@@ -1,0 +1,9 @@
+public class Building
+{
+    public string Name { get; set; }
+    public List<BuildingParameter> Parameters { get; set; } = new List<BuildingParameter>();
+
+    public void AddParameter(BuildingParameter p) => Parameters.Add(p);
+    public void RemoveParameter(BuildingParameter p) => Parameters.Remove(p);
+    public BuildingParameter GetParameter(string name) => Parameters.Find(p => p.Name == name);
+}

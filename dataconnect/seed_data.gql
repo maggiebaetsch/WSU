@@ -1,0 +1,61 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This is a seed data mutation, only to be used by authenticated users.") {
+  user1: user_insert(data: {
+    id: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    displayName: "Alice Smith",
+    createdAt: "2023-01-01T10:00:00Z",
+    email: "alice.smith@example.com",
+    photoUrl: "https://example.com/alice.jpg"
+  })
+  user2: user_insert(data: {
+    id: "b2c3d4e5-f6a7-8901-2345-67890abcdef0",
+    displayName: "Bob Johnson",
+    createdAt: "2023-01-02T11:00:00Z",
+    email: "bob.johnson@example.com",
+    photoUrl: "https://example.com/bob.jpg"
+  })
+  building1: building_insert(data: {
+    id: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+    userId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    name: "Headquarters Building",
+    buildingType: "Office",
+    createdAt: "2023-01-03T09:00:00Z",
+    address: "123 Main St, Anytown, USA",
+    yearBuilt: 2005,
+    description: "Main office building for the company."
+  })
+  building2: building_insert(data: {
+    id: "d4e5f6a7-b8c9-0123-4567-890abcdef012",
+    userId: "b2c3d4e5-f6a7-8901-2345-67890abcdef0",
+    name: "Warehouse A",
+    buildingType: "Warehouse",
+    createdAt: "2023-01-04T14:30:00Z",
+    address: "456 Industrial Rd, Otherville, USA",
+    yearBuilt: 1998,
+    description: "Storage facility for goods."
+  })
+  buildingCharacteristics1: buildingCharacteristics_insert(data: {
+    buildingId: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+    totalAreaSqFt: 50000.0,
+    wallInsulationRValue: 19.5,
+    roofInsulationRValue: 30.0,
+    windowType: "Double Pane",
+    numberOfFloors: 5,
+    basementType: "Full"
+  })
+  electricalLoad1: electricalLoad_insert(data: {
+    buildingId: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+    lightingType: "LED",
+    totalLightingWattage: 15000.0,
+    applianceLoadWattage: 8000.0,
+    hoursOfOperationPerDay: 10.0,
+    numberOfOccupants: 150
+  })
+  hvacSystem1: hVACSystem_insert(data: {
+    buildingId: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+    systemType: "Centralized VAV",
+    heatingEfficiencyRating: 0.92,
+    coolingEfficiencyRating: 0.88,
+    heatingFuel: "Natural Gas",
+    thermostatType: "Smart Thermostat"
+  })
+}

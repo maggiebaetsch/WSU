@@ -1,0 +1,44 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type Building @table {
+  user: User!
+  name: String!
+  buildingType: String!
+  createdAt: Timestamp!
+  address: String
+  yearBuilt: Int
+  description: String
+}
+
+type BuildingCharacteristics @table {
+  building: Building!
+  totalAreaSqFt: Float!
+  wallInsulationRValue: Float!
+  roofInsulationRValue: Float!
+  windowType: String!
+  numberOfFloors: Int
+  basementType: String
+}
+
+type HVACSystem @table {
+  building: Building!
+  systemType: String!
+  heatingEfficiencyRating: Float!
+  coolingEfficiencyRating: Float!
+  heatingFuel: String
+  thermostatType: String
+}
+
+type ElectricalLoad @table {
+  building: Building!
+  lightingType: String!
+  totalLightingWattage: Float!
+  applianceLoadWattage: Float!
+  hoursOfOperationPerDay: Float
+  numberOfOccupants: Int
+}

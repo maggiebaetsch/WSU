@@ -1,0 +1,20 @@
+public class FirebaseService
+{
+    private readonly HttpClient _client;
+    private readonly string _baseUrl = "https://your-project-id.firebaseio.com/";
+
+    public FirebaseService()
+    {
+        _client = new HttpClient();
+    }
+
+    public async Task CreateBuilding(Building building)  //This is important and need to learn more about!!!!!! Converting the data
+    {
+        var json = JsonConvert.SerializeObject(building);
+
+        await _client.PostAsync(
+            $"{_baseUrl}/buildings.json",
+            new StringContent(json, Encoding.UTF8, "application/json")
+        );
+    }
+}

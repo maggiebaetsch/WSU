@@ -1,0 +1,76 @@
+query GetMyBuildings @auth(level: USER, insecureReason: "This query lists buildings associated with the current logged-in user.") {
+  buildings(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    buildingType
+    address
+    yearBuilt
+    createdAt
+    description
+  }
+}
+
+mutation CreateBuilding($name: String!, $buildingType: String!, $address: String, $yearBuilt: Int, $description: String) @auth(level: USER, insecureReason: "This mutation allows a logged-in user to create a new building associated with their account.") {
+  building_insert(data: {
+    userId_expr: "auth.uid",
+    name: $name,
+    buildingType: $buildingType,
+    address: $address,
+    yearBuilt: $yearBuilt,
+    description: $description,
+    createdAt_expr: "request.time"
+  }) {
+    id
+  }
+}
+
+query GetBuildingDetails($buildingId: UUID!) @auth(level: USER, insecureReason: "This query retrieves details for a specific building, including its characteristics, electrical loads, and HVAC systems, if the user owns it.") {
+  building(key: {id: $buildingId}, where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    buildingType
+    address
+    yearBuilt
+    description
+    createdAt
+    buildingCharacteristicss_on_building {
+      id
+      totalAreaSqFt
+      wallInsulationRValue
+      roofInsulationRValue
+      windowType
+      numberOfFloors
+      basementType
+    }
+    electricalLoads_on_building {
+      id
+      lightingType
+      totalLightingWattage
+      applianceLoadWattage
+      hoursOfOperationPerDay
+      numberOfOccupants
+    }
+    hVACSystems_on_building {
+      id
+      systemType
+      heatingEfficiencyRating
+      coolingEfficiencyRating
+      heatingFuel
+      thermostatType
+    }
+  }
+}
+
+mutation UpdateBuildingCharacteristics($buildingId: UUID!, $totalAreaSqFt: Float!, $wallInsulationRValue: Float!, $roofInsulationRValue: Float!, $windowType: String!, $numberOfFloors: Int, $basementType: String) @auth(level: USER, insecureReason: "This mutation allows a logged-in user to update the characteristics of a building they own.") {
+  buildingCharacteristics_upsert(data: {
+    buildingId: $buildingId,
+    totalAreaSqFt: $totalAreaSqFt,
+    wallInsulationRValue: $wallInsulationRValue,
+    roofInsulationRValue: $roofInsulationRValue,
+    windowType: $windowType,
+    numberOfFloors: $numberOfFloors,
+    basementType: $basementType
+  }) {
+    id
+  }
+}

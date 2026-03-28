@@ -1,0 +1,15 @@
+public class EnergyResult
+{
+    public double Cooling { get; set; }
+    public double Heating { get; set; }
+    public double Total { get; set; }
+    public double Carbon { get; set; }
+    public double Cost { get; set; }
+
+    public static EnergyResult Predict(Building building, List<Improvement> improvements)
+    {
+        // Place energy equations here
+
+        return new EnergyResult();
+    }
+}
