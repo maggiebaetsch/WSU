@@ -29,9 +29,8 @@ query GetBuildingParameters($buildingId: Int!) {
   }
 }
 
-mutation CreateBuildingParameters($id: Int!, $buildingId: Int!, $climate: Climate!, $floorArea: String!, $buildingType: BuildingType!, $envelope: EnvelopeType!, $isAC: Boolean!) {
+mutation CreateBuildingParameters($buildingId: Int!, $climate: Climate!, $floorArea: String!, $buildingType: BuildingType!, $envelope: EnvelopeType!, $isAC: Boolean!) {
   buildingParameters_insert(data: {
-    id: $id
     building: {id: $buildingId}
     climate: $climate
     floorArea: $floorArea

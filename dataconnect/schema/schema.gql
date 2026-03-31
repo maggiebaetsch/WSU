@@ -30,7 +30,6 @@ type Building @table {
 }
 
 type BuildingParameters @table {
-  id: Int!
   building: Building!
 
   climate: Climate!
@@ -41,14 +40,12 @@ type BuildingParameters @table {
 }
 
 type Improvements @table {
-  id: Int!
   building: Building!
 
   name: String!
 }
 
 type InsulationRoof @table {
-  id: Int!
   improvements: Improvements!
 
   type: String!
@@ -57,7 +54,6 @@ type InsulationRoof @table {
 }
 
 type InsulationWall @table {
-  id: Int!
   improvements: Improvements!
 
   type: String!
@@ -66,14 +62,12 @@ type InsulationWall @table {
 }
 
 type WindowSize @table {
-  id: Int!
   improvements: Improvements!
 
   area: Float!
 }
 
 type WindowGlazing @table {
-  id: Int!
   improvements: Improvements!
 
   type: String!
@@ -82,21 +76,18 @@ type WindowGlazing @table {
 }
 
 type Orientation @table {
-  id: Int!
   improvements: Improvements!
 
   direction: String!
 }
 
 type Occupancy @table {
-  id: Int!
   improvements: Improvements!
 
   numberOfPeople: Int!
 }
 
 type WindowShading @table {
-  id: Int!
   improvements: Improvements!
 
   type: String!
@@ -104,7 +95,6 @@ type WindowShading @table {
 }
 
 type EnergyResult @table {
-  id: Int!
   building: Building!
   improvements: Improvements!
 
