@@ -1,7 +1,7 @@
 public class FirebaseService
 {
     private readonly HttpClient _client;
-    private readonly string _baseUrl = "https://your-project-id.firebaseio.com/";
+    private readonly string _baseUrl = "https://building-energy-analysis.firebaseapp.com/";
 
     public FirebaseService()
     {

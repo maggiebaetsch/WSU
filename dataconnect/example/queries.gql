@@ -1,76 +1,42 @@
-query GetMyBuildings @auth(level: USER, insecureReason: "This query lists buildings associated with the current logged-in user.") {
-  buildings(where: {userId: {eq_expr: "auth.uid"}}) {
+query GetAllBuildings {
+  buildings {
     id
     name
-    buildingType
-    address
-    yearBuilt
-    createdAt
-    description
   }
 }
 
-mutation CreateBuilding($name: String!, $buildingType: String!, $address: String, $yearBuilt: Int, $description: String) @auth(level: USER, insecureReason: "This mutation allows a logged-in user to create a new building associated with their account.") {
+query GetBuildingById($id: Int!) {
+  building(key: {id: $id}) {
+    id
+    name
+  }
+}
+
+mutation CreateBuilding($id: Int!, $name: String!) {
   building_insert(data: {
-    userId_expr: "auth.uid",
-    name: $name,
-    buildingType: $buildingType,
-    address: $address,
-    yearBuilt: $yearBuilt,
-    description: $description,
-    createdAt_expr: "request.time"
-  }) {
-    id
-  }
+    id: $id
+    name: $name
+  })
 }
 
-query GetBuildingDetails($buildingId: UUID!) @auth(level: USER, insecureReason: "This query retrieves details for a specific building, including its characteristics, electrical loads, and HVAC systems, if the user owns it.") {
-  building(key: {id: $buildingId}, where: {userId: {eq_expr: "auth.uid"}}) {
-    id
-    name
+query GetBuildingParameters($buildingId: Int!) {
+  buildingParameterss(where: {building: {id: {eq: $buildingId}}}) {
+    climate
+    floorArea
     buildingType
-    address
-    yearBuilt
-    description
-    createdAt
-    buildingCharacteristicss_on_building {
-      id
-      totalAreaSqFt
-      wallInsulationRValue
-      roofInsulationRValue
-      windowType
-      numberOfFloors
-      basementType
-    }
-    electricalLoads_on_building {
-      id
-      lightingType
-      totalLightingWattage
-      applianceLoadWattage
-      hoursOfOperationPerDay
-      numberOfOccupants
-    }
-    hVACSystems_on_building {
-      id
-      systemType
-      heatingEfficiencyRating
-      coolingEfficiencyRating
-      heatingFuel
-      thermostatType
-    }
+    envelope
+    isAC
   }
 }
 
-mutation UpdateBuildingCharacteristics($buildingId: UUID!, $totalAreaSqFt: Float!, $wallInsulationRValue: Float!, $roofInsulationRValue: Float!, $windowType: String!, $numberOfFloors: Int, $basementType: String) @auth(level: USER, insecureReason: "This mutation allows a logged-in user to update the characteristics of a building they own.") {
-  buildingCharacteristics_upsert(data: {
-    buildingId: $buildingId,
-    totalAreaSqFt: $totalAreaSqFt,
-    wallInsulationRValue: $wallInsulationRValue,
-    roofInsulationRValue: $roofInsulationRValue,
-    windowType: $windowType,
-    numberOfFloors: $numberOfFloors,
-    basementType: $basementType
-  }) {
-    id
-  }
+mutation CreateBuildingParameters($buildingId: Int!, $climate: Climate!, $floorArea: String!, $buildingType: BuildingType!, $envelope: EnvelopeType!, $isAC: Boolean!) {
+  buildingParameters_insert(data: {
+    building: {id: $buildingId}
+    climate: $climate
+    floorArea: $floorArea
+    buildingType: $buildingType
+    envelope: $envelope
+    isAC: $isAC
+  })
 }
+

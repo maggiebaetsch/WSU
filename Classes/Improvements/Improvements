@@ -11,8 +11,10 @@ public class Improvements
     public List<Improvement> GetImprovements() => ImprovementList;
 }
 
-public class Improvement { }  // Base 
-
+public abstract class Improvement //Base
+{
+    public string Type { get; set; }
+}
 
 public class InsulationRoof : Improvement
 {

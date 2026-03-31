@@ -1,44 +1,105 @@
-type User @table {
-  displayName: String!
-  createdAt: Timestamp!
-  email: String
-  photoUrl: String
+enum Climate {
+  TROPICAL
+  DRY_ARID_SEMIARID
+  TEMPERATE
+  CONTINENTAL
+  POLAR_ALPINE
+}
+
+enum BuildingType {
+  RESIDENTIAL
+  OFFICE
+  HOTEL
+  GOVERNMENTAL
+  SCHOOL
+  HOSPITAL
+  RETAIL
+  AGED_CARE
+  INDUSTRIAL
+}
+
+enum EnvelopeType {
+  HIGH_MASS
+  LOW_MASS
+  GLAZED
 }
 
 type Building @table {
-  user: User!
+  id: Int!
   name: String!
-  buildingType: String!
-  createdAt: Timestamp!
-  address: String
-  yearBuilt: Int
-  description: String
 }
 
-type BuildingCharacteristics @table {
+type BuildingParameters @table {
   building: Building!
-  totalAreaSqFt: Float!
-  wallInsulationRValue: Float!
-  roofInsulationRValue: Float!
-  windowType: String!
-  numberOfFloors: Int
-  basementType: String
+
+  climate: Climate!
+  floorArea: String!
+  buildingType: BuildingType!
+  envelope: EnvelopeType!
+  isAC: Boolean!
 }
 
-type HVACSystem @table {
+type Improvements @table {
   building: Building!
-  systemType: String!
-  heatingEfficiencyRating: Float!
-  coolingEfficiencyRating: Float!
-  heatingFuel: String
-  thermostatType: String
+  name: String!
 }
 
-type ElectricalLoad @table {
+type InsulationRoof @table {
+  improvements: Improvements!
+
+  type: String!
+  thickness: Int!
+  rValue: Float!
+}
+
+type InsulationWall @table {
+  improvements: Improvements!
+
+  type: String!
+  thickness: Int!
+  rValue: Float!
+}
+
+type WindowSize @table {
+  improvements: Improvements!
+
+  area: Float!
+}
+
+type WindowGlazing @table {
+  improvements: Improvements!
+
+  type: String!
+  rValue: Float!
+  shgc: Float!
+}
+
+type Orientation @table {
+  improvements: Improvements!
+
+  direction: String!
+}
+
+type Occupancy @table {
+  improvements: Improvements!
+
+  numberOfPeople: Int!
+}
+
+type WindowShading @table {
+  improvements: Improvements!
+
+  type: String!
+  isExternal: Boolean!
+}
+
+type EnergyResult @table {
   building: Building!
-  lightingType: String!
-  totalLightingWattage: Float!
-  applianceLoadWattage: Float!
-  hoursOfOperationPerDay: Float
-  numberOfOccupants: Int
+  improvements: Improvements!
+
+  cooling: Float!
+  heating: Float!
+  total: Float!
+  carbon: Float!
+  cost: Float!
 }
