@@ -6,11 +6,13 @@ Firebase hosting was setup but not with github, need auth for this.
 
 Steps
     1. npm install firebase
-    2. firebase login
-    3. firebase deploy
+    2. npm install -g firebase-tools
+    3. firebase login
+    4. firebase deploy
         If you are unable to login: https://console.firebase.google.com/u/1/project/building-energy-analysis/hosting/sites/building-energy-analysis
 
 Project Console: https://console.firebase.google.com/project/building-energy-analysis/overview
+
 Hosting URL: https://building-energy-analysis.web.app (Broken because index moved)
 
 
@@ -29,5 +31,5 @@ DATA STUFFFFF!!!!!!!!!!!!!!!
         │   └── WindowShading
         └── EnergyResult
 
-How to veiw and confirm that the data structure is working with Schema: https://console.firebase.google.com/u/1/project/building-energy-analysis/dataconnect/locations/us-east4/services/wsu/schema
+How to view and confirm that the data structure is working with Schema: https://console.firebase.google.com/u/1/project/building-energy-analysis/dataconnect/locations/us-east4/services/wsu/schema
 
