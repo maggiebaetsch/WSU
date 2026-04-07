@@ -1,37 +1,440 @@
-{
-  "buildings": [
-    { "id": 1, "name": "Office A" }
-  ],
-  "buildingParameters": [
-    {
-      "id": 1,
-      "building": 1,
-      "climate": "TEMPERATE",
-      "floorArea": "0-1000",
-      "buildingType": "OFFICE",
-      "envelope": "HIGH_MASS",
-      "isAC": true
-    }
-  ],
-  "improvements": [
-    { "id": 1, "building": 1, "name": "WS-10" },
-    { "id": 2, "building": 1, "name": "WS-20" },
-    { "id": 3, "building": 1, "name": "WS-30" },
-    { "id": 4, "building": 1, "name": "WS-40" },
-    { "id": 5, "building": 1, "name": "WS-50" }
-  ],
-  "windowSize": [
-    { "id": 1, "improvements": 1, "area": 10 },
-    { "id": 2, "improvements": 2, "area": 20 },
-    { "id": 3, "improvements": 3, "area": 30 },
-    { "id": 4, "improvements": 4, "area": 40 },
-    { "id": 5, "improvements": 5, "area": 50 }
-  ],
-  "energyResults": [
-    { "id": 1, "building": 1, "improvements": 1, "cooling": 900, "heating": 700, "total": 1600, "carbon": 400, "cost": 200 },
-    { "id": 2, "building": 1, "improvements": 2, "cooling": 950, "heating": 720, "total": 1670, "carbon": 420, "cost": 210 },
-    { "id": 3, "building": 1, "improvements": 3, "cooling": 1000, "heating": 750, "total": 1750, "carbon": 440, "cost": 220 },
-    { "id": 4, "building": 1, "improvements": 4, "cooling": 1100, "heating": 780, "total": 1880, "carbon": 470, "cost": 235 },
-    { "id": 5, "building": 1, "improvements": 5, "cooling": 1200, "heating": 800, "total": 2000, "carbon": 500, "cost": 250 }
-  ]
+mutation SeedData @auth(level: NO_ACCESS) {
+  # Remove prior seeded energy results
+  delErRoof1: energyResult_delete(key: { id: "c1111111-1111-1111-1111-111111111111" })
+  delErRoof2: energyResult_delete(key: { id: "c1111111-1111-1111-1111-111111111112" })
+  delErRoof3: energyResult_delete(key: { id: "c1111111-1111-1111-1111-111111111113" })
+
+  delErWall1: energyResult_delete(key: { id: "c2222222-2222-2222-2222-222222222221" })
+  delErWall2: energyResult_delete(key: { id: "c2222222-2222-2222-2222-222222222222" })
+  delErWall3: energyResult_delete(key: { id: "c2222222-2222-2222-2222-222222222223" })
+
+  delErWs1: energyResult_delete(key: { id: "c3333333-3333-3333-3333-333333333331" })
+  delErWs2: energyResult_delete(key: { id: "c3333333-3333-3333-3333-333333333332" })
+  delErWs3: energyResult_delete(key: { id: "c3333333-3333-3333-3333-333333333333" })
+
+  delErWg1: energyResult_delete(key: { id: "c4444444-4444-4444-4444-444444444441" })
+  delErWg2: energyResult_delete(key: { id: "c4444444-4444-4444-4444-444444444442" })
+  delErWg3: energyResult_delete(key: { id: "c4444444-4444-4444-4444-444444444443" })
+
+  delErO1: energyResult_delete(key: { id: "c5555555-5555-5555-5555-555555555551" })
+  delErO2: energyResult_delete(key: { id: "c5555555-5555-5555-5555-555555555552" })
+  delErO3: energyResult_delete(key: { id: "c5555555-5555-5555-5555-555555555553" })
+
+  delErOcc1: energyResult_delete(key: { id: "c6666666-6666-6666-6666-666666666661" })
+  delErOcc2: energyResult_delete(key: { id: "c6666666-6666-6666-6666-666666666662" })
+  delErOcc3: energyResult_delete(key: { id: "c6666666-6666-6666-6666-666666666663" })
+
+  delErShade1: energyResult_delete(key: { id: "c7777777-7777-7777-7777-777777777771" })
+  delErShade2: energyResult_delete(key: { id: "c7777777-7777-7777-7777-777777777772" })
+  delErShade3: energyResult_delete(key: { id: "c7777777-7777-7777-7777-777777777773" })
+
+  # Remove prior seeded improvement entries
+  delRoof1: insulationRoof_delete(key: { id: "b1111111-1111-1111-1111-111111111111" })
+  delRoof2: insulationRoof_delete(key: { id: "b1111111-1111-1111-1111-111111111112" })
+  delRoof3: insulationRoof_delete(key: { id: "b1111111-1111-1111-1111-111111111113" })
+
+  delWall1: insulationWall_delete(key: { id: "b2222222-2222-2222-2222-222222222221" })
+  delWall2: insulationWall_delete(key: { id: "b2222222-2222-2222-2222-222222222222" })
+  delWall3: insulationWall_delete(key: { id: "b2222222-2222-2222-2222-222222222223" })
+
+  delWs1: windowSize_delete(key: { id: "b3333333-3333-3333-3333-333333333331" })
+  delWs2: windowSize_delete(key: { id: "b3333333-3333-3333-3333-333333333332" })
+  delWs3: windowSize_delete(key: { id: "b3333333-3333-3333-3333-333333333333" })
+
+  delWg1: windowGlazing_delete(key: { id: "b4444444-4444-4444-4444-444444444441" })
+  delWg2: windowGlazing_delete(key: { id: "b4444444-4444-4444-4444-444444444442" })
+  delWg3: windowGlazing_delete(key: { id: "b4444444-4444-4444-4444-444444444443" })
+
+  delO1: orientation_delete(key: { id: "b5555555-5555-5555-5555-555555555551" })
+  delO2: orientation_delete(key: { id: "b5555555-5555-5555-5555-555555555552" })
+  delO3: orientation_delete(key: { id: "b5555555-5555-5555-5555-555555555553" })
+
+  delOcc1: occupancy_delete(key: { id: "b6666666-6666-6666-6666-666666666661" })
+  delOcc2: occupancy_delete(key: { id: "b6666666-6666-6666-6666-666666666662" })
+  delOcc3: occupancy_delete(key: { id: "b6666666-6666-6666-6666-666666666663" })
+
+  delShade1: windowShading_delete(key: { id: "b7777777-7777-7777-7777-777777777771" })
+  delShade2: windowShading_delete(key: { id: "b7777777-7777-7777-7777-777777777772" })
+  delShade3: windowShading_delete(key: { id: "b7777777-7777-7777-7777-777777777773" })
+
+  # Remove prior seeded parent rows
+  delBp1: buildingParameters_delete(key: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" })
+  delB1: building_delete(key: { id: "11111111-1111-1111-1111-111111111111" })
+
+  # Parent rows
+  b1: building_insert(data: {
+    id: "11111111-1111-1111-1111-111111111111"
+    name: "Residential Building A"
+  })
+
+  bp1: buildingParameters_insert(data: {
+    id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1"
+    building: { id: "11111111-1111-1111-1111-111111111111" }
+    climate: TEMPERATE
+    floorArea: "5000"
+    buildingType: RESIDENTIAL
+    envelope: LOW_MASS
+    isAC: true
+  })
+
+  # Insulation roof (3 entries)
+  roof1: insulationRoof_insert(data: {
+    id: "b1111111-1111-1111-1111-111111111111"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Fiberglass"
+    thickness: 6.0
+    rValue: 19.0
+  })
+  roof2: insulationRoof_insert(data: {
+    id: "b1111111-1111-1111-1111-111111111112"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Cellulose"
+    thickness: 8.0
+    rValue: 30.0
+  })
+  roof3: insulationRoof_insert(data: {
+    id: "b1111111-1111-1111-1111-111111111113"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Spray Foam"
+    thickness: 5.0
+    rValue: 25.0
+  })
+
+  # Insulation wall (3 entries)
+  wall1: insulationWall_insert(data: {
+    id: "b2222222-2222-2222-2222-222222222221"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Spray Foam"
+    thickness: 4.0
+    rValue: 13.0
+  })
+  wall2: insulationWall_insert(data: {
+    id: "b2222222-2222-2222-2222-222222222222"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Batt"
+    thickness: 6.0
+    rValue: 21.0
+  })
+  wall3: insulationWall_insert(data: {
+    id: "b2222222-2222-2222-2222-222222222223"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Rigid Board"
+    thickness: 3.0
+    rValue: 15.0
+  })
+
+  # Window size (3 entries)
+  ws1: windowSize_insert(data: {
+    id: "b3333333-3333-3333-3333-333333333331"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    name: "Window Type A"
+    area: 120.0
+  })
+  ws2: windowSize_insert(data: {
+    id: "b3333333-3333-3333-3333-333333333332"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    name: "Window Type B"
+    area: 150.0
+  })
+  ws3: windowSize_insert(data: {
+    id: "b3333333-3333-3333-3333-333333333333"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    name: "Window Type C"
+    area: 95.0
+  })
+
+  # Window glazing (3 entries)
+  wg1: windowGlazing_insert(data: {
+    id: "b4444444-4444-4444-4444-444444444441"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Double Pane"
+    rValue: 2.0
+    shgc: 0.65
+  })
+  wg2: windowGlazing_insert(data: {
+    id: "b4444444-4444-4444-4444-444444444442"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Triple Pane"
+    rValue: 3.2
+    shgc: 0.45
+  })
+  wg3: windowGlazing_insert(data: {
+    id: "b4444444-4444-4444-4444-444444444443"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Low-E"
+    rValue: 2.5
+    shgc: 0.38
+  })
+
+  # Orientation (3 entries)
+  o1: orientation_insert(data: {
+    id: "b5555555-5555-5555-5555-555555555551"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    direction: "South"
+  })
+  o2: orientation_insert(data: {
+    id: "b5555555-5555-5555-5555-555555555552"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    direction: "East"
+  })
+  o3: orientation_insert(data: {
+    id: "b5555555-5555-5555-5555-555555555553"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    direction: "West"
+  })
+
+  # Occupancy (3 entries)
+  occ1: occupancy_insert(data: {
+    id: "b6666666-6666-6666-6666-666666666661"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    numberOfPeople: 40
+  })
+  occ2: occupancy_insert(data: {
+    id: "b6666666-6666-6666-6666-666666666662"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    numberOfPeople: 55
+  })
+  occ3: occupancy_insert(data: {
+    id: "b6666666-6666-6666-6666-666666666663"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    numberOfPeople: 30
+  })
+
+  # Window shading (3 entries)
+  shade1: windowShading_insert(data: {
+    id: "b7777777-7777-7777-7777-777777777771"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Blinds"
+    isExternal: false
+  })
+  shade2: windowShading_insert(data: {
+    id: "b7777777-7777-7777-7777-777777777772"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Overhang"
+    isExternal: true
+  })
+  shade3: windowShading_insert(data: {
+    id: "b7777777-7777-7777-7777-777777777773"
+    buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
+    type: "Film"
+    isExternal: false
+  })
+
+  # Energy results (one per entry)
+  erRoof1: energyResult_insert(data: {
+    id: "c1111111-1111-1111-1111-111111111111"
+    insulationRoof: { id: "b1111111-1111-1111-1111-111111111111" }
+    improvementType: "INSULATION_ROOF"
+    cooling: 120.0
+    heating: 95.0
+    total: 215.0
+    carbon: 54.0
+    cost: 320.0
+  })
+  erRoof2: energyResult_insert(data: {
+    id: "c1111111-1111-1111-1111-111111111112"
+    insulationRoof: { id: "b1111111-1111-1111-1111-111111111112" }
+    improvementType: "INSULATION_ROOF"
+    cooling: 112.0
+    heating: 88.0
+    total: 200.0
+    carbon: 49.0
+    cost: 300.0
+  })
+  erRoof3: energyResult_insert(data: {
+    id: "c1111111-1111-1111-1111-111111111113"
+    insulationRoof: { id: "b1111111-1111-1111-1111-111111111113" }
+    improvementType: "INSULATION_ROOF"
+    cooling: 108.0
+    heating: 84.0
+    total: 192.0
+    carbon: 47.0
+    cost: 288.0
+  })
+
+  erWall1: energyResult_insert(data: {
+    id: "c2222222-2222-2222-2222-222222222221"
+    insulationWall: { id: "b2222222-2222-2222-2222-222222222221" }
+    improvementType: "INSULATION_WALL"
+    cooling: 114.0
+    heating: 89.0
+    total: 203.0
+    carbon: 51.0
+    cost: 302.0
+  })
+  erWall2: energyResult_insert(data: {
+    id: "c2222222-2222-2222-2222-222222222222"
+    insulationWall: { id: "b2222222-2222-2222-2222-222222222222" }
+    improvementType: "INSULATION_WALL"
+    cooling: 109.0
+    heating: 86.0
+    total: 195.0
+    carbon: 48.0
+    cost: 292.0
+  })
+  erWall3: energyResult_insert(data: {
+    id: "c2222222-2222-2222-2222-222222222223"
+    insulationWall: { id: "b2222222-2222-2222-2222-222222222223" }
+    improvementType: "INSULATION_WALL"
+    cooling: 106.0
+    heating: 83.0
+    total: 189.0
+    carbon: 46.0
+    cost: 284.0
+  })
+
+  erWs1: energyResult_insert(data: {
+    id: "c3333333-3333-3333-3333-333333333331"
+    windowSize: { id: "b3333333-3333-3333-3333-333333333331" }
+    improvementType: "WINDOW_SIZE"
+    cooling: 130.0
+    heating: 100.0
+    total: 230.0
+    carbon: 60.0
+    cost: 350.0
+  })
+  erWs2: energyResult_insert(data: {
+    id: "c3333333-3333-3333-3333-333333333332"
+    windowSize: { id: "b3333333-3333-3333-3333-333333333332" }
+    improvementType: "WINDOW_SIZE"
+    cooling: 138.0
+    heating: 108.0
+    total: 246.0
+    carbon: 64.0
+    cost: 372.0
+  })
+  erWs3: energyResult_insert(data: {
+    id: "c3333333-3333-3333-3333-333333333333"
+    windowSize: { id: "b3333333-3333-3333-3333-333333333333" }
+    improvementType: "WINDOW_SIZE"
+    cooling: 122.0
+    heating: 96.0
+    total: 218.0
+    carbon: 57.0
+    cost: 336.0
+  })
+
+  erWg1: energyResult_insert(data: {
+    id: "c4444444-4444-4444-4444-444444444441"
+    windowGlazing: { id: "b4444444-4444-4444-4444-444444444441" }
+    improvementType: "WINDOW_GLAZING"
+    cooling: 115.0
+    heating: 88.0
+    total: 203.0
+    carbon: 52.0
+    cost: 305.0
+  })
+  erWg2: energyResult_insert(data: {
+    id: "c4444444-4444-4444-4444-444444444442"
+    windowGlazing: { id: "b4444444-4444-4444-4444-444444444442" }
+    improvementType: "WINDOW_GLAZING"
+    cooling: 108.0
+    heating: 82.0
+    total: 190.0
+    carbon: 47.0
+    cost: 286.0
+  })
+  erWg3: energyResult_insert(data: {
+    id: "c4444444-4444-4444-4444-444444444443"
+    windowGlazing: { id: "b4444444-4444-4444-4444-444444444443" }
+    improvementType: "WINDOW_GLAZING"
+    cooling: 104.0
+    heating: 79.0
+    total: 183.0
+    carbon: 45.0
+    cost: 276.0
+  })
+
+  erO1: energyResult_insert(data: {
+    id: "c5555555-5555-5555-5555-555555555551"
+    orientation: { id: "b5555555-5555-5555-5555-555555555551" }
+    improvementType: "ORIENTATION"
+    cooling: 105.0
+    heating: 92.0
+    total: 197.0
+    carbon: 49.0
+    cost: 295.0
+  })
+  erO2: energyResult_insert(data: {
+    id: "c5555555-5555-5555-5555-555555555552"
+    orientation: { id: "b5555555-5555-5555-5555-555555555552" }
+    improvementType: "ORIENTATION"
+    cooling: 109.0
+    heating: 94.0
+    total: 203.0
+    carbon: 51.0
+    cost: 303.0
+  })
+  erO3: energyResult_insert(data: {
+    id: "c5555555-5555-5555-5555-555555555553"
+    orientation: { id: "b5555555-5555-5555-5555-555555555553" }
+    improvementType: "ORIENTATION"
+    cooling: 111.0
+    heating: 96.0
+    total: 207.0
+    carbon: 52.0
+    cost: 309.0
+  })
+
+  erOcc1: energyResult_insert(data: {
+    id: "c6666666-6666-6666-6666-666666666661"
+    occupancy: { id: "b6666666-6666-6666-6666-666666666661" }
+    improvementType: "OCCUPANCY"
+    cooling: 140.0
+    heating: 110.0
+    total: 250.0
+    carbon: 65.0
+    cost: 380.0
+  })
+  erOcc2: energyResult_insert(data: {
+    id: "c6666666-6666-6666-6666-666666666662"
+    occupancy: { id: "b6666666-6666-6666-6666-666666666662" }
+    improvementType: "OCCUPANCY"
+    cooling: 148.0
+    heating: 118.0
+    total: 266.0
+    carbon: 69.0
+    cost: 402.0
+  })
+  erOcc3: energyResult_insert(data: {
+    id: "c6666666-6666-6666-6666-666666666663"
+    occupancy: { id: "b6666666-6666-6666-6666-666666666663" }
+    improvementType: "OCCUPANCY"
+    cooling: 132.0
+    heating: 104.0
+    total: 236.0
+    carbon: 61.0
+    cost: 360.0
+  })
+
+  erShade1: energyResult_insert(data: {
+    id: "c7777777-7777-7777-7777-777777777771"
+    windowShading: { id: "b7777777-7777-7777-7777-777777777771" }
+    improvementType: "WINDOW_SHADING"
+    cooling: 100.0
+    heating: 85.0
+    total: 185.0
+    carbon: 47.0
+    cost: 280.0
+  })
+  erShade2: energyResult_insert(data: {
+    id: "c7777777-7777-7777-7777-777777777772"
+    windowShading: { id: "b7777777-7777-7777-7777-777777777772" }
+    improvementType: "WINDOW_SHADING"
+    cooling: 96.0
+    heating: 82.0
+    total: 178.0
+    carbon: 45.0
+    cost: 270.0
+  })
+  erShade3: energyResult_insert(data: {
+    id: "c7777777-7777-7777-7777-777777777773"
+    windowShading: { id: "b7777777-7777-7777-7777-777777777773" }
+    improvementType: "WINDOW_SHADING"
+    cooling: 102.0
+    heating: 87.0
+    total: 189.0
+    carbon: 48.0
+    cost: 286.0
+  })
 }

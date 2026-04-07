@@ -1,37 +1,54 @@
-query GetAllBuildings {
+query GetAllBuildings @auth(level: NO_ACCESS) {
   buildings {
     id
     name
   }
 }
 
-query GetBuildingById($id: Int!) {
-  building(key: {id: $id}) {
+query GetBuildingById($id: UUID!) @auth(level: NO_ACCESS) {
+  building(key: { id: $id }) {
     id
     name
+    buildingParameters {
+      id
+      climate
+      floorArea
+      buildingType
+      envelope
+      isAC
+    }
   }
 }
 
-mutation CreateBuilding($id: Int!, $name: String!) {
-  building_insert(data: {
-    id: $id
-    name: $name
-  })
-}
-
-query GetBuildingParameters($buildingId: Int!) {
-  buildingParameterss(where: {building: {id: {eq: $buildingId}}}) {
+query GetAllBuildingParameters @auth(level: NO_ACCESS) {
+  buildingParameterss {
+    id
     climate
     floorArea
     buildingType
     envelope
     isAC
+    building {
+      id
+      name
+    }
   }
 }
 
-mutation CreateBuildingParameters($buildingId: Int!, $climate: Climate!, $floorArea: String!, $buildingType: BuildingType!, $envelope: EnvelopeType!, $isAC: Boolean!) {
+mutation CreateBuilding($name: String!) @auth(level: NO_ACCESS) {
+  building_insert(data: { name: $name })
+}
+
+mutation CreateBuildingParameters(
+  $buildingId: UUID!,
+  $climate: Climate!,
+  $floorArea: String!,
+  $buildingType: BuildingType!,
+  $envelope: EnvelopeType!,
+  $isAC: Boolean!
+) @auth(level: NO_ACCESS) {
   buildingParameters_insert(data: {
-    building: {id: $buildingId}
+    building: { id: $buildingId }
     climate: $climate
     floorArea: $floorArea
     buildingType: $buildingType
@@ -40,3 +57,427 @@ mutation CreateBuildingParameters($buildingId: Int!, $climate: Climate!, $floorA
   })
 }
 
+mutation CreateInsulationRoof(
+  $buildingParametersId: UUID!,
+  $type: String!,
+  $thickness: Float!,
+  $rValue: Float!
+) @auth(level: NO_ACCESS) {
+  insulationRoof_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    type: $type
+    thickness: $thickness
+    rValue: $rValue
+  })
+}
+
+mutation CreateInsulationWall(
+  $buildingParametersId: UUID!,
+  $type: String!,
+  $thickness: Float!,
+  $rValue: Float!
+) @auth(level: NO_ACCESS) {
+  insulationWall_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    type: $type
+    thickness: $thickness
+    rValue: $rValue
+  })
+}
+
+mutation CreateWindowSize(
+  $buildingParametersId: UUID!,
+  $name: String!,
+  $area: Float!
+) @auth(level: NO_ACCESS) {
+  windowSize_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    name: $name
+    area: $area
+  })
+}
+
+mutation CreateWindowGlazing(
+  $buildingParametersId: UUID!,
+  $type: String!,
+  $rValue: Float!,
+  $shgc: Float!
+) @auth(level: NO_ACCESS) {
+  windowGlazing_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    type: $type
+    rValue: $rValue
+    shgc: $shgc
+  })
+}
+
+mutation CreateOrientation(
+  $buildingParametersId: UUID!,
+  $direction: String!
+) @auth(level: NO_ACCESS) {
+  orientation_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    direction: $direction
+  })
+}
+
+mutation CreateOccupancy(
+  $buildingParametersId: UUID!,
+  $numberOfPeople: Int!
+) @auth(level: NO_ACCESS) {
+  occupancy_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    numberOfPeople: $numberOfPeople
+  })
+}
+
+mutation CreateWindowShading(
+  $buildingParametersId: UUID!,
+  $type: String!,
+  $isExternal: Boolean!
+) @auth(level: NO_ACCESS) {
+  windowShading_insert(data: {
+    buildingParameters: { id: $buildingParametersId }
+    type: $type
+    isExternal: $isExternal
+  })
+}
+
+mutation AssignInsulationRoofEnergyResult(
+  $insulationRoofId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    insulationRoof: { id: $insulationRoofId }
+    improvementType: "INSULATION_ROOF"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignInsulationWallEnergyResult(
+  $insulationWallId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    insulationWall: { id: $insulationWallId }
+    improvementType: "INSULATION_WALL"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignWindowSizeEnergyResult(
+  $windowSizeId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    windowSize: { id: $windowSizeId }
+    improvementType: "WINDOW_SIZE"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignWindowGlazingEnergyResult(
+  $windowGlazingId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    windowGlazing: { id: $windowGlazingId }
+    improvementType: "WINDOW_GLAZING"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignOrientationEnergyResult(
+  $orientationId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    orientation: { id: $orientationId }
+    improvementType: "ORIENTATION"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignOccupancyEnergyResult(
+  $occupancyId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    occupancy: { id: $occupancyId }
+    improvementType: "OCCUPANCY"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+mutation AssignWindowShadingEnergyResult(
+  $windowShadingId: UUID!,
+  $cooling: Float!,
+  $heating: Float!,
+  $total: Float!,
+  $carbon: Float!,
+  $cost: Float!
+) @auth(level: NO_ACCESS) {
+  energyResult_insert(data: {
+    windowShading: { id: $windowShadingId }
+    improvementType: "WINDOW_SHADING"
+    cooling: $cooling
+    heating: $heating
+    total: $total
+    carbon: $carbon
+    cost: $cost
+  })
+}
+
+query GetWindowSizes($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowSizes(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    name
+    area
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetInsulationRoofs($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  insulationRoofs(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetInsulationWalls($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  insulationWalls(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowGlazings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    rValue
+    shgc
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetOrientations($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  orientations(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    direction
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetOccupancies($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  occupancies(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    numberOfPeople
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetWindowShadings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowShadings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    isExternal
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetFullBuildingDetails($buildingId: UUID!) @auth(level: NO_ACCESS) {
+  building(key: { id: $buildingId }) {
+    id
+    name
+    buildingParameters {
+      id
+      climate
+      floorArea
+      buildingType
+      envelope
+      isAC
+    }
+  }
+  insulationRoofs(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  insulationWalls(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowSizes(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    name
+    area
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowGlazings(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    rValue
+    shgc
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  orientations(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    direction
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  occupancies(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    numberOfPeople
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowShadings(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    isExternal
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}

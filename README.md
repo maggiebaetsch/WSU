@@ -13,23 +13,32 @@ Steps
 
 Project Console: https://console.firebase.google.com/project/building-energy-analysis/overview
 
-Hosting URL: https://building-energy-analysis.web.app (Broken because index moved)
+Hosting URL: https://building-energy-analysis.web.app
 
 
-DATA STUFFFFF!!!!!!!!!!!!!!!
+DATA STUFF
     Structure:
     User
     └── Building
         ├── BuildingParameters (1:1)
-        ├── Improvements (1:many)
-        │   ├── InsulationRoof
-        │   ├── InsulationWall
-        │   ├── WindowSize
-        │   ├── WindowGlazing
-        │   ├── Orientation
-        │   ├── Occupancy
-        │   └── WindowShading
-        └── EnergyResult
+        ├── InsulationRoof (1:many)
+        │   └── EnergyResult (0..1 per row)
+        ├── InsulationWall (1:many)
+        │   └── EnergyResult (0..1 per row)
+        ├── WindowSize (1:many)
+        │   └── EnergyResult (0..1 per row)
+        ├── WindowGlazing (1:many)
+        │   └── EnergyResult (0..1 per row)
+        ├── Orientation (1:many)
+        │   └── EnergyResult (0..1 per row)
+        ├── Occupancy (1:many)
+        │   └── EnergyResult (0..1 per row)
+        └── WindowShading (1:many)
+            └── EnergyResult (0..1 per row)
+
+    Note: EnergyResult is one shared table with optional links to each improvement type.
+
+    To deploy only changes to Firebase Data: firebase deploy --only dataconnect
 
 How to view and confirm that the data structure is working with Schema: https://console.firebase.google.com/u/1/project/building-energy-analysis/dataconnect/locations/us-east4/services/wsu/schema
 

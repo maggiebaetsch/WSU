@@ -25,8 +25,9 @@ enum EnvelopeType {
 }
 
 type Building @table {
-  id: Int!
+  id: UUID! @default(expr: "uuidV4()")
   name: String!
+  buildingParameters: BuildingParameters
 }
 
 type BuildingParameters @table {
@@ -39,14 +40,9 @@ type BuildingParameters @table {
   isAC: Boolean!
 }
 
-type Improvements @table {
-  building: Building!
-
-  name: String!
-}
-
 type InsulationRoof @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   type: String!
   thickness: Float!
@@ -54,7 +50,8 @@ type InsulationRoof @table {
 }
 
 type InsulationWall @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   type: String!
   thickness: Float!
@@ -62,13 +59,16 @@ type InsulationWall @table {
 }
 
 type WindowSize @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
+  name: String!
   area: Float!
 }
 
 type WindowGlazing @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   type: String!
   rValue: Float!
@@ -76,27 +76,36 @@ type WindowGlazing @table {
 }
 
 type Orientation @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   direction: String!
 }
 
 type Occupancy @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   numberOfPeople: Int!
 }
 
 type WindowShading @table {
-  improvements: Improvements!
+  buildingParameters: BuildingParameters!
+  energyResult: EnergyResult
 
   type: String!
   isExternal: Boolean!
 }
 
 type EnergyResult @table {
-  building: Building!
-  improvements: Improvements!
+  insulationRoof: InsulationRoof
+  insulationWall: InsulationWall
+  windowSize: WindowSize
+  windowGlazing: WindowGlazing
+  orientation: Orientation
+  occupancy: Occupancy
+  windowShading: WindowShading
+  improvementType: String!
 
   cooling: Float!
   heating: Float!
