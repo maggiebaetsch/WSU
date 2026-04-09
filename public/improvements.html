@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Improvements</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/12.11.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/12.11.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Building Improvements</h1>
+      <p>Provide improvement details before analysis.</p>
+    </header>
+
+    <div class="container">
+      <form id="improvementsForm" class="improvements-form">
+        <!-- Roof -->
+        <div class="card">
+          <h2>Roof Insulation</h2>
+          <div class="form-group">
+            <label for="roofinsulationtype">Type</label>
+            <select id="roofinsulationtype" name="roofinsulationtype" required>
+              <option value="">Select Material:</option>
+              <option value="XPS">XPS</option>
+              <option value="Rockwool">Rockwool</option>
+              <option value="Sheepwool">Sheepwool</option>
+              <option value="Cork">Cork</option>
+              <option value="Cladding">Cladding</option>
+              <option value="WoodChips">Wood Chips</option>
+              <option value="Cellulost">Cellulose</option>
+              <option value="SprayFoam">Polyurethane Spray Foam</option>
+              <option value="PET">PET</option>
+              <option value="Glasswool">Glasswool</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="RoofThickness">Thickness (mm)</label>
+            <input
+              type="number"
+              id="RoofThickness"
+              name="RoofThickness"
+              min="0"
+              step="1"
+              max="5"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="RoofUValue">U-value</label>
+            <input
+              type="number"
+              id="RoofUValue"
+              name="RoofUValue"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Wall -->
+        <div class="card">
+          <h2>Wall Insulation</h2>
+          <div class="form-group">
+            <label for="wallinsulationtype">Type</label>
+            <select id="wallinsulationtype" name="wallinsulationtype" required>
+              <option value="">Select Material:</option>
+              <option value="XPS">XPS</option>
+              <option value="Rockwool">Rockwool</option>
+              <option value="Sheepwool">Sheepwool</option>
+              <option value="Cork">Cork</option>
+              <option value="Cladding">Cladding</option>
+              <option value="WoodChips">Wood Chips</option>
+              <option value="Cellulose">Cellulose</option>
+              <option value="SprayFoam">Polyurethane Spray Foam</option>
+              <option value="PET">PET</option>
+              <option value="Glasswool">Glasswool</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="WallThickness">Thickness</label>
+            <input
+              type="number"
+              id="WallThickness"
+              name="WallThickness"
+              min="0"
+              step="1"
+              max="5"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="WallUValue">U-value</label>
+            <input
+              type="number"
+              id="WallUValue"
+              name="WallUValue"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Windows -->
+        <div class="card">
+          <h2>Window</h2>
+          <div class="form-group">
+            <label for="windowSizeArea">Window Area (sq ft)</label>
+            <input
+              type="number"
+              id="windowSizeArea"
+              name="windowSizeArea"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="windowGlazingType">Glazing Type</label>
+            <select id="windowGlazingType" name="windowGlazingType" required>
+              <option value="">Select:</option>
+              <option value="sg">Single Glazed</option>
+              <option value="dg">Double Glazed</option>
+              <option value="tg">Triple Glazed</option>
+              <option value="low-esg">Low-E Single Glazed</option>
+              <option value="low-edg">Low-E Double Glazed</option>
+              <option value="low-etg">Low-E Triple Glazed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="windowGlazingUValue">U-value</label>
+            <input
+              type="number"
+              id="windowGlazingUValue"
+              name="windowGlazingUValue"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="windowGlazingSHGC">SHGC</label>
+            <input
+              type="number"
+              id="windowGlazingSHGC"
+              name="windowGlazingSHGC"
+              min="0"
+              max="1"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Orientation -->
+        <div class="card">
+          <h2>Orientation</h2>
+          <div class="form-group">
+            <label for="orientation">Orientation</label>
+            <select id="orientation" name="orientation" required>
+              <option value="north">North</option>
+              <option value="east">East</option>
+              <option value="south">South</option>
+              <option value="west">West</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Occupancy -->
+        <div class="card">
+          <h2>Occupancy</h2>
+          <div class="form-group">
+            <label for="occupancy">Average Occupancy</label>
+            <input
+              type="number"
+              id="occupancy"
+              name="occupancy"
+              min="0"
+              step="1"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Window Shading -->
+        <div class="card">
+          <h2>Window Shading</h2>
+          <div class="form-group">
+            <label for="shading">Shading Type</label>
+            <select id="shading" name="shading" required>
+              <option value="venetian">Venetian Blinds</option>
+              <option value="roller">Roller Blinds</option>
+              <option value="drapes">Drapes</option>
+              <option value="shaderolls">Shade Rolls</option>
+              <option value="shutters">External Shutters</option>
+              <option value="awnings">Awnings</option>
+              <option value="louvres">Louvres</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                id="windowShadingExternal"
+                name="windowShadingExternal"
+              />
+              External shading (checked) / Internal shading (unchecked)
+            </label>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+          <a href="parameters.html" class="button">Back</a>
+          <a href="results.html" class="button">View Results</a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; Western Sydney University. All rights reserved.</p>
+    </footer>
+
+    <!--<script> UPDATE WITH PROPER QUERIES
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("improvementsForm");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const buildingId = localStorage.getItem("buildingId");
+          if (!buildingId) {
+            alert("No building found. Please start from the first page.");
+            return;
+          }
+
+          try {
+            const app = firebase.app();
+            const dataConnect = firebase.dataconnect.getDataConnect(
+              app,
+              "example",
+            );
+
+            // Collect form values
+            const roofType =
+              document.getElementById("roofinsulationtype").value;
+            const roofThickness = parseFloat(
+              document.getElementById("RoofThickness").value,
+            );
+            const roofUValue = parseFloat(
+              document.getElementById("RoofUValue").value,
+            );
+
+            const wallType =
+              document.getElementById("wallinsulationtype").value;
+            const wallThickness = parseFloat(
+              document.getElementById("WallThickness").value,
+            );
+            const wallUValue = parseFloat(
+              document.getElementById("WallUValue").value,
+            );
+
+            const windowArea = parseFloat(
+              document.getElementById("windowSizeArea").value,
+            );
+
+            const glazingType =
+              document.getElementById("windowGlazingType").value;
+            const glazingUValue = parseFloat(
+              document.getElementById("windowGlazingUValue").value,
+            );
+            const glazingSHGC = parseFloat(
+              document.getElementById("windowGlazingSHGC").value,
+            );
+
+            const orientation = document.getElementById("orientation").value;
+            const occupancy = parseInt(
+              document.getElementById("occupancy").value,
+            );
+
+            const shadingType = document.getElementById("shading").value;
+            const shadingExternal = document.getElementById(
+              "windowShadingExternal",
+            ).checked;
+
+            await dataConnect.executeGraphql({
+              query: `
+                mutation AddImprovements(
+                  $buildingId: UUID!,
+                  $roofType: String!,
+                  $roofThickness: Float!,
+                  $roofR: Float!,
+                  $wallType: String!,
+                  $wallThickness: Float!,
+                  $wallR: Float!,
+                  $windowArea: Float!,
+                  $glazingType: String!,
+                  $glazingR: Float!,
+                  $glazingSHGC: Float!,
+                  $orientation: String!,
+                  $occupancy: Int!,
+                  $shadingType: String!,
+                  $isExternal: Boolean!
+                ) {
+                  buildingImprovements_insert(data: {
+                    building: { id: $buildingId },
+                    roofType: $roofType,
+                    roofThickness: $roofThickness,
+                    roofR: $roofR,
+                    wallType: $wallType,
+                    wallThickness: $wallThickness,
+                    wallR: $wallR,
+                    windowArea: $windowArea,
+                    glazingType: $glazingType,
+                    glazingR: $glazingR,
+                    glazingSHGC: $glazingSHGC,
+                    orientation: $orientation,
+                    occupancy: $occupancy,
+                    shadingType: $shadingType,
+                    isExternal: $isExternal
+                  })
+                }
+              `,
+              variables: {
+                buildingId,
+                roofType,
+                roofThickness,
+                roofR: roofUValue,
+                wallType,
+                wallThickness,
+                wallR: wallUValue,
+                windowArea,
+                glazingType,
+                glazingR: glazingUValue,
+                glazingSHGC,
+                orientation,
+                occupancy,
+                shadingType,
+                isExternal: shadingExternal,
+              },
+            });
+
+            alert("Improvements saved!");
+          } catch (error) {
+            console.error(error);
+            alert("Error saving improvements");
+          }
+        });
+      });
+    </script>
+
+-->
+  </body>
+</html>

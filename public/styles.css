@@ -1,0 +1,188 @@
+/* ======================================================
+   Global Styles for Building Energy Analysis Project
+   ====================================================== */
+
+/* ---------- Body ---------- */
+body {
+  background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: #6ccb70;
+  color: white;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* ---------- Section ---------- */
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  color: #6ccb70;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+}
+
+.feature h3 {
+  color: #6ccb70;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- Cards  ---------- */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #6ccb70;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #6ccb70;
+}
+
+/* ---------- Form groups ---------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+/* ---------- Buttons ---------- */
+.button,
+.button-group button,
+.cta a {
+  display: inline-block;
+  background-color: #6ccb70;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button-group button:hover,
+.cta a:hover {
+  background-color: #58b75b;
+}
+
+/* ---------- Navigation buttons ---------- */
+.navigation-buttons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 80%;
+  }
+
+  .card {
+    padding: 1rem 1.2rem;
+  }
+
+  .button,
+  .button-group button,
+  .cta a {
+    width: 100%;
+    text-align: center;
+  }
+}

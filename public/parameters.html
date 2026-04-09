@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Building Characteristics - Building Energy Analysis</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/12.11.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/12.11.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Building Characteristics</h1>
+      <p>Enter your building details for energy analysis</p>
+    </header>
+
+    <div class="container">
+      <form id="building-form" class="improvements-form">
+        <!-- Card: Building Name -->
+        <div class="card">
+          <div class="form-group">
+            <label for="building-name">Building Name:</label>
+            <input
+              type="text"
+              id="building-name"
+              name="buildingName"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Card: Climate -->
+        <div class="card">
+          <div class="form-group">
+            <label for="climate">Climate:</label>
+            <select id="climate" name="climate" required>
+              <option value="">Select Climate</option>
+              <option value="Temperate">Temperate</option>
+              <option value="Tropical">Tropical</option>
+              <option value="DryAridSemiarid">Dry Arid/Semiarid</option>
+              <option value="Continental">Continental</option>
+              <option value="PolarAlpine">Polar/Alpine</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Card: Floor Area -->
+        <div class="card">
+          <div class="form-group">
+            <label for="floor-area">Floor Area (sq ft):</label>
+            <input
+              type="number"
+              id="floor-area"
+              name="floorArea"
+              min="1"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Card: Building Type -->
+        <div class="card">
+          <div class="form-group">
+            <label for="building-type">Building Type:</label>
+            <select id="building-type" name="buildingType" required>
+              <option value="">Select Building Type</option>
+              <option value="Residential">Residential</option>
+              <option value="Office">Office</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Governmental">Governmental</option>
+              <option value="School">School</option>
+              <option value="Hospital">Hospital</option>
+              <option value="Retail">Retail</option>
+              <option value="AgedCare">Aged Care</option>
+              <option value="Industrial">Industrial</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Card: Envelope -->
+        <div class="card">
+          <div class="form-group">
+            <label for="envelope">Building Envelope:</label>
+            <select id="envelope" name="envelope" required>
+              <option value="">Select Envelope Type</option>
+              <option value="HighMass">High Mass</option>
+              <option value="LowMass">Low Mass</option>
+              <option value="Glazed">Glazed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Card: Air Conditioning -->
+        <div class="card">
+          <div class="form-group">
+            <label for="air-conditioned">
+              <input
+                type="checkbox"
+                id="air-conditioned"
+                name="airConditioned"
+              />
+              Air Conditioned
+            </label>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+          <a href="index.html" class="button">Back to Home</a>
+          <a href="improvements.html" class="button">Next ></a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; Western Sydney University. All rights reserved.</p>
+    </footer>
+
+    <!--<script> UPDATE WITH PROPER QUERIES WHEN COMPLETED
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("building-form");
+        const nextButton = document.getElementById("next-button");
+
+        nextButton.addEventListener("click", async function (event) {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const formData = new FormData(form);
+          const buildingId = crypto.randomUUID();
+
+          try {
+            const app = firebase.app();
+            const dataConnect = firebase.dataconnect.getDataConnect(app, "example");
+
+            // Insert building
+            await dataConnect.executeGraphql({
+              query: `
+                mutation CreateBuilding($id: UUID!, $name: String!) {
+                  building_insert(data: { id: $id, name: $name })
+                }
+              `,
+              variables: { id: buildingId, name: formData.get("buildingName") },
+            });
+
+            // Insert building parameters (keep values as-is)
+            await dataConnect.executeGraphql({
+              query: `
+                mutation CreateBuildingParameters(
+                  $buildingId: UUID!,
+                  $climate: String!,
+                  $floorArea: String!,
+                  $buildingType: String!,
+                  $envelope: String!,
+                  $isAC: Boolean!
+                ) {
+                  buildingParameters_insert(data: {
+                    building: { id: $buildingId },
+                    climate: $climate,
+                    floorArea: $floorArea,
+                    buildingType: $buildingType,
+                    envelope: $envelope,
+                    isAC: $isAC
+                  })
+                }
+              `,
+              variables: {
+                buildingId,
+                climate: formData.get("climate"),
+                floorArea: formData.get("floorArea"),
+                buildingType: formData.get("buildingType"),
+                envelope: formData.get("envelope"),
+                isAC: formData.get("airConditioned") === "on",
+              },
+            });
+
+            localStorage.setItem("buildingId", buildingId);
+            window.location.href = "improvements.html";
+          } catch (error) {
+            console.error("Error saving data:", error);
+            alert("Error saving data. Check console.");
+          }
+        });
+      });
+    </script>-->
+  </body>
+</html>
