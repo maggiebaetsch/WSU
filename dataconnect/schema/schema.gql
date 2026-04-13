@@ -62,7 +62,6 @@ type WindowSize @table {
   buildingParameters: BuildingParameters!
   energyResult: EnergyResult
 
-  name: String!
   area: Float!
 }
 

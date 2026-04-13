@@ -1,0 +1,3 @@
+mutation SeedData @auth(level: NO_ACCESS) {
+  # Will enter WSU data here
+}

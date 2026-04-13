@@ -127,19 +127,16 @@ mutation SeedData @auth(level: NO_ACCESS) {
   ws1: windowSize_insert(data: {
     id: "b3333333-3333-3333-3333-333333333331"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
-    name: "Window Type A"
     area: 120.0
   })
   ws2: windowSize_insert(data: {
     id: "b3333333-3333-3333-3333-333333333332"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
-    name: "Window Type B"
     area: 150.0
   })
   ws3: windowSize_insert(data: {
     id: "b3333333-3333-3333-3333-333333333333"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
-    name: "Window Type C"
     area: 95.0
   })
 

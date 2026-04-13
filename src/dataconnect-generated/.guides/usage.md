@@ -14,8 +14,17 @@ If a user is not using a supported framework, they can use the generated SDK dir
 Here's an example of how to use it with the first 5 operations:
 
 ```js
-import { getAllBuildings, getBuildingById, getAllBuildingParameters, createBuilding, createBuildingParameters, createInsulationRoof, createInsulationWall, createWindowSize, createWindowGlazing, createOrientation } from '@dataconnect/generated';
+import { getEnergyResultById, getEnergyResultsByBuildingParameters, getEnergyResultsByBuilding, getAllBuildings, getBuildingById, getAllBuildingParameters, getFullBuildingDetails, getWindowSizes, getInsulationRoofs, getInsulationWalls } from '@dataconnect/generated';
 
+
+// Operation GetEnergyResultById:  For variables, look at type GetEnergyResultByIdVars in ../index.d.ts
+const { data } = await GetEnergyResultById(dataConnect, getEnergyResultByIdVars);
+
+// Operation GetEnergyResultsByBuildingParameters:  For variables, look at type GetEnergyResultsByBuildingParametersVars in ../index.d.ts
+const { data } = await GetEnergyResultsByBuildingParameters(dataConnect, getEnergyResultsByBuildingParametersVars);
+
+// Operation GetEnergyResultsByBuilding:  For variables, look at type GetEnergyResultsByBuildingVars in ../index.d.ts
+const { data } = await GetEnergyResultsByBuilding(dataConnect, getEnergyResultsByBuildingVars);
 
 // Operation GetAllBuildings: 
 const { data } = await GetAllBuildings(dataConnect);
@@ -26,26 +35,17 @@ const { data } = await GetBuildingById(dataConnect, getBuildingByIdVars);
 // Operation GetAllBuildingParameters: 
 const { data } = await GetAllBuildingParameters(dataConnect);
 
-// Operation CreateBuilding:  For variables, look at type CreateBuildingVars in ../index.d.ts
-const { data } = await CreateBuilding(dataConnect, createBuildingVars);
+// Operation GetFullBuildingDetails:  For variables, look at type GetFullBuildingDetailsVars in ../index.d.ts
+const { data } = await GetFullBuildingDetails(dataConnect, getFullBuildingDetailsVars);
 
-// Operation CreateBuildingParameters:  For variables, look at type CreateBuildingParametersVars in ../index.d.ts
-const { data } = await CreateBuildingParameters(dataConnect, createBuildingParametersVars);
+// Operation GetWindowSizes:  For variables, look at type GetWindowSizesVars in ../index.d.ts
+const { data } = await GetWindowSizes(dataConnect, getWindowSizesVars);
 
-// Operation CreateInsulationRoof:  For variables, look at type CreateInsulationRoofVars in ../index.d.ts
-const { data } = await CreateInsulationRoof(dataConnect, createInsulationRoofVars);
+// Operation GetInsulationRoofs:  For variables, look at type GetInsulationRoofsVars in ../index.d.ts
+const { data } = await GetInsulationRoofs(dataConnect, getInsulationRoofsVars);
 
-// Operation CreateInsulationWall:  For variables, look at type CreateInsulationWallVars in ../index.d.ts
-const { data } = await CreateInsulationWall(dataConnect, createInsulationWallVars);
-
-// Operation CreateWindowSize:  For variables, look at type CreateWindowSizeVars in ../index.d.ts
-const { data } = await CreateWindowSize(dataConnect, createWindowSizeVars);
-
-// Operation CreateWindowGlazing:  For variables, look at type CreateWindowGlazingVars in ../index.d.ts
-const { data } = await CreateWindowGlazing(dataConnect, createWindowGlazingVars);
-
-// Operation CreateOrientation:  For variables, look at type CreateOrientationVars in ../index.d.ts
-const { data } = await CreateOrientation(dataConnect, createOrientationVars);
+// Operation GetInsulationWalls:  For variables, look at type GetInsulationWallsVars in ../index.d.ts
+const { data } = await GetInsulationWalls(dataConnect, getInsulationWallsVars);
 
 
 ```

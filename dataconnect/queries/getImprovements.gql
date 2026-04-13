@@ -1,0 +1,104 @@
+query GetWindowSizes($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowSizes(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    area
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetInsulationRoofs($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  insulationRoofs(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetInsulationWalls($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  insulationWalls(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowGlazings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    rValue
+    shgc
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetOrientations($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  orientations(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    direction
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetOccupancies($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  occupancies(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    numberOfPeople
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}
+
+query GetWindowShadings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  windowShadings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
+    id
+    type
+    isExternal
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}

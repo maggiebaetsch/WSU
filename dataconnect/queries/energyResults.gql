@@ -1,0 +1,220 @@
+query GetEnergyResultById($id: UUID!) @auth(level: NO_ACCESS) {
+  energyResult(key: { id: $id }) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+    insulationRoof {
+      id
+    }
+    insulationWall {
+      id
+    }
+    windowSize {
+      id
+    }
+    windowGlazing {
+      id
+    }
+    orientation {
+      id
+    }
+    occupancy {
+      id
+    }
+    windowShading {
+      id
+    }
+  }
+}
+
+query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+  roofResults: energyResults(
+    where: {
+      insulationRoof: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  wallResults: energyResults(
+    where: {
+      insulationWall: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowSizeResults: energyResults(
+    where: {
+      windowSize: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowGlazingResults: energyResults(
+    where: {
+      windowGlazing: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  orientationResults: energyResults(
+    where: {
+      orientation: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  occupancyResults: energyResults(
+    where: {
+      occupancy: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowShadingResults: energyResults(
+    where: {
+      windowShading: { buildingParameters: { id: { eq: $buildingParametersId } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+}
+
+query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: NO_ACCESS) {
+  roofResults: energyResults(
+    where: {
+      insulationRoof: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  wallResults: energyResults(
+    where: {
+      insulationWall: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowSizeResults: energyResults(
+    where: {
+      windowSize: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowGlazingResults: energyResults(
+    where: {
+      windowGlazing: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  orientationResults: energyResults(
+    where: {
+      orientation: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  occupancyResults: energyResults(
+    where: {
+      occupancy: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+  windowShadingResults: energyResults(
+    where: {
+      windowShading: { buildingParameters: { building: { id: { eq: $buildingId } } } }
+    }
+  ) {
+    id
+    improvementType
+    cooling
+    heating
+    total
+    carbon
+    cost
+  }
+}

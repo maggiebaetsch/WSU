@@ -1,0 +1,135 @@
+query GetAllBuildings @auth(level: NO_ACCESS) {
+  buildings {
+    id
+    name
+  }
+}
+
+query GetBuildingById($id: UUID!) @auth(level: NO_ACCESS) {
+  building(key: { id: $id }) {
+    id
+    name
+    buildingParameters {
+      id
+      climate
+      floorArea
+      buildingType
+      envelope
+      isAC
+    }
+  }
+}
+
+query GetAllBuildingParameters @auth(level: NO_ACCESS) {
+  buildingParameterss {
+    id
+    climate
+    floorArea
+    buildingType
+    envelope
+    isAC
+    building {
+      id
+      name
+    }
+  }
+}
+
+query GetFullBuildingDetails($buildingId: UUID!) @auth(level: NO_ACCESS) {
+  building(key: { id: $buildingId }) {
+    id
+    name
+    buildingParameters {
+      id
+      climate
+      floorArea
+      buildingType
+      envelope
+      isAC
+    }
+  }
+  insulationRoofs(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  insulationWalls(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    thickness
+    rValue
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowSizes(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    area
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowGlazings(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    rValue
+    shgc
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  orientations(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    direction
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  occupancies(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    numberOfPeople
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+  windowShadings(where: { buildingParameters: { building: { id: { eq: $buildingId } } } }) {
+    id
+    type
+    isExternal
+    energyResult {
+      cooling
+      heating
+      total
+      carbon
+      cost
+    }
+  }
+}

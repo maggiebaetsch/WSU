@@ -36,6 +36,51 @@ const connectorConfig = {
 };
 exports.connectorConfig = connectorConfig;
 
+const getEnergyResultByIdRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultById', inputVars);
+}
+getEnergyResultByIdRef.operationName = 'GetEnergyResultById';
+exports.getEnergyResultByIdRef = getEnergyResultByIdRef;
+
+exports.getEnergyResultById = function getEnergyResultById(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultByIdRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getEnergyResultsByBuildingParametersRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuildingParameters', inputVars);
+}
+getEnergyResultsByBuildingParametersRef.operationName = 'GetEnergyResultsByBuildingParameters';
+exports.getEnergyResultsByBuildingParametersRef = getEnergyResultsByBuildingParametersRef;
+
+exports.getEnergyResultsByBuildingParameters = function getEnergyResultsByBuildingParameters(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getEnergyResultsByBuildingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuilding', inputVars);
+}
+getEnergyResultsByBuildingRef.operationName = 'GetEnergyResultsByBuilding';
+exports.getEnergyResultsByBuildingRef = getEnergyResultsByBuildingRef;
+
+exports.getEnergyResultsByBuilding = function getEnergyResultsByBuilding(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
 const getAllBuildingsRef = (dc) => {
   const { dc: dcInstance} = validateArgs(connectorConfig, dc, undefined);
   dcInstance._useGeneratedSdk();
@@ -78,6 +123,266 @@ exports.getAllBuildingParameters = function getAllBuildingParameters(dcOrOptions
   
   const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrOptions, options, undefined,false, false);
   return executeQuery(getAllBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getFullBuildingDetailsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetFullBuildingDetails', inputVars);
+}
+getFullBuildingDetailsRef.operationName = 'GetFullBuildingDetails';
+exports.getFullBuildingDetailsRef = getFullBuildingDetailsRef;
+
+exports.getFullBuildingDetails = function getFullBuildingDetails(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getFullBuildingDetailsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getWindowSizesRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetWindowSizes', inputVars);
+}
+getWindowSizesRef.operationName = 'GetWindowSizes';
+exports.getWindowSizesRef = getWindowSizesRef;
+
+exports.getWindowSizes = function getWindowSizes(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getWindowSizesRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getInsulationRoofsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetInsulationRoofs', inputVars);
+}
+getInsulationRoofsRef.operationName = 'GetInsulationRoofs';
+exports.getInsulationRoofsRef = getInsulationRoofsRef;
+
+exports.getInsulationRoofs = function getInsulationRoofs(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getInsulationRoofsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getInsulationWallsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetInsulationWalls', inputVars);
+}
+getInsulationWallsRef.operationName = 'GetInsulationWalls';
+exports.getInsulationWallsRef = getInsulationWallsRef;
+
+exports.getInsulationWalls = function getInsulationWalls(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getInsulationWallsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getWindowGlazingsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetWindowGlazings', inputVars);
+}
+getWindowGlazingsRef.operationName = 'GetWindowGlazings';
+exports.getWindowGlazingsRef = getWindowGlazingsRef;
+
+exports.getWindowGlazings = function getWindowGlazings(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getWindowGlazingsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getOrientationsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetOrientations', inputVars);
+}
+getOrientationsRef.operationName = 'GetOrientations';
+exports.getOrientationsRef = getOrientationsRef;
+
+exports.getOrientations = function getOrientations(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getOrientationsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getOccupanciesRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetOccupancies', inputVars);
+}
+getOccupanciesRef.operationName = 'GetOccupancies';
+exports.getOccupanciesRef = getOccupanciesRef;
+
+exports.getOccupancies = function getOccupancies(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getOccupanciesRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getWindowShadingsRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetWindowShadings', inputVars);
+}
+getWindowShadingsRef.operationName = 'GetWindowShadings';
+exports.getWindowShadingsRef = getWindowShadingsRef;
+
+exports.getWindowShadings = function getWindowShadings(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getWindowShadingsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const updateBuildingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateBuilding', inputVars);
+}
+updateBuildingRef.operationName = 'UpdateBuilding';
+exports.updateBuildingRef = updateBuildingRef;
+
+exports.updateBuilding = function updateBuilding(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateBuildingRef(dcInstance, inputVars));
+}
+;
+
+const updateBuildingParametersRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateBuildingParameters', inputVars);
+}
+updateBuildingParametersRef.operationName = 'UpdateBuildingParameters';
+exports.updateBuildingParametersRef = updateBuildingParametersRef;
+
+exports.updateBuildingParameters = function updateBuildingParameters(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateBuildingParametersRef(dcInstance, inputVars));
+}
+;
+
+const updateInsulationRoofRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateInsulationRoof', inputVars);
+}
+updateInsulationRoofRef.operationName = 'UpdateInsulationRoof';
+exports.updateInsulationRoofRef = updateInsulationRoofRef;
+
+exports.updateInsulationRoof = function updateInsulationRoof(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateInsulationRoofRef(dcInstance, inputVars));
+}
+;
+
+const updateInsulationWallRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateInsulationWall', inputVars);
+}
+updateInsulationWallRef.operationName = 'UpdateInsulationWall';
+exports.updateInsulationWallRef = updateInsulationWallRef;
+
+exports.updateInsulationWall = function updateInsulationWall(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateInsulationWallRef(dcInstance, inputVars));
+}
+;
+
+const updateWindowSizeRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateWindowSize', inputVars);
+}
+updateWindowSizeRef.operationName = 'UpdateWindowSize';
+exports.updateWindowSizeRef = updateWindowSizeRef;
+
+exports.updateWindowSize = function updateWindowSize(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateWindowSizeRef(dcInstance, inputVars));
+}
+;
+
+const updateWindowGlazingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateWindowGlazing', inputVars);
+}
+updateWindowGlazingRef.operationName = 'UpdateWindowGlazing';
+exports.updateWindowGlazingRef = updateWindowGlazingRef;
+
+exports.updateWindowGlazing = function updateWindowGlazing(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateWindowGlazingRef(dcInstance, inputVars));
+}
+;
+
+const updateOrientationRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateOrientation', inputVars);
+}
+updateOrientationRef.operationName = 'UpdateOrientation';
+exports.updateOrientationRef = updateOrientationRef;
+
+exports.updateOrientation = function updateOrientation(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateOrientationRef(dcInstance, inputVars));
+}
+;
+
+const updateOccupancyRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateOccupancy', inputVars);
+}
+updateOccupancyRef.operationName = 'UpdateOccupancy';
+exports.updateOccupancyRef = updateOccupancyRef;
+
+exports.updateOccupancy = function updateOccupancy(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateOccupancyRef(dcInstance, inputVars));
+}
+;
+
+const updateWindowShadingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateWindowShading', inputVars);
+}
+updateWindowShadingRef.operationName = 'UpdateWindowShading';
+exports.updateWindowShadingRef = updateWindowShadingRef;
+
+exports.updateWindowShading = function updateWindowShading(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateWindowShadingRef(dcInstance, inputVars));
+}
+;
+
+const updateEnergyResultRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'UpdateEnergyResult', inputVars);
+}
+updateEnergyResultRef.operationName = 'UpdateEnergyResult';
+exports.updateEnergyResultRef = updateEnergyResultRef;
+
+exports.updateEnergyResult = function updateEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(updateEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
@@ -305,122 +610,240 @@ exports.assignWindowShadingEnergyResult = function assignWindowShadingEnergyResu
 }
 ;
 
-const getWindowSizesRef = (dcOrVars, vars) => {
+const createInsulationRoofWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetWindowSizes', inputVars);
+  return mutationRef(dcInstance, 'CreateInsulationRoofWithEnergyResult', inputVars);
 }
-getWindowSizesRef.operationName = 'GetWindowSizes';
-exports.getWindowSizesRef = getWindowSizesRef;
+createInsulationRoofWithEnergyResultRef.operationName = 'CreateInsulationRoofWithEnergyResult';
+exports.createInsulationRoofWithEnergyResultRef = createInsulationRoofWithEnergyResultRef;
 
-exports.getWindowSizes = function getWindowSizes(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getWindowSizesRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createInsulationRoofWithEnergyResult = function createInsulationRoofWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createInsulationRoofWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getInsulationRoofsRef = (dcOrVars, vars) => {
+const createInsulationWallWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetInsulationRoofs', inputVars);
+  return mutationRef(dcInstance, 'CreateInsulationWallWithEnergyResult', inputVars);
 }
-getInsulationRoofsRef.operationName = 'GetInsulationRoofs';
-exports.getInsulationRoofsRef = getInsulationRoofsRef;
+createInsulationWallWithEnergyResultRef.operationName = 'CreateInsulationWallWithEnergyResult';
+exports.createInsulationWallWithEnergyResultRef = createInsulationWallWithEnergyResultRef;
 
-exports.getInsulationRoofs = function getInsulationRoofs(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getInsulationRoofsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createInsulationWallWithEnergyResult = function createInsulationWallWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createInsulationWallWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getInsulationWallsRef = (dcOrVars, vars) => {
+const createWindowSizeWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetInsulationWalls', inputVars);
+  return mutationRef(dcInstance, 'CreateWindowSizeWithEnergyResult', inputVars);
 }
-getInsulationWallsRef.operationName = 'GetInsulationWalls';
-exports.getInsulationWallsRef = getInsulationWallsRef;
+createWindowSizeWithEnergyResultRef.operationName = 'CreateWindowSizeWithEnergyResult';
+exports.createWindowSizeWithEnergyResultRef = createWindowSizeWithEnergyResultRef;
 
-exports.getInsulationWalls = function getInsulationWalls(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getInsulationWallsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createWindowSizeWithEnergyResult = function createWindowSizeWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createWindowSizeWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getWindowGlazingsRef = (dcOrVars, vars) => {
+const createWindowGlazingWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetWindowGlazings', inputVars);
+  return mutationRef(dcInstance, 'CreateWindowGlazingWithEnergyResult', inputVars);
 }
-getWindowGlazingsRef.operationName = 'GetWindowGlazings';
-exports.getWindowGlazingsRef = getWindowGlazingsRef;
+createWindowGlazingWithEnergyResultRef.operationName = 'CreateWindowGlazingWithEnergyResult';
+exports.createWindowGlazingWithEnergyResultRef = createWindowGlazingWithEnergyResultRef;
 
-exports.getWindowGlazings = function getWindowGlazings(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getWindowGlazingsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createWindowGlazingWithEnergyResult = function createWindowGlazingWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createWindowGlazingWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getOrientationsRef = (dcOrVars, vars) => {
+const createOrientationWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetOrientations', inputVars);
+  return mutationRef(dcInstance, 'CreateOrientationWithEnergyResult', inputVars);
 }
-getOrientationsRef.operationName = 'GetOrientations';
-exports.getOrientationsRef = getOrientationsRef;
+createOrientationWithEnergyResultRef.operationName = 'CreateOrientationWithEnergyResult';
+exports.createOrientationWithEnergyResultRef = createOrientationWithEnergyResultRef;
 
-exports.getOrientations = function getOrientations(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getOrientationsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createOrientationWithEnergyResult = function createOrientationWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createOrientationWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getOccupanciesRef = (dcOrVars, vars) => {
+const createOccupancyWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetOccupancies', inputVars);
+  return mutationRef(dcInstance, 'CreateOccupancyWithEnergyResult', inputVars);
 }
-getOccupanciesRef.operationName = 'GetOccupancies';
-exports.getOccupanciesRef = getOccupanciesRef;
+createOccupancyWithEnergyResultRef.operationName = 'CreateOccupancyWithEnergyResult';
+exports.createOccupancyWithEnergyResultRef = createOccupancyWithEnergyResultRef;
 
-exports.getOccupancies = function getOccupancies(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getOccupanciesRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createOccupancyWithEnergyResult = function createOccupancyWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createOccupancyWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getWindowShadingsRef = (dcOrVars, vars) => {
+const createWindowShadingWithEnergyResultRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetWindowShadings', inputVars);
+  return mutationRef(dcInstance, 'CreateWindowShadingWithEnergyResult', inputVars);
 }
-getWindowShadingsRef.operationName = 'GetWindowShadings';
-exports.getWindowShadingsRef = getWindowShadingsRef;
+createWindowShadingWithEnergyResultRef.operationName = 'CreateWindowShadingWithEnergyResult';
+exports.createWindowShadingWithEnergyResultRef = createWindowShadingWithEnergyResultRef;
 
-exports.getWindowShadings = function getWindowShadings(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getWindowShadingsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.createWindowShadingWithEnergyResult = function createWindowShadingWithEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(createWindowShadingWithEnergyResultRef(dcInstance, inputVars));
 }
 ;
 
-const getFullBuildingDetailsRef = (dcOrVars, vars) => {
+const deleteBuildingRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetFullBuildingDetails', inputVars);
+  return mutationRef(dcInstance, 'DeleteBuilding', inputVars);
 }
-getFullBuildingDetailsRef.operationName = 'GetFullBuildingDetails';
-exports.getFullBuildingDetailsRef = getFullBuildingDetailsRef;
+deleteBuildingRef.operationName = 'DeleteBuilding';
+exports.deleteBuildingRef = deleteBuildingRef;
 
-exports.getFullBuildingDetails = function getFullBuildingDetails(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getFullBuildingDetailsRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+exports.deleteBuilding = function deleteBuilding(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteBuildingRef(dcInstance, inputVars));
+}
+;
+
+const deleteBuildingParametersRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteBuildingParameters', inputVars);
+}
+deleteBuildingParametersRef.operationName = 'DeleteBuildingParameters';
+exports.deleteBuildingParametersRef = deleteBuildingParametersRef;
+
+exports.deleteBuildingParameters = function deleteBuildingParameters(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteBuildingParametersRef(dcInstance, inputVars));
+}
+;
+
+const deleteInsulationRoofRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteInsulationRoof', inputVars);
+}
+deleteInsulationRoofRef.operationName = 'DeleteInsulationRoof';
+exports.deleteInsulationRoofRef = deleteInsulationRoofRef;
+
+exports.deleteInsulationRoof = function deleteInsulationRoof(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteInsulationRoofRef(dcInstance, inputVars));
+}
+;
+
+const deleteInsulationWallRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteInsulationWall', inputVars);
+}
+deleteInsulationWallRef.operationName = 'DeleteInsulationWall';
+exports.deleteInsulationWallRef = deleteInsulationWallRef;
+
+exports.deleteInsulationWall = function deleteInsulationWall(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteInsulationWallRef(dcInstance, inputVars));
+}
+;
+
+const deleteWindowSizeRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteWindowSize', inputVars);
+}
+deleteWindowSizeRef.operationName = 'DeleteWindowSize';
+exports.deleteWindowSizeRef = deleteWindowSizeRef;
+
+exports.deleteWindowSize = function deleteWindowSize(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteWindowSizeRef(dcInstance, inputVars));
+}
+;
+
+const deleteWindowGlazingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteWindowGlazing', inputVars);
+}
+deleteWindowGlazingRef.operationName = 'DeleteWindowGlazing';
+exports.deleteWindowGlazingRef = deleteWindowGlazingRef;
+
+exports.deleteWindowGlazing = function deleteWindowGlazing(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteWindowGlazingRef(dcInstance, inputVars));
+}
+;
+
+const deleteOrientationRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteOrientation', inputVars);
+}
+deleteOrientationRef.operationName = 'DeleteOrientation';
+exports.deleteOrientationRef = deleteOrientationRef;
+
+exports.deleteOrientation = function deleteOrientation(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteOrientationRef(dcInstance, inputVars));
+}
+;
+
+const deleteOccupancyRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteOccupancy', inputVars);
+}
+deleteOccupancyRef.operationName = 'DeleteOccupancy';
+exports.deleteOccupancyRef = deleteOccupancyRef;
+
+exports.deleteOccupancy = function deleteOccupancy(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteOccupancyRef(dcInstance, inputVars));
+}
+;
+
+const deleteWindowShadingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteWindowShading', inputVars);
+}
+deleteWindowShadingRef.operationName = 'DeleteWindowShading';
+exports.deleteWindowShadingRef = deleteWindowShadingRef;
+
+exports.deleteWindowShading = function deleteWindowShading(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteWindowShadingRef(dcInstance, inputVars));
+}
+;
+
+const deleteEnergyResultRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return mutationRef(dcInstance, 'DeleteEnergyResult', inputVars);
+}
+deleteEnergyResultRef.operationName = 'DeleteEnergyResult';
+exports.deleteEnergyResultRef = deleteEnergyResultRef;
+
+exports.deleteEnergyResult = function deleteEnergyResult(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
+  return executeMutation(deleteEnergyResultRef(dcInstance, inputVars));
 }
 ;

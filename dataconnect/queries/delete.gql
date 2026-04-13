@@ -1,0 +1,39 @@
+mutation DeleteBuilding($id: UUID!) @auth(level: NO_ACCESS) {
+  building_delete(key: { id: $id })
+}
+
+mutation DeleteBuildingParameters($id: UUID!) @auth(level: NO_ACCESS) {
+  buildingParameters_delete(key: { id: $id })
+}
+
+mutation DeleteInsulationRoof($id: UUID!) @auth(level: NO_ACCESS) {
+  insulationRoof_delete(key: { id: $id })
+}
+
+mutation DeleteInsulationWall($id: UUID!) @auth(level: NO_ACCESS) {
+  insulationWall_delete(key: { id: $id })
+}
+
+mutation DeleteWindowSize($id: UUID!) @auth(level: NO_ACCESS) {
+  windowSize_delete(key: { id: $id })
+}
+
+mutation DeleteWindowGlazing($id: UUID!) @auth(level: NO_ACCESS) {
+  windowGlazing_delete(key: { id: $id })
+}
+
+mutation DeleteOrientation($id: UUID!) @auth(level: NO_ACCESS) {
+  orientation_delete(key: { id: $id })
+}
+
+mutation DeleteOccupancy($id: UUID!) @auth(level: NO_ACCESS) {
+  occupancy_delete(key: { id: $id })
+}
+
+mutation DeleteWindowShading($id: UUID!) @auth(level: NO_ACCESS) {
+  windowShading_delete(key: { id: $id })
+}
+
+mutation DeleteEnergyResult($id: UUID!) @auth(level: NO_ACCESS) {
+  energyResult_delete(key: { id: $id })
+}
