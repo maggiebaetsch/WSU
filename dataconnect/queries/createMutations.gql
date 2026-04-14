@@ -1,4 +1,4 @@
-mutation CreateBuilding($name: String!) @auth(level: NO_ACCESS) {
+mutation CreateBuilding($name: String!) @auth(level: PUBLIC) {
   building_insert(data: { name: $name })
 }
 
@@ -9,7 +9,7 @@ mutation CreateBuildingParameters(
   $buildingType: BuildingType!,
   $envelope: EnvelopeType!,
   $isAC: Boolean!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   buildingParameters_insert(data: {
     building: { id: $buildingId }
     climate: $climate
@@ -25,7 +25,7 @@ mutation CreateInsulationRoof(
   $type: String!,
   $thickness: Float!,
   $rValue: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   insulationRoof_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     type: $type
@@ -39,7 +39,7 @@ mutation CreateInsulationWall(
   $type: String!,
   $thickness: Float!,
   $rValue: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   insulationWall_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     type: $type
@@ -51,7 +51,7 @@ mutation CreateInsulationWall(
 mutation CreateWindowSize(
   $buildingParametersId: UUID!,
   $area: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowSize_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     area: $area
@@ -63,7 +63,7 @@ mutation CreateWindowGlazing(
   $type: String!,
   $rValue: Float!,
   $shgc: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowGlazing_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     type: $type
@@ -75,7 +75,7 @@ mutation CreateWindowGlazing(
 mutation CreateOrientation(
   $buildingParametersId: UUID!,
   $direction: String!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   orientation_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     direction: $direction
@@ -85,7 +85,7 @@ mutation CreateOrientation(
 mutation CreateOccupancy(
   $buildingParametersId: UUID!,
   $numberOfPeople: Int!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   occupancy_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     numberOfPeople: $numberOfPeople
@@ -96,7 +96,7 @@ mutation CreateWindowShading(
   $buildingParametersId: UUID!,
   $type: String!,
   $isExternal: Boolean!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowShading_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     type: $type
@@ -111,7 +111,7 @@ mutation AssignInsulationRoofEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     insulationRoof: { id: $insulationRoofId }
     improvementType: "INSULATION_ROOF"
@@ -130,7 +130,7 @@ mutation AssignInsulationWallEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     insulationWall: { id: $insulationWallId }
     improvementType: "INSULATION_WALL"
@@ -149,7 +149,7 @@ mutation AssignWindowSizeEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     windowSize: { id: $windowSizeId }
     improvementType: "WINDOW_SIZE"
@@ -168,7 +168,7 @@ mutation AssignWindowGlazingEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     windowGlazing: { id: $windowGlazingId }
     improvementType: "WINDOW_GLAZING"
@@ -187,7 +187,7 @@ mutation AssignOrientationEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     orientation: { id: $orientationId }
     improvementType: "ORIENTATION"
@@ -206,7 +206,7 @@ mutation AssignOccupancyEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     occupancy: { id: $occupancyId }
     improvementType: "OCCUPANCY"
@@ -225,7 +225,7 @@ mutation AssignWindowShadingEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   energyResult_insert(data: {
     windowShading: { id: $windowShadingId }
     improvementType: "WINDOW_SHADING"

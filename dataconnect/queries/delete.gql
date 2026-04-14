@@ -1,39 +1,39 @@
-mutation DeleteBuilding($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteBuilding($id: UUID!) @auth(level: PUBLIC) {
   building_delete(key: { id: $id })
 }
 
-mutation DeleteBuildingParameters($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteBuildingParameters($id: UUID!) @auth(level: PUBLIC) {
   buildingParameters_delete(key: { id: $id })
 }
 
-mutation DeleteInsulationRoof($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteInsulationRoof($id: UUID!) @auth(level: PUBLIC) {
   insulationRoof_delete(key: { id: $id })
 }
 
-mutation DeleteInsulationWall($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteInsulationWall($id: UUID!) @auth(level: PUBLIC) {
   insulationWall_delete(key: { id: $id })
 }
 
-mutation DeleteWindowSize($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteWindowSize($id: UUID!) @auth(level: PUBLIC) {
   windowSize_delete(key: { id: $id })
 }
 
-mutation DeleteWindowGlazing($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteWindowGlazing($id: UUID!) @auth(level: PUBLIC) {
   windowGlazing_delete(key: { id: $id })
 }
 
-mutation DeleteOrientation($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteOrientation($id: UUID!) @auth(level: PUBLIC) {
   orientation_delete(key: { id: $id })
 }
 
-mutation DeleteOccupancy($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteOccupancy($id: UUID!) @auth(level: PUBLIC) {
   occupancy_delete(key: { id: $id })
 }
 
-mutation DeleteWindowShading($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteWindowShading($id: UUID!) @auth(level: PUBLIC) {
   windowShading_delete(key: { id: $id })
 }
 
-mutation DeleteEnergyResult($id: UUID!) @auth(level: NO_ACCESS) {
+mutation DeleteEnergyResult($id: UUID!) @auth(level: PUBLIC) {
   energyResult_delete(key: { id: $id })
 }

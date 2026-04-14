@@ -1,11 +1,11 @@
-query GetAllBuildings @auth(level: NO_ACCESS) {
+query GetAllBuildings @auth(level: PUBLIC) {
   buildings {
     id
     name
   }
 }
 
-query GetBuildingById($id: UUID!) @auth(level: NO_ACCESS) {
+query GetBuildingById($id: UUID!) @auth(level: PUBLIC) {
   building(key: { id: $id }) {
     id
     name
@@ -20,7 +20,7 @@ query GetBuildingById($id: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetAllBuildingParameters @auth(level: NO_ACCESS) {
+query GetAllBuildingParameters @auth(level: PUBLIC) {
   buildingParameterss {
     id
     climate
@@ -35,7 +35,7 @@ query GetAllBuildingParameters @auth(level: NO_ACCESS) {
   }
 }
 
-query GetFullBuildingDetails($buildingId: UUID!) @auth(level: NO_ACCESS) {
+query GetFullBuildingDetails($buildingId: UUID!) @auth(level: PUBLIC) {
   building(key: { id: $buildingId }) {
     id
     name

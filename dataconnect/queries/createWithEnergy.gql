@@ -9,7 +9,7 @@ mutation CreateInsulationRoofWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   insulationRoof_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -39,7 +39,7 @@ mutation CreateInsulationWallWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   insulationWall_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -67,7 +67,7 @@ mutation CreateWindowSizeWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowSize_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -95,7 +95,7 @@ mutation CreateWindowGlazingWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowGlazing_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -123,7 +123,7 @@ mutation CreateOrientationWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   orientation_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -149,7 +149,7 @@ mutation CreateOccupancyWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   occupancy_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }
@@ -176,7 +176,7 @@ mutation CreateWindowShadingWithEnergyResult(
   $total: Float!,
   $carbon: Float!,
   $cost: Float!
-) @auth(level: NO_ACCESS) {
+) @auth(level: PUBLIC) {
   windowShading_insert(data: {
     id: $id
     buildingParameters: { id: $buildingParametersId }

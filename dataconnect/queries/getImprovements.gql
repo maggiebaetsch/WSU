@@ -1,4 +1,4 @@
-query GetWindowSizes($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetWindowSizes($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   windowSizes(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     area
@@ -12,7 +12,7 @@ query GetWindowSizes($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetInsulationRoofs($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetInsulationRoofs($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   insulationRoofs(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     type
@@ -28,7 +28,7 @@ query GetInsulationRoofs($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetInsulationWalls($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetInsulationWalls($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   insulationWalls(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     type
@@ -44,7 +44,7 @@ query GetInsulationWalls($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   windowGlazings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     type
@@ -60,7 +60,7 @@ query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetOrientations($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetOrientations($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   orientations(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     direction
@@ -74,7 +74,7 @@ query GetOrientations($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetOccupancies($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetOccupancies($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   occupancies(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     numberOfPeople
@@ -88,7 +88,7 @@ query GetOccupancies($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
   }
 }
 
-query GetWindowShadings($buildingParametersId: UUID!) @auth(level: NO_ACCESS) {
+query GetWindowShadings($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   windowShadings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     type
