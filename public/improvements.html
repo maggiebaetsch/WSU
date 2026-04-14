@@ -23,52 +23,8 @@
         <div class="card">
           <h2>Roof Insulation</h2>
           <div class="form-group">
-            <label for="roofinsulationtype">Type</label>
-            <select id="roofinsulationtype" name="roofinsulationtype" required>
-              <option value="">Select Material:</option>
-              <option value="XPS">XPS</option>
-              <option value="Rockwool">Rockwool</option>
-              <option value="Sheepwool">Sheepwool</option>
-              <option value="Cork">Cork</option>
-              <option value="Cladding">Cladding</option>
-              <option value="WoodChips">Wood Chips</option>
-              <option value="Cellulost">Cellulose</option>
-              <option value="SprayFoam">Polyurethane Spray Foam</option>
-              <option value="PET">PET</option>
-              <option value="Glasswool">Glasswool</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="RoofThickness">Thickness (mm)</label>
-            <input
-              type="number"
-              id="RoofThickness"
-              name="RoofThickness"
-              min="0"
-              step="1"
-              max="5"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="RoofUValue">U-value</label>
-            <input
-              type="number"
-              id="RoofUValue"
-              name="RoofUValue"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-        </div>
-
-        <!-- Wall -->
-        <div class="card">
-          <h2>Wall Insulation</h2>
-          <div class="form-group">
-            <label for="wallinsulationtype">Type</label>
-            <select id="wallinsulationtype" name="wallinsulationtype" required>
+            <label for="roofType">Type</label>
+            <select id="roofType" name="roofType" required>
               <option value="">Select Material:</option>
               <option value="XPS">XPS</option>
               <option value="Rockwool">Rockwool</option>
@@ -83,11 +39,11 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="WallThickness">Thickness</label>
+            <label for="roofThickness">Thickness (mm)</label>
             <input
               type="number"
-              id="WallThickness"
-              name="WallThickness"
+              id="roofThickness"
+              name="roofThickness"
               min="0"
               step="1"
               max="5"
@@ -95,11 +51,55 @@
             />
           </div>
           <div class="form-group">
-            <label for="WallUValue">U-value</label>
+            <label for="roofRValue">U-value</label>
             <input
               type="number"
-              id="WallUValue"
-              name="WallUValue"
+              id="roofRValue"
+              name="roofRValue"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Wall -->
+        <div class="card">
+          <h2>Wall Insulation</h2>
+          <div class="form-group">
+            <label for="wallType">Type</label>
+            <select id="wallType" name="wallType" required>
+              <option value="">Select Material:</option>
+              <option value="XPS">XPS</option>
+              <option value="Rockwool">Rockwool</option>
+              <option value="Sheepwool">Sheepwool</option>
+              <option value="Cork">Cork</option>
+              <option value="Cladding">Cladding</option>
+              <option value="WoodChips">Wood Chips</option>
+              <option value="Cellulose">Cellulose</option>
+              <option value="SprayFoam">Polyurethane Spray Foam</option>
+              <option value="PET">PET</option>
+              <option value="Glasswool">Glasswool</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="wallThickness">Thickness</label>
+            <input
+              type="number"
+              id="wallThickness"
+              name="wallThickness"
+              min="0"
+              step="1"
+              max="5"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="wallRValue">R-value</label>
+            <input
+              type="number"
+              id="wallRValue"
+              name="wallRValue"
               min="0"
               step="0.01"
               required
@@ -111,19 +111,19 @@
         <div class="card">
           <h2>Window</h2>
           <div class="form-group">
-            <label for="windowSizeArea">Window Area (sq ft)</label>
+            <label for="windowArea">Window Area (sq ft)</label>
             <input
               type="number"
-              id="windowSizeArea"
-              name="windowSizeArea"
+              id="windowArea"
+              name="windowArea"
               min="0"
               step="0.01"
               required
             />
           </div>
           <div class="form-group">
-            <label for="windowGlazingType">Glazing Type</label>
-            <select id="windowGlazingType" name="windowGlazingType" required>
+            <label for="glazingType">Glazing Type</label>
+            <select id="glazingType" name="glazingType" required>
               <option value="">Select:</option>
               <option value="sg">Single Glazed</option>
               <option value="dg">Double Glazed</option>
@@ -134,22 +134,22 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="windowGlazingUValue">U-value</label>
+            <label for="glazingRValue">U-value</label>
             <input
               type="number"
-              id="windowGlazingUValue"
-              name="windowGlazingUValue"
+              id="glazingRValue"
+              name="glazingRValue"
               min="0"
               step="0.01"
               required
             />
           </div>
           <div class="form-group">
-            <label for="windowGlazingSHGC">SHGC</label>
+            <label for="shgc">SHGC</label>
             <input
               type="number"
-              id="windowGlazingSHGC"
-              name="windowGlazingSHGC"
+              id="shgc"
+              name="shgc"
               min="0"
               max="1"
               step="0.01"
@@ -205,12 +205,10 @@
           </div>
           <div class="form-group">
             <label>
-              <input
-                type="checkbox"
-                id="windowShadingExternal"
-                name="windowShadingExternal"
-              />
-              External shading (checked) / Internal shading (unchecked)
+              <select name="isExternal">
+                <option value="true">External</option>
+                <option value="false">Internal</option>
+              </select>
             </label>
           </div>
         </div>
@@ -218,7 +216,7 @@
         <!-- Buttons -->
         <div class="button-group">
           <a href="parameters.html" class="button">Back</a>
-          <a href="results.html" class="button">View Results</a>
+          <button type="submit" class="button">Save & View Results</button>
         </div>
       </form>
     </div>
@@ -228,133 +226,95 @@
     </footer>
 
     <!--<script> UPDATE WITH PROPER QUERIES
+        createInsulationRoof,
+        createInsulationWall,
+        createWindowSize,
+        createWindowGlazing,
+        createOrientation,
+        createOccupancy,
+        createWindowShading,
+      } from "./dataconnect/src/index.cjs.js";
+
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("improvementsForm");
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
 
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const buildingId = localStorage.getItem("buildingId");
-          if (!buildingId) {
-            alert("No building found. Please start from the first page.");
+          if (!form.checkValidity()) {
+            form.reportValidity();
             return;
           }
 
+          const buildingParametersId = localStorage.getItem(
+            "buildingParametersId",
+          );
+
+          if (!buildingParametersId) {
+            alert("Missing buildingParametersId. Go back and try again.");
+            return;
+          }
+
+          const formData = new FormData(form);
+          console.log(Object.fromEntries(formData));
           try {
-            const app = firebase.app();
-            const dataConnect = firebase.dataconnect.getDataConnect(
-              app,
-              "example",
-            );
-
-            // Collect form values
-            const roofType =
-              document.getElementById("roofinsulationtype").value;
-            const roofThickness = parseFloat(
-              document.getElementById("RoofThickness").value,
-            );
-            const roofUValue = parseFloat(
-              document.getElementById("RoofUValue").value,
-            );
-
-            const wallType =
-              document.getElementById("wallinsulationtype").value;
-            const wallThickness = parseFloat(
-              document.getElementById("WallThickness").value,
-            );
-            const wallUValue = parseFloat(
-              document.getElementById("WallUValue").value,
-            );
-
-            const windowArea = parseFloat(
-              document.getElementById("windowSizeArea").value,
-            );
-
-            const glazingType =
-              document.getElementById("windowGlazingType").value;
-            const glazingUValue = parseFloat(
-              document.getElementById("windowGlazingUValue").value,
-            );
-            const glazingSHGC = parseFloat(
-              document.getElementById("windowGlazingSHGC").value,
-            );
-
-            const orientation = document.getElementById("orientation").value;
-            const occupancy = parseInt(
-              document.getElementById("occupancy").value,
-            );
-
-            const shadingType = document.getElementById("shading").value;
-            const shadingExternal = document.getElementById(
-              "windowShadingExternal",
-            ).checked;
-
-            await dataConnect.executeGraphql({
-              query: `
-                mutation AddImprovements(
-                  $buildingId: UUID!,
-                  $roofType: String!,
-                  $roofThickness: Float!,
-                  $roofR: Float!,
-                  $wallType: String!,
-                  $wallThickness: Float!,
-                  $wallR: Float!,
-                  $windowArea: Float!,
-                  $glazingType: String!,
-                  $glazingR: Float!,
-                  $glazingSHGC: Float!,
-                  $orientation: String!,
-                  $occupancy: Int!,
-                  $shadingType: String!,
-                  $isExternal: Boolean!
-                ) {
-                  buildingImprovements_insert(data: {
-                    building: { id: $buildingId },
-                    roofType: $roofType,
-                    roofThickness: $roofThickness,
-                    roofR: $roofR,
-                    wallType: $wallType,
-                    wallThickness: $wallThickness,
-                    wallR: $wallR,
-                    windowArea: $windowArea,
-                    glazingType: $glazingType,
-                    glazingR: $glazingR,
-                    glazingSHGC: $glazingSHGC,
-                    orientation: $orientation,
-                    occupancy: $occupancy,
-                    shadingType: $shadingType,
-                    isExternal: $isExternal
-                  })
-                }
-              `,
-              variables: {
-                buildingId,
-                roofType,
-                roofThickness,
-                roofR: roofUValue,
-                wallType,
-                wallThickness,
-                wallR: wallUValue,
-                windowArea,
-                glazingType,
-                glazingR: glazingUValue,
-                glazingSHGC,
-                orientation,
-                occupancy,
-                shadingType,
-                isExternal: shadingExternal,
-              },
+            // INSULATION ROOF
+            await createInsulationRoof({
+              buildingParametersId,
+              type: formData.get("roofType"),
+              thickness: parseFloat(formData.get("roofThickness")),
+              rValue: parseFloat(formData.get("roofRValue")),
             });
 
-            alert("Improvements saved!");
+            // INSULATION WALL
+            await createInsulationWall({
+              buildingParametersId,
+              type: formData.get("wallType"),
+              thickness: parseFloat(formData.get("wallThickness")),
+              rValue: parseFloat(formData.get("wallRValue")),
+            });
+
+            // WINDOW SIZE
+            await createWindowSize({
+              buildingParametersId,
+              area: parseFloat(formData.get("windowArea")),
+            });
+
+            // WINDOW GLAZING
+            await createWindowGlazing({
+              buildingParametersId,
+              type: formData.get("glazingType"),
+              rValue: parseFloat(formData.get("glazingRValue")),
+              shgc: parseFloat(formData.get("shgc")),
+            });
+
+            // ORIENTATION
+            await createOrientation({
+              buildingParametersId,
+              direction: formData.get("orientation"),
+            });
+
+            // OCCUPANCY
+            await createOccupancy({
+              buildingParametersId,
+              numberOfPeople: parseInt(formData.get("occupancy")),
+            });
+
+            // WINDOW SHADING
+            await createWindowShading({
+              buildingParametersId,
+              type: formData.get("shading"),
+              isExternal: formData.get("isExternal") === "true",
+            });
+
+            alert("Data saved successfully!");
+
+            // window.location.href = "results.html";
           } catch (error) {
-            console.error(error);
-            alert("Error saving improvements");
+            console.error("IMPROVEMENTS SAVE ERROR:", error);
+            alert("Failed to save improvements. Check console.");
           }
         });
       });
-    </script>
-
--->
+    </script>-->
   </body>
 </html>

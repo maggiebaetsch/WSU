@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.11.0/firebase-app-compat.js"></script>
-    <script defer src="/__/firebase/12.11.0/firebase-auth-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
@@ -110,7 +108,7 @@
         <!-- Buttons -->
         <div class="button-group">
           <a href="index.html" class="button">Back to Home</a>
-          <a href="improvements.html" class="button">Next ></a>
+          <button type="submit" id="next-button" class="button">Next ></button>
         </div>
       </form>
     </div>
@@ -119,72 +117,91 @@
       <p>&copy; Western Sydney University. All rights reserved.</p>
     </footer>
 
-    <!--<script> UPDATE WITH PROPER QUERIES WHEN COMPLETED
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("building-form");
-        const nextButton = document.getElementById("next-button");
+    <!--<script type="module">
+      import { getApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+      import { getDataConnect } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-data-connect.js";
 
-        nextButton.addEventListener("click", async function (event) {
+      import {
+        createBuilding,
+        createBuildingParameters,
+      } from "./dataconnect/src/index.cjs.js";
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("building-form");
+
+        form.addEventListener("submit", async (event) => {
           event.preventDefault();
 
           if (!form.checkValidity()) {
             form.reportValidity();
             return;
           }
-
           const formData = new FormData(form);
-          const buildingId = crypto.randomUUID();
+
+          const climateMap = {
+            Temperate: "TEMPERATE",
+            Tropical: "TROPICAL",
+            DryAridSemiarid: "DRY_ARID_SEMIARID",
+            Continental: "CONTINENTAL",
+            PolarAlpine: "POLAR_ALPINE",
+          };
+
+          const buildingTypeMap = {
+            Residential: "RESIDENTIAL",
+            Office: "OFFICE",
+            Hotel: "HOTEL",
+            Governmental: "GOVERNMENTAL",
+            School: "SCHOOL",
+            Hospital: "HOSPITAL",
+            Retail: "RETAIL",
+            AgedCare: "AGED_CARE",
+            Industrial: "INDUSTRIAL",
+          };
+
+          const envelopeMap = {
+            HighMass: "HIGH_MASS",
+            LowMass: "LOW_MASS",
+            Glazed: "GLAZED",
+          };
+
+          const name = formData.get("buildingName");
+          const climate = climateMap[formData.get("climate")];
+          const floorArea = formData.get("floorArea");
+          const buildingType = buildingTypeMap[formData.get("buildingType")];
+          const envelope = envelopeMap[formData.get("envelope")];
+          const isAC = formData.get("airConditioned") === "on";
 
           try {
-            const app = firebase.app();
-            const dataConnect = firebase.dataconnect.getDataConnect(app, "example");
+            const app = getApp();
+            const dataconnect = getDataConnect(app);
 
-            // Insert building
-            await dataConnect.executeGraphql({
-              query: `
-                mutation CreateBuilding($id: UUID!, $name: String!) {
-                  building_insert(data: { id: $id, name: $name })
-                }
-              `,
-              variables: { id: buildingId, name: formData.get("buildingName") },
+            dataconnect._emulator = {
+              host: "127.0.0.1",
+              port: 9400,
+            };
+
+            console.log("Using Data Connect emulator on 9400");
+            const buildingRes = await createBuilding({
+              name: name,
             });
 
-            // Insert building parameters (keep values as-is)
-            await dataConnect.executeGraphql({
-              query: `
-                mutation CreateBuildingParameters(
-                  $buildingId: UUID!,
-                  $climate: String!,
-                  $floorArea: String!,
-                  $buildingType: String!,
-                  $envelope: String!,
-                  $isAC: Boolean!
-                ) {
-                  buildingParameters_insert(data: {
-                    building: { id: $buildingId },
-                    climate: $climate,
-                    floorArea: $floorArea,
-                    buildingType: $buildingType,
-                    envelope: $envelope,
-                    isAC: $isAC
-                  })
-                }
-              `,
-              variables: {
-                buildingId,
-                climate: formData.get("climate"),
-                floorArea: formData.get("floorArea"),
-                buildingType: formData.get("buildingType"),
-                envelope: formData.get("envelope"),
-                isAC: formData.get("airConditioned") === "on",
-              },
+            const buildingId = buildingRes.data.building_insert.id;
+
+            // Create Parameters
+            const paramsRes = await createBuildingParameters({
+              buildingId: buildingId,
+              climate: climate,
+              floorArea: floorArea,
+              buildingType: buildingType,
+              envelope: envelope,
+              isAC: isAC,
             });
 
-            localStorage.setItem("buildingId", buildingId);
+            const buildingParametersId =
+              paramsRes.data.buildingParameters_insert.id;
             window.location.href = "improvements.html";
           } catch (error) {
-            console.error("Error saving data:", error);
-            alert("Error saving data. Check console.");
+            console.error("PARAMETERS SAVE ERROR:", error);
+            alert("Failed to save building. Check console.");
           }
         });
       });
