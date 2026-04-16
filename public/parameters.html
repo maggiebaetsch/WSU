@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Building Characteristics - Building Energy Analysis</title>
     <link rel="stylesheet" href="styles.css" />
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
     <header>
-      <h1>Building Characteristics</h1>
-      <p>Enter your building details for energy analysis</p>
+      <h1 id="page-title">Building Characteristics</h1>
+      <p id="page-subtitle">Enter your building details for energy analysis</p>
     </header>
 
     <div class="container">
@@ -107,7 +104,7 @@
 
         <!-- Buttons -->
         <div class="button-group">
-          <a href="index.html" class="button">Back to Home</a>
+          <a href="index.html" id="back-link" class="button">Back to Home</a>
           <button type="submit" id="next-button" class="button">Next ></button>
         </div>
       </form>
@@ -117,94 +114,6 @@
       <p>&copy; Western Sydney University. All rights reserved.</p>
     </footer>
 
-    <!--<script type="module">
-      import { getApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-      import { getDataConnect } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-data-connect.js";
-
-      import {
-        createBuilding,
-        createBuildingParameters,
-      } from "./dataconnect/src/index.cjs.js";
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("building-form");
-
-        form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-
-          if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-          }
-          const formData = new FormData(form);
-
-          const climateMap = {
-            Temperate: "TEMPERATE",
-            Tropical: "TROPICAL",
-            DryAridSemiarid: "DRY_ARID_SEMIARID",
-            Continental: "CONTINENTAL",
-            PolarAlpine: "POLAR_ALPINE",
-          };
-
-          const buildingTypeMap = {
-            Residential: "RESIDENTIAL",
-            Office: "OFFICE",
-            Hotel: "HOTEL",
-            Governmental: "GOVERNMENTAL",
-            School: "SCHOOL",
-            Hospital: "HOSPITAL",
-            Retail: "RETAIL",
-            AgedCare: "AGED_CARE",
-            Industrial: "INDUSTRIAL",
-          };
-
-          const envelopeMap = {
-            HighMass: "HIGH_MASS",
-            LowMass: "LOW_MASS",
-            Glazed: "GLAZED",
-          };
-
-          const name = formData.get("buildingName");
-          const climate = climateMap[formData.get("climate")];
-          const floorArea = formData.get("floorArea");
-          const buildingType = buildingTypeMap[formData.get("buildingType")];
-          const envelope = envelopeMap[formData.get("envelope")];
-          const isAC = formData.get("airConditioned") === "on";
-
-          try {
-            const app = getApp();
-            const dataconnect = getDataConnect(app);
-
-            dataconnect._emulator = {
-              host: "127.0.0.1",
-              port: 9400,
-            };
-
-            console.log("Using Data Connect emulator on 9400");
-            const buildingRes = await createBuilding({
-              name: name,
-            });
-
-            const buildingId = buildingRes.data.building_insert.id;
-
-            // Create Parameters
-            const paramsRes = await createBuildingParameters({
-              buildingId: buildingId,
-              climate: climate,
-              floorArea: floorArea,
-              buildingType: buildingType,
-              envelope: envelope,
-              isAC: isAC,
-            });
-
-            const buildingParametersId =
-              paramsRes.data.buildingParameters_insert.id;
-            window.location.href = "improvements.html";
-          } catch (error) {
-            console.error("PARAMETERS SAVE ERROR:", error);
-            alert("Failed to save building. Check console.");
-          }
-        });
-      });
-    </script>-->
+    <script type="module" src="./scripts/pages/parameters.js"></script>
   </body>
 </html>

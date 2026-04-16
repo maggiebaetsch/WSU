@@ -4,9 +4,9 @@
 
 /* ---------- Body ---------- */
 body {
-  background-color: #f4f6f8;
+  background-color: #eef1ed;
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #2f362f;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
 
 /* ---------- Header ---------- */
 header {
-  background-color: #6ccb70;
+  background-color: #5f7869;
   color: white;
   padding: 3rem 1rem 2rem;
   text-align: center;
@@ -43,7 +43,7 @@ header p {
 }
 
 .section h2 {
-  color: #6ccb70;
+  color: #5f7869;
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -61,7 +61,7 @@ header p {
 }
 
 .feature {
-  background-color: white;
+  background-color: #fafcf9;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   margin: 1rem;
@@ -71,24 +71,24 @@ header p {
 }
 
 .feature h3 {
-  color: #6ccb70;
+  color: #5f7869;
   margin-bottom: 0.8rem;
 }
 
 /* ---------- Cards  ---------- */
 .card {
-  background-color: white;
+  background-color: #fafcf9;
   border-radius: 12px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid #6ccb70;
+  border-left: 6px solid #5f7869;
 }
 
 .card h2 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #6ccb70;
+  color: #5f7869;
 }
 
 /* ---------- Form groups ---------- */
@@ -107,7 +107,8 @@ input,
 select {
   padding: 0.6rem 0.8rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #c4ccc4;
+  background-color: #ffffff;
   font-size: 1rem;
 }
 
@@ -121,21 +122,26 @@ input[type="checkbox"] {
 .button-group button,
 .cta a {
   display: inline-block;
-  background-color: #6ccb70;
+  background-color: #5f7869;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
+  appearance: none;
   transition: background-color 0.3s ease;
 }
 
 .button:hover,
 .button-group button:hover,
 .cta a:hover {
-  background-color: #58b75b;
+  background-color: #4e6558;
 }
 
 /* ---------- Navigation buttons ---------- */
@@ -151,9 +157,99 @@ input[type="checkbox"] {
   gap: 1rem;
 }
 
+/* ---------- Improvements Page ---------- */
+.page-actions {
+  justify-content: flex-start;
+}
+
+.improvements-page .container {
+  max-width: 1280px;
+}
+
+.improvements-page #improvements-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.improvements-page .card {
+  margin-bottom: 0;
+}
+
+/* ---------- Table Formatting ---------- */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.improvements-page .table-wrap {
+  margin-top: 1rem;
+  border: 1px solid #d5ddd5;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.improvements-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.improvements-page .improvements-table {
+  margin-top: 0;
+  min-width: 980px;
+}
+
+.improvements-table th,
+.improvements-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #d5ddd5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.improvements-page .improvements-table th,
+.improvements-page .improvements-table td {
+  word-break: break-word;
+}
+
+.improvements-table th {
+  background: #edf1ec;
+  font-weight: 700;
+}
+
+.improvements-table tr:last-child td {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #d5ddd5;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.section-header .button {
+  flex-shrink: 0;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.row-actions .button {
+  margin: 0;
+}
+
 /* ---------- Footer ---------- */
 footer {
-  background-color: #333;
+  background-color: #364039;
   color: white;
   text-align: center;
   padding: 1.5rem;
@@ -177,6 +273,15 @@ footer {
 
   .card {
     padding: 1rem 1.2rem;
+  }
+
+  .section-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .improvements-page .improvements-table {
+    min-width: 760px;
   }
 
   .button,

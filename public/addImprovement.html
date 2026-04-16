@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Improvement</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="page-title">Add Improvement</h1>
+      <p id="page-subtitle">Create a new improvement and its linked energy result.</p>
+    </header>
+    <div class="container">
+      <form id="improvement-form" class="improvements-form">
+        <div class="card">
+          <h2>Improvement Details</h2>
+          <div id="dynamic-fields"></div>
+        </div>
+
+        <div class="card">
+          <h2>Energy Result</h2>
+          <div class="form-group">
+            <label for="cooling">Cooling</label>
+            <input type="number" id="cooling" name="cooling" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="heating">Heating</label>
+            <input type="number" id="heating" name="heating" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="total">Total</label>
+            <input type="number" id="total" name="total" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="carbon">Carbon</label>
+            <input type="number" id="carbon" name="carbon" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="cost">Cost</label>
+            <input type="number" id="cost" name="cost" step="0.01" required />
+          </div>
+        </div>
+
+        <div class="button-group">
+          <a id="back-link" href="buildings.html" class="button">Back</a>
+          <button type="submit" id="submit-button" class="button">Save Improvement</button>
+        </div>
+      </form>
+    </div>
+    <footer>
+      <p>&copy; Western Sydney University. All rights reserved.</p>
+    </footer>
+    <script type="module" src="./scripts/pages/addImprovement.js"></script>
+  </body>
+</html>

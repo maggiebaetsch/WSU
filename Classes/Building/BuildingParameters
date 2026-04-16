@@ -1,8 +1,0 @@
-public class BuildingParameters
-{
-    public Climate Climate { get; set; }
-    public string FloorArea { get; set; }
-    public BuildingType BuildingType { get; set; }
-    public EnvelopeType Envelope { get; set; }
-    public bool IsAC { get; set; }
-}

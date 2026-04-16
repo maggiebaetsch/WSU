@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "sync:dataconnect-browser": "mkdir -p public/scripts/dataconnect-generated/esm && cp src/dataconnect-generated/esm/index.esm.js public/scripts/dataconnect-generated/esm/index.esm.js && cp src/dataconnect-generated/esm/package.json public/scripts/dataconnect-generated/esm/package.json",
+    "deploy:dataconnect": "firebase deploy --only dataconnect",
+    "deploy:hosting": "firebase deploy --only hosting"
+  },
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
     "firebase": "^12.11.0"

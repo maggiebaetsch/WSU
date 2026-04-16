@@ -1,4 +1,0 @@
-public class DataType //Not sure if this is the right approach anymore.....
-{
-    public string Name { get; set; } 
-}

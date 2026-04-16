@@ -1,8 +1,0 @@
-public class Building
-{
-    public string Id { get; set; }
-    public string Name { get; set; }
-
-    public BuildingParameters Parameters { get; set; }
-    public List<Improvements> ImprovementSets { get; set; } = new();
-}

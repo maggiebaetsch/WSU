@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Building Energy Analysis</title>
     <link rel="stylesheet" href="styles.css" />
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.11.0/firebase-app-compat.js"></script>
-    <script defer src="/__/firebase/12.11.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
     <header>
@@ -82,8 +77,8 @@
       </section>
 
       <div class="cta button-group">
-        <a href="parameters.html" class="button">Start New Calculation</a>
-        <a href="#load" class="button">Load Saved Building</a>
+        <a href="parameters.html" id="start-new-calculation" class="button">Start New Calculation</a>
+        <a href="buildings.html" class="button">View All Buildings</a>
       </div>
     </div>
 
@@ -91,10 +86,6 @@
       <p>&copy; Western Sydney University. All rights reserved.</p>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("Building Energy Analysis homepage loaded");
-      });
-    </script>
+    <script type="module" src="./scripts/pages/index.js"></script>
   </body>
 </html>

@@ -44,6 +44,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    insulationRoof {
+      id
+    }
   }
   wallResults: energyResults(
     where: {
@@ -57,6 +60,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    insulationWall {
+      id
+    }
   }
   windowSizeResults: energyResults(
     where: {
@@ -70,6 +76,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    windowSize {
+      id
+    }
   }
   windowGlazingResults: energyResults(
     where: {
@@ -83,6 +92,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    windowGlazing {
+      id
+    }
   }
   orientationResults: energyResults(
     where: {
@@ -96,6 +108,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    orientation {
+      id
+    }
   }
   occupancyResults: energyResults(
     where: {
@@ -109,6 +124,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    occupancy {
+      id
+    }
   }
   windowShadingResults: energyResults(
     where: {
@@ -122,6 +140,9 @@ query GetEnergyResultsByBuildingParameters($buildingParametersId: UUID!) @auth(l
     total
     carbon
     cost
+    windowShading {
+      id
+    }
   }
 }
 
@@ -138,6 +159,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    insulationRoof {
+      id
+    }
   }
   wallResults: energyResults(
     where: {
@@ -151,6 +175,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    insulationWall {
+      id
+    }
   }
   windowSizeResults: energyResults(
     where: {
@@ -164,6 +191,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    windowSize {
+      id
+    }
   }
   windowGlazingResults: energyResults(
     where: {
@@ -177,6 +207,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    windowGlazing {
+      id
+    }
   }
   orientationResults: energyResults(
     where: {
@@ -190,6 +223,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    orientation {
+      id
+    }
   }
   occupancyResults: energyResults(
     where: {
@@ -203,6 +239,9 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    occupancy {
+      id
+    }
   }
   windowShadingResults: energyResults(
     where: {
@@ -216,5 +255,8 @@ query GetEnergyResultsByBuilding($buildingId: UUID!) @auth(level: PUBLIC) {
     total
     carbon
     cost
+    windowShading {
+      id
+    }
   }
 }
