@@ -1,0 +1,239 @@
+mutation SeedWindowSizeData @auth(level: PUBLIC) {
+	ws1: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333331"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 37.73
+	})
+
+	ws2: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333332"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 14.31
+	})
+
+	ws3: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333333"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 9.53
+	})
+
+	ws4: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333334"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 4.78
+	})
+
+	ws5: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333335"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 23.42
+	})
+
+	ws6: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333336"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 14.31
+	})
+
+	ws7: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333337"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 9.1
+	})
+
+	ws8: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333338"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 6.06
+	})
+
+	ws9: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333339"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 3.04
+	})
+
+	ws10: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333340"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 9.53
+	})
+
+	ws11: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333341"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 4.75
+	})
+
+	ws12: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333342"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 12.58
+	})
+
+	ws13: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333343"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 12.6
+	})
+
+	ws14: windowSize_insert(data: {
+		id: "b8333333-3333-4333-8333-333333333344"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		area: 12.54
+	})
+
+  erWs1: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333331"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333331" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5355.141778
+    cooling: 5625.728222
+    total: 38383.64
+    carbon: 26.48471
+    cost: 0.0
+  })
+
+  erWs2: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333332"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333332" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5498.253595
+    cooling: 5274.106405
+    total: 38199.68
+    carbon: 26.35778
+    cost: 0.0
+  })
+
+  erWs3: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333333"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333333" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5529.885802
+    cooling: 5207.404198
+    total: 38169.5
+    carbon: 26.33696
+    cost: 0.0
+  })
+
+  erWs4: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333334"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333334" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5574.336686
+    cooling: 5129.593314
+    total: 38141.56
+    carbon: 26.31768
+    cost: 0.0
+  })
+
+  erWs5: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333335"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333335" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5468.499789
+    cooling: 5405.880211
+    total: 38292.14
+    carbon: 26.42158
+    cost: 0.0
+  })
+
+  erWs6: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333336"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333336" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5535.602889
+    cooling: 5267.367111
+    total: 38230.41
+    carbon: 26.37898
+    cost: 0.0
+  })
+
+  erWs7: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333337"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333337" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5552.108945
+    cooling: 5193.331055
+    total: 38178.34
+    carbon: 26.34305
+    cost: 0.0
+  })
+
+  erWs8: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333338"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333338" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5578.156033
+    cooling: 5145.783967
+    total: 38160.08
+    carbon: 26.33046
+    cost: 0.0
+  })
+
+  erWs9: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333339"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333339" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5603.576964
+    cooling: 5096.683036
+    total: 38139.87
+    carbon: 26.31651
+    cost: 0.0
+  })
+
+  erWs10: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333340"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333340" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5556.115022
+    cooling: 5202.904978
+    total: 38191.32
+    carbon: 26.35201
+    cost: 0.0
+  })
+
+  erWs11: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333341"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333341" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5588.954038
+    cooling: 5130.635962
+    total: 38156.96
+    carbon: 26.3283
+    cost: 0.0
+  })
+
+  erWs12: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333342"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333342" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5516.472291
+    cooling: 5251.647709
+    total: 38197.25
+    carbon: 26.3561
+    cost: 0.0
+  })
+
+  erWs13: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333343"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333343" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5550.152187
+    cooling: 5227.637813
+    total: 38207.59
+    carbon: 26.36324
+    cost: 0.0
+  })
+
+  erWs14: energyResult_insert(data: {
+    id: "c8333333-3333-4333-8333-333333333344"
+    windowSize: { id: "b8333333-3333-4333-8333-333333333344" }
+    improvementType: "WINDOW_SIZE"
+    heating: 5518.376479
+    cooling: 5255.633521
+    total: 38202.72
+    carbon: 26.35988
+    cost: 0.0
+  })
+}

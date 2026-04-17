@@ -1,0 +1,16 @@
+mutation SeedData @auth(level: PUBLIC) {
+  sydneyOfficeBuilding: building_insert(data: {
+    id: "9e4d7e7f-2fd3-4f52-9ea8-1f6b8c8e1a11"
+    name: "Sydney, Australia low-rise Office"
+  })
+
+  sydneyOfficeParameters: buildingParameters_insert(data: {
+    id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21"
+    building: { id: "9e4d7e7f-2fd3-4f52-9ea8-1f6b8c8e1a11" }
+    climate: TEMPERATE
+    floorArea: "10000"
+    buildingType: OFFICE
+    envelope: GLAZED
+    isAC: true
+  })
+}
