@@ -6,6 +6,7 @@ Hosting URL: https://building-energy-analysis.web.app
 
 ## Data Structure
 
+```
 Building
 ├── BuildingParameters (1:1)
 │   ├── InsulationRoof (1:many)
@@ -22,7 +23,7 @@ Building
 │   │   └── EnergyResult (0..1 per row)
 │   └── WindowShading (1:many)
 │       └── EnergyResult (0..1 per row)
-
+```
 
 EnergyResult is one shared table with optional links to each improvement type.
 
