@@ -144,7 +144,7 @@ function buildEnergyResultMap(items, relationKey) {
   return new Map(
     (items || [])
       .filter((item) => item?.[relationKey]?.id)
-      .map((item) => [item[relationKey].id, item])
+      .map((item) => [item[relationKey].id, item]),
   );
 }
 
@@ -197,7 +197,7 @@ function renderSection(container, title, headers, rows, createHref) {
   tableWrap.className = "table-wrap";
 
   const table = document.createElement("table");
-  table.className = "improvements-table";
+  table.className = "improvements-table improvement-section-table";
 
   // Build the table header from the section config.
   const thead = document.createElement("thead");
@@ -337,17 +337,19 @@ async function loadImprovementData(buildingParametersId) {
     roofResults: energyResultsResponse.data?.roofResults || [],
     wallResults: energyResultsResponse.data?.wallResults || [],
     windowSizeResults: energyResultsResponse.data?.windowSizeResults || [],
-    windowGlazingResults: energyResultsResponse.data?.windowGlazingResults || [],
+    windowGlazingResults:
+      energyResultsResponse.data?.windowGlazingResults || [],
     orientationResults: energyResultsResponse.data?.orientationResults || [],
     occupancyResults: energyResultsResponse.data?.occupancyResults || [],
-    windowShadingResults: energyResultsResponse.data?.windowShadingResults || [],
+    windowShadingResults:
+      energyResultsResponse.data?.windowShadingResults || [],
   };
 }
 
 // Check whether any energy result rows exist for this building.
 function hasAnyEnergyResults(improvementData) {
   return SECTION_CONFIGS.some(
-    (section) => (improvementData[section.energyKey] || []).length > 0
+    (section) => (improvementData[section.energyKey] || []).length > 0,
   );
 }
 
@@ -360,11 +362,17 @@ function renderNoEnergyResultsCard(list) {
   list.appendChild(noteCard);
 }
 
-function createRows(items, section, buildingId, buildingParametersId, improvementData) {
+function createRows(
+  items,
+  section,
+  buildingId,
+  buildingParametersId,
+  improvementData,
+) {
   // Match each improvement with its linked energy result.
   const energyMap = buildEnergyResultMap(
     improvementData[section.energyKey],
-    section.relationKey
+    section.relationKey,
   );
 
   return items.map((item) => {
@@ -379,19 +387,58 @@ function createRows(items, section, buildingId, buildingParametersId, improvemen
         async () => {
           // Ask before deleting a saved improvement.
           const confirmed = window.confirm(
-            `Delete this ${section.kind.replace("-", " ")} record?`
+            `Delete this ${section.kind.replace("-", " ")} record?`,
           );
 
           if (!confirmed) {
             return;
           }
 
-          await deleteImprovementRecord(section.kind, item.id, energyMap.get(item.id)?.id);
+          await deleteImprovementRecord(
+            section.kind,
+            item.id,
+            energyMap.get(item.id)?.id,
+          );
           window.location.reload();
-        }
+        },
       ),
     ];
   });
+}
+
+function highlightLowestEnergyImprovement() {
+  const tables = document.querySelectorAll(".improvement-section-table");
+
+  let lowestValue = Infinity;
+  let lowestRow = null;
+
+  tables.forEach((table) => {
+    const rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td");
+
+      const cooling = parseFloat(cells[cells.length - 6].textContent) || 0;
+      const heating = parseFloat(cells[cells.length - 5].textContent) || 0;
+
+      const totalEnergy = cooling + heating;
+
+      if (totalEnergy < lowestValue) {
+        lowestValue = totalEnergy;
+        lowestRow = row;
+      }
+    });
+  });
+
+  if (lowestRow) {
+    // Remove previous highlights
+    document.querySelectorAll(".highlight-row").forEach((r) => {
+      r.classList.remove("highlight-row");
+    });
+
+    lowestRow.classList.add("highlight-row");
+    lowestRow.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 }
 
 async function init() {
@@ -419,9 +466,12 @@ async function init() {
     const buildingParameters =
       building?.buildingParameters ||
       parametersResponse.data?.buildingParameterss?.find(
-        (item) => item.id === buildingParametersIdFromUrl || item.building.id === buildingId
+        (item) =>
+          item.id === buildingParametersIdFromUrl ||
+          item.building.id === buildingId,
       );
-    const buildingParametersId = buildingParameters?.id || buildingParametersIdFromUrl;
+    const buildingParametersId =
+      buildingParameters?.id || buildingParametersIdFromUrl;
 
     // Stop early if the selected building does not exist.
     if (!building) {
@@ -452,7 +502,7 @@ async function init() {
         section,
         buildingId,
         buildingParametersId,
-        improvementData
+        improvementData,
       );
 
       renderSection(
@@ -460,8 +510,11 @@ async function init() {
         section.title,
         [...section.headers, ...ENERGY_HEADERS, "Actions"],
         rows,
-        `addImprovement.html?buildingId=${encodeURIComponent(buildingId)}&buildingParametersId=${encodeURIComponent(buildingParametersId || "")}&kind=${section.kind}`
+        `addImprovement.html?buildingId=${encodeURIComponent(buildingId)}&buildingParametersId=${encodeURIComponent(buildingParametersId || "")}&kind=${section.kind}`,
       );
+      document
+        .getElementById("highlight-lowest-btn")
+        .addEventListener("click", highlightLowestEnergyImprovement);
     }
   } catch (error) {
     // Show a simple page message if any request fails.
