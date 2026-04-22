@@ -259,6 +259,16 @@ footer {
   background-color: #fffa9e !important;
   transition: background-color 0.4s ease;
 }
+.improvement-header-spacer {
+  height: 20px;
+}
+
+.highlight-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {

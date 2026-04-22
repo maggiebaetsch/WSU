@@ -437,7 +437,67 @@ function highlightLowestEnergyImprovement() {
     });
 
     lowestRow.classList.add("highlight-row");
-    lowestRow.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function highlightLowestCarbonImprovement() {
+  const tables = document.querySelectorAll(".improvement-section-table");
+
+  let lowestValue = Infinity;
+  let lowestRow = null;
+
+  tables.forEach((table) => {
+    const rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td");
+
+      const carbon = parseFloat(cells[cells.length - 3].textContent) || 0;
+
+      if (carbon < lowestValue) {
+        lowestValue = carbon;
+        lowestRow = row;
+      }
+    });
+  });
+
+  if (lowestRow) {
+    document.querySelectorAll(".highlight-row").forEach((r) => {
+      r.classList.remove("highlight-row");
+    });
+
+    lowestRow.classList.add("highlight-row");
+  }
+}
+
+function highlightLowestCostImprovement() {
+  const tables = document.querySelectorAll(".improvement-section-table");
+
+  let lowestValue = Infinity;
+  let lowestRow = null;
+
+  tables.forEach((table) => {
+    const rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td");
+
+      const cost = parseFloat(cells[cells.length - 1].textContent) || 0;
+
+      if (cost < lowestValue) {
+        lowestValue = cost;
+        lowestRow = row;
+      }
+    });
+  });
+
+  if (lowestRow) {
+    // Remove any previous highlight
+    document.querySelectorAll(".highlight-row").forEach((r) => {
+      r.classList.remove("highlight-row");
+    });
+
+    lowestRow.classList.add("highlight-row");
   }
 }
 
@@ -515,6 +575,12 @@ async function init() {
       document
         .getElementById("highlight-lowest-btn")
         .addEventListener("click", highlightLowestEnergyImprovement);
+      document
+        .getElementById("highlight-lowest-carbon-btn")
+        .addEventListener("click", highlightLowestCarbonImprovement);
+      document
+        .getElementById("highlight-lowest-cost-btn")
+        .addEventListener("click", highlightLowestCostImprovement);
     }
   } catch (error) {
     // Show a simple page message if any request fails.
