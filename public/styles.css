@@ -157,6 +157,20 @@ input[type="checkbox"] {
   gap: 1rem;
 }
 
+/* ---------- Filter Bar ---------- */
+.building-filters {
+  align-items: end;
+}
+
+.filter-field {
+  flex: 1 1 320px;
+  margin-bottom: 0;
+}
+
+.filter-scope {
+  flex: 1 1 180px;
+}
+
 /* ---------- Improvements Page ---------- */
 .page-actions {
   justify-content: flex-start;
@@ -233,8 +247,69 @@ input[type="checkbox"] {
   margin: 0;
 }
 
+.section-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .section-header .button {
   flex-shrink: 0;
+}
+
+/* ---------- Sorting Buttons ---------- */
+.table-sort-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.table-sort-button .sort-indicator {
+  color: #5c675e;
+  font-size: 0.85rem;
+}
+
+.table-sort-button[data-direction="asc"] .sort-indicator {
+  color: #1e5e2d;
+}
+
+.table-sort-button[data-direction="asc"] .sort-indicator::before {
+  content: "▲";
+}
+
+.table-sort-button[data-direction="asc"] .sort-indicator {
+  font-size: 0;
+}
+
+.table-sort-button[data-direction="desc"] .sort-indicator {
+  color: #1e5e2d;
+  font-size: 0;
+}
+
+.table-sort-button[data-direction="desc"] .sort-indicator::before {
+  content: "▼";
+  font-size: 0.85rem;
+}
+
+.table-sort-button[data-direction="none"] .sort-indicator {
+  font-size: 0;
+}
+
+.table-sort-button[data-direction="none"] .sort-indicator::before {
+  content: "↕";
+  font-size: 0.85rem;
 }
 
 .row-actions {

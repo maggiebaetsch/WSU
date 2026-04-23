@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startLink.addEventListener("click", () => {
       // Remove the saved id so the next flow starts fresh.
       localStorage.removeItem("buildingParametersId");
+      localStorage.removeItem("buildingId");
     });
   }
 });

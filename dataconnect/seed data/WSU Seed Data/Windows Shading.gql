@@ -1,0 +1,601 @@
+mutation SeedWindowShadingData @auth(level: PUBLIC) {
+	ws1: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "No shade"
+		isExternal: false
+	})
+	ws2: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Fixed Slat Angled"
+		isExternal: false
+	})
+	ws3: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Dark Drapes close weave"
+		isExternal: false
+	})
+	ws4: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Light Drapes close weave"
+		isExternal: false
+	})
+	ws5: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll light opaque"
+		isExternal: false
+	})
+	ws6: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll light translucent"
+		isExternal: false
+	})
+	ws7: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "High reflectance"
+		isExternal: false
+	})
+	ws8: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Low reflectance high transm"
+		isExternal: false
+	})
+	ws9: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Low reflectance low transm"
+		isExternal: false
+	})
+	ws10: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll medium opaque"
+		isExternal: false
+	})
+
+	ws11: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll medium translucent"
+		isExternal: false
+	})
+	ws12: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Venitian blinds light"
+		isExternal: false
+	})
+	ws13: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Venitian blinds medium"
+		isExternal: false
+	})
+	ws14: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Dark Drapes open weave"
+		isExternal: false
+	})
+	ws15: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Light Drapes open weave"
+		isExternal: false
+	})
+	ws16: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Blind high reflective"
+		isExternal: false
+	})
+	ws17: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000017"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Blind low reflective"
+		isExternal: false
+	})
+	ws18: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000018"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Medium reflectance low transm"
+		isExternal: false
+	})
+	ws19: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000019"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Med reflectance med transm"
+		isExternal: false
+	})
+
+	erWs1: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000001"
+		windowShading: { id: "47000000-0000-0000-0000-000000000001" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5332.993787
+		cooling: 4449.936213
+		total: 38323.1
+		carbon: 26.44294
+		cost: 0.0
+	})
+	erWs2: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000002"
+		windowShading: { id: "47000000-0000-0000-0000-000000000002" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48471
+		cost: 0.0
+	})
+	erWs3: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000003"
+		windowShading: { id: "47000000-0000-0000-0000-000000000003" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5325.606492
+		cooling: 4580.003508
+		total: 38445.78
+		carbon: 26.52759
+		cost: 0.0
+	})
+	erWs4: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000004"
+		windowShading: { id: "47000000-0000-0000-0000-000000000004" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.594044
+		cooling: 4537.115956
+		total: 38405.88
+		carbon: 26.50006
+		cost: 0.0
+	})
+	erWs5: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000005"
+		windowShading: { id: "47000000-0000-0000-0000-000000000005" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.151485
+		cooling: 4543.368515
+		total: 38411.7
+		carbon: 26.50407
+		cost: 0.0
+	})
+	erWs6: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000006"
+		windowShading: { id: "47000000-0000-0000-0000-000000000006" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.729532
+		cooling: 4513.000468
+		total: 38382.9
+		carbon: 26.4842
+		cost: 0.0
+	})
+	erWs7: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000007"
+		windowShading: { id: "47000000-0000-0000-0000-000000000007" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5332.92993
+		cooling: 4472.40007
+		total: 38345.5
+		carbon: 26.4584
+		cost: 0.0
+	})
+	erWs8: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000008"
+		windowShading: { id: "47000000-0000-0000-0000-000000000008" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5330.133531
+		cooling: 4501.306469
+		total: 38371.62
+		carbon: 26.47642
+		cost: 0.0
+	})
+	erWs9: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000009"
+		windowShading: { id: "47000000-0000-0000-0000-000000000009" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5327.679734
+		cooling: 4547.820266
+		total: 38415.67
+		carbon: 26.50681
+		cost: 0.0
+	})
+	erWs10: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000010"
+		windowShading: { id: "47000000-0000-0000-0000-000000000010" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.112327
+		cooling: 4542.517673
+		total: 38410.81
+		carbon: 26.50346
+		cost: 0.0
+	})
+
+	erWs11: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000011"
+		windowShading: { id: "47000000-0000-0000-0000-000000000011" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5334.635321
+		cooling: 4437.884679
+		total: 38312.7
+		carbon: 26.43576
+		cost: 0.0
+	})
+	erWs12: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000012"
+		windowShading: { id: "47000000-0000-0000-0000-000000000012" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.341515
+		cooling: 4514.238485
+		total: 38383.75
+		carbon: 26.48479
+		cost: 0.0
+	})
+	erWs13: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000013"
+		windowShading: { id: "47000000-0000-0000-0000-000000000013" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.060463
+		cooling: 4533.829537
+		total: 38402.06
+		carbon: 26.49742
+		cost: 0.0
+	})
+	erWs14: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000014"
+		windowShading: { id: "47000000-0000-0000-0000-000000000014" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5327.827128
+		cooling: 4536.252872
+		total: 38404.26
+		carbon: 26.49894
+		cost: 0.0
+	})
+	erWs15: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000015"
+		windowShading: { id: "47000000-0000-0000-0000-000000000015" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.687697
+		cooling: 4508.202303
+		total: 38378.07
+		carbon: 26.48087
+		cost: 0.0
+	})
+	erWs16: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000016"
+		windowShading: { id: "47000000-0000-0000-0000-000000000016" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5334.229933
+		cooling: 4453.870067
+		total: 38328.27
+		carbon: 26.44651
+		cost: 0.0
+	})
+	erWs17: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000017"
+		windowShading: { id: "47000000-0000-0000-0000-000000000017" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5326.831
+		cooling: 4561.579
+		total: 38428.58
+		carbon: 26.51572
+		cost: 0.0
+	})
+	erWs18: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000018"
+		windowShading: { id: "47000000-0000-0000-0000-000000000018" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.655812
+		cooling: 4519.554188
+		total: 38389.38
+		carbon: 26.48867
+		cost: 0.0
+	})
+	erWs19: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000019"
+		windowShading: { id: "47000000-0000-0000-0000-000000000019" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5331.509107
+		cooling: 4485.980893
+		total: 38357.66
+		carbon: 26.46679
+		cost: 0.0
+	})
+
+	ws20: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000020"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Fixed Slat Angled"
+		isExternal: true
+	})
+	ws21: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000021"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Dark Drapes"
+		isExternal: true
+	})
+	ws22: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000022"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Light Drapes"
+		isExternal: true
+	})
+	ws23: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000023"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll light opaque"
+		isExternal: true
+	})
+	ws24: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000024"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll light translucent"
+		isExternal: true
+	})
+	ws25: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000025"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "High reflectance"
+		isExternal: true
+	})
+	ws26: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000026"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Low reflectance high transm"
+		isExternal: true
+	})
+	ws27: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000027"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Low reflectance low transm"
+		isExternal: true
+	})
+	ws28: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000028"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll medium opaque"
+		isExternal: true
+	})
+	ws29: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000029"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Shade roll medium translucent"
+		isExternal: true
+	})
+
+	ws30: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000030"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Venitian blinds light"
+		isExternal: true
+	})
+	ws31: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000031"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Venitian blinds medium"
+		isExternal: true
+	})
+	ws32: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000032"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Dark Drapes open weave"
+		isExternal: true
+	})
+	ws33: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000033"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Light Drapes open weave"
+		isExternal: true
+	})
+	ws34: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000034"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Blind high reflective"
+		isExternal: true
+	})
+	ws35: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000035"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Blind low reflective"
+		isExternal: true
+	})
+	ws36: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000036"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Medium reflectance low transm"
+		isExternal: true
+	})
+	ws37: windowShading_insert(data: {
+		id: "47000000-0000-0000-0000-000000000037"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Med reflectance med transm"
+		isExternal: true
+	})
+
+	erWs20: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000020"
+		windowShading: { id: "47000000-0000-0000-0000-000000000020" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5330.26392
+		cooling: 4489.62608
+		total: 38360.07
+		carbon: 26.46845
+		cost: 0.0
+	})
+	erWs21: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000021"
+		windowShading: { id: "47000000-0000-0000-0000-000000000021" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5343.12376
+		cooling: 4324.14624
+		total: 38207.44
+		carbon: 26.36313
+		cost: 0.0
+	})
+	erWs22: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000022"
+		windowShading: { id: "47000000-0000-0000-0000-000000000022" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5345.390817
+		cooling: 4292.909183
+		total: 38178.48
+		carbon: 26.34315
+		cost: 0.0
+	})
+	erWs23: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000023"
+		windowShading: { id: "47000000-0000-0000-0000-000000000023" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5345.130253
+		cooling: 4296.529747
+		total: 38181.83
+		carbon: 26.34546
+		cost: 0.0
+	})
+	erWs24: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000024"
+		windowShading: { id: "47000000-0000-0000-0000-000000000024" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5335.544269
+		cooling: 4419.175731
+		total: 38294.89
+		carbon: 26.42347
+		cost: 0.0
+	})
+	erWs25: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000025"
+		windowShading: { id: "47000000-0000-0000-0000-000000000025" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5345.02513
+		cooling: 4296.06487
+		total: 38181.26
+		carbon: 26.34507
+		cost: 0.0
+	})
+	erWs26: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000026"
+		windowShading: { id: "47000000-0000-0000-0000-000000000026" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.329602
+		cooling: 4515.010398
+		total: 38383.52
+		carbon: 26.48463
+		cost: 0.0
+	})
+	erWs27: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000027"
+		windowShading: { id: "47000000-0000-0000-0000-000000000027" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5341.687765
+		cooling: 4342.332235
+		total: 38224.2
+		carbon: 26.3747
+		cost: 0.0
+	})
+	erWs28: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000028"
+		windowShading: { id: "47000000-0000-0000-0000-000000000028" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5283.18
+		cooling: 5283.18
+		total: 38204.31
+		carbon: 26.36097
+		cost: 0.0
+	})
+	erWs29: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000029"
+		windowShading: { id: "47000000-0000-0000-0000-000000000029" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5334.583357
+		cooling: 4435.864643
+		total: 38310.59
+		carbon: 26.43431
+		cost: 0.0
+	})
+
+	erWs30: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000030"
+		windowShading: { id: "47000000-0000-0000-0000-000000000030" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.842663
+		cooling: 4493.587337
+		total: 38363.6
+		carbon: 26.47088
+		cost: 0.0
+	})
+	erWs31: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000031"
+		windowShading: { id: "47000000-0000-0000-0000-000000000031" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.597359
+		cooling: 4498.242641
+		total: 38368.02
+		carbon: 26.47393
+		cost: 0.0
+	})
+	erWs32: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000032"
+		windowShading: { id: "47000000-0000-0000-0000-000000000032" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5328.335206
+		cooling: 4516.044794
+		total: 38384.56
+		carbon: 26.48535
+		cost: 0.0
+	})
+	erWs33: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000033"
+		windowShading: { id: "47000000-0000-0000-0000-000000000033" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5329.008466
+		cooling: 4505.221534
+		total: 38374.4
+		carbon: 26.47834
+		cost: 0.0
+	})
+	erWs34: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000034"
+		windowShading: { id: "47000000-0000-0000-0000-000000000034" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5348.356483
+		cooling: 4254.103517
+		total: 38142.63
+		carbon: 26.31841
+		cost: 0.0
+	})
+	erWs35: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000035"
+		windowShading: { id: "47000000-0000-0000-0000-000000000035" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5344.471742
+		cooling: 4306.998258
+		total: 38191.65
+		carbon: 26.35224
+		cost: 0.0
+	})
+	erWs36: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000036"
+		windowShading: { id: "47000000-0000-0000-0000-000000000036" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5343.237225
+		cooling: 4320.802775
+		total: 38204.22
+		carbon: 26.36091
+		cost: 0.0
+	})
+	erWs37: energyResult_insert(data: {
+		id: "48000000-0000-0000-0000-000000000037"
+		windowShading: { id: "47000000-0000-0000-0000-000000000037" }
+		improvementType: "WINDOW_SHADING"
+		heating: 5335.187209
+		cooling: 4423.382791
+		total: 38298.74
+		carbon: 26.42613
+		cost: 0.0
+	})
+}

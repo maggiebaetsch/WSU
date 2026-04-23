@@ -180,7 +180,7 @@ const configByKind = {
     relationKey: "windowSize",
     fields: `
       <div class="form-group">
-        <label for="area">Area</label>
+        <label for="area">Area (m²)</label>
         <input type="number" id="area" name="area" step="0.01" min="0" required />
       </div>
     `,
@@ -284,14 +284,22 @@ const configByKind = {
       <div class="form-group">
         <label for="direction">Direction</label>
         <select id="direction" name="direction" required>
-          <option value="north">North</option>
-          <option value="east">East</option>
-          <option value="south">South</option>
-          <option value="west">West</option>
-          <option value="west">NorthWest</option>
-          <option value="west">SouthWest</option>
-          <option value="west">NorthEast</option>
-          <option value="west">SouthEast</option>
+          <option value="North">North</option>
+          <option value="East">East</option>
+          <option value="South">South</option>
+          <option value="West">West</option>
+          <option value="Northeast">Northeast</option>
+          <option value="Southeast">Southeast</option>
+          <option value="Southwest">Southwest</option>
+          <option value="Northwest">Northwest</option>
+          <option value="North-northeast">North-northeast</option>
+          <option value="East-northeast">East-northeast</option>
+          <option value="East-southeast">East-southeast</option>
+          <option value="South-southeast">South-southeast</option>
+          <option value="South-southwest">South-southwest</option>
+          <option value="West-southwest">West-southwest</option>
+          <option value="West-northwest">West-northwest</option>
+          <option value="North-northwest">North-northwest</option>
         </select>
       </div>
     `,

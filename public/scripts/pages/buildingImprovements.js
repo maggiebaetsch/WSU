@@ -20,7 +20,13 @@ import {
   getWindowSizes,
 } from "../dataconnect-generated/esm/index.esm.js";
 
-const ENERGY_HEADERS = ["Cooling", "Heating", "Total", "Carbon", "Cost"];
+const ENERGY_HEADERS = [
+  "Cooling (kWh)",
+  "Heating (kWh)",
+  "Total Energy (kWh)",
+  "Carbon (tonCO2)",
+  "Cost ($)",
+];
 
 // Pick the right delete mutation for each improvement type.
 const DELETE_FUNCTIONS = {
@@ -41,9 +47,9 @@ const SECTION_CONFIGS = [
     itemKey: "insulationRoofs",
     energyKey: "roofResults",
     relationKey: "insulationRoof",
-    headers: ["ID", "Type", "Thickness", "R-Value"],
+    headers: ["Type", "Thickness", "R-Value"],
     getValues(item) {
-      return [item.id, item.type, item.thickness, item.rValue];
+      return [item.type, item.thickness, item.rValue];
     },
   },
   {
@@ -52,9 +58,9 @@ const SECTION_CONFIGS = [
     itemKey: "insulationWalls",
     energyKey: "wallResults",
     relationKey: "insulationWall",
-    headers: ["ID", "Type", "Thickness", "R-Value"],
+    headers: ["Type", "Thickness", "R-Value"],
     getValues(item) {
-      return [item.id, item.type, item.thickness, item.rValue];
+      return [item.type, item.thickness, item.rValue];
     },
   },
   {
@@ -63,9 +69,9 @@ const SECTION_CONFIGS = [
     itemKey: "windowSizes",
     energyKey: "windowSizeResults",
     relationKey: "windowSize",
-    headers: ["ID", "Area"],
+    headers: ["Area (m²)"],
     getValues(item) {
-      return [item.id, item.area];
+      return [item.area];
     },
   },
   {
@@ -74,9 +80,9 @@ const SECTION_CONFIGS = [
     itemKey: "windowGlazings",
     energyKey: "windowGlazingResults",
     relationKey: "windowGlazing",
-    headers: ["ID", "Type", "R-Value", "SHGC"],
+    headers: ["Type", "R-Value", "SHGC"],
     getValues(item) {
-      return [item.id, item.type, item.rValue, item.shgc];
+      return [item.type, item.rValue, item.shgc];
     },
   },
   {
@@ -85,9 +91,9 @@ const SECTION_CONFIGS = [
     itemKey: "orientations",
     energyKey: "orientationResults",
     relationKey: "orientation",
-    headers: ["ID", "Direction"],
+    headers: ["Direction"],
     getValues(item) {
-      return [item.id, item.direction];
+      return [item.direction];
     },
   },
   {
@@ -96,9 +102,9 @@ const SECTION_CONFIGS = [
     itemKey: "occupancies",
     energyKey: "occupancyResults",
     relationKey: "occupancy",
-    headers: ["ID", "Number Of People"],
+    headers: ["Number Of People"],
     getValues(item) {
-      return [item.id, item.numberOfPeople];
+      return [item.numberOfPeople];
     },
   },
   {
@@ -107,9 +113,9 @@ const SECTION_CONFIGS = [
     itemKey: "windowShadings",
     energyKey: "windowShadingResults",
     relationKey: "windowShading",
-    headers: ["ID", "Type", "External"],
+    headers: ["Type", "External"],
     getValues(item) {
-      return [item.id, item.type, item.isExternal ? "Yes" : "No"];
+      return [item.type, item.isExternal ? "Yes" : "No"];
     },
   },
 ];
@@ -162,6 +168,54 @@ function formatEnum(value) {
     .join(" ");
 }
 
+function parseSortableNumber(value) {
+  const normalized = String(value || "")
+    .replace(/,/g, "")
+    .trim();
+
+  if (!normalized || normalized === "-" || normalized === "-NULL-") {
+    return null;
+  }
+
+  const number = Number(normalized);
+  return Number.isFinite(number) ? number : null;
+}
+
+function compareSortValues(leftValue, rightValue) {
+  const leftNumber = parseSortableNumber(leftValue);
+  const rightNumber = parseSortableNumber(rightValue);
+
+  if (leftNumber != null && rightNumber != null) {
+    return leftNumber - rightNumber;
+  }
+
+  return String(leftValue || "").localeCompare(String(rightValue || ""), undefined, {
+    numeric: true,
+    sensitivity: "base",
+  });
+}
+
+function sortTableRows(tbody, columnIndex, direction) {
+  const rows = Array.from(tbody.rows);
+
+  rows.sort((leftRow, rightRow) => {
+    const leftValue = leftRow.cells[columnIndex]?.dataset.sortValue || "";
+    const rightValue = rightRow.cells[columnIndex]?.dataset.sortValue || "";
+    const comparison = compareSortValues(leftValue, rightValue);
+
+    if (comparison !== 0) {
+      return direction === "asc" ? comparison : -comparison;
+    }
+
+    return (
+      Number(leftRow.dataset.originalIndex) -
+      Number(rightRow.dataset.originalIndex)
+    );
+  });
+
+  tbody.replaceChildren(...rows);
+}
+
 function renderSection(container, title, headers, rows, createHref) {
   // Build one section card and table.
   const card = document.createElement("div");
@@ -174,14 +228,18 @@ function renderSection(container, title, headers, rows, createHref) {
   heading.textContent = title;
   header.appendChild(heading);
 
+  const headerActions = document.createElement("div");
+  headerActions.className = "section-header-actions";
+
   if (createHref) {
     const addLink = document.createElement("a");
     addLink.className = "button";
     addLink.href = createHref;
     addLink.textContent = "Add Improvement";
-    header.appendChild(addLink);
+    headerActions.appendChild(addLink);
   }
 
+  header.appendChild(headerActions);
   card.appendChild(header);
 
   // Show a simple message when a section has no saved rows yet.
@@ -202,17 +260,73 @@ function renderSection(container, title, headers, rows, createHref) {
   // Build the table header from the section config.
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-  for (const headerText of headers) {
+  const sortState = { columnIndex: null, direction: "asc" };
+  const sortButtons = [];
+  const isSortableHeader = (headerText) => headerText !== "Actions";
+  for (const [columnIndex, headerText] of headers.entries()) {
     const th = document.createElement("th");
-    th.textContent = headerText;
+    th.scope = "col";
+
+    if (isSortableHeader(headerText)) {
+      const sortButton = document.createElement("button");
+      const label = document.createElement("span");
+      const indicator = document.createElement("span");
+
+      sortButton.type = "button";
+      sortButton.className = "table-sort-button";
+  sortButton.dataset.direction = "none";
+  th.setAttribute("aria-sort", "none");
+      label.textContent = headerText;
+      indicator.className = "sort-indicator";
+      indicator.textContent = "-";
+      sortButton.append(label, indicator);
+      sortButton.addEventListener("click", () => {
+        const nextDirection =
+          sortState.columnIndex === columnIndex && sortState.direction === "asc"
+            ? "desc"
+            : "asc";
+
+        sortState.columnIndex = columnIndex;
+        sortState.direction = nextDirection;
+        sortTableRows(tbody, columnIndex, nextDirection);
+
+        sortButtons.forEach(({ button, column }) => {
+          const active = column === columnIndex;
+          button.dataset.direction = active ? nextDirection : "none";
+          button.closest("th")?.setAttribute(
+            "aria-sort",
+            active
+              ? nextDirection === "asc"
+                ? "ascending"
+                : "descending"
+              : "none",
+          );
+          button.setAttribute(
+            "aria-label",
+            active
+              ? `${headers[column]} sorted ${nextDirection === "asc" ? "ascending" : "descending"}`
+              : `Sort by ${headers[column]}`,
+          );
+        });
+      });
+
+      sortButton.setAttribute("aria-label", `Sort by ${headerText}`);
+      sortButtons.push({ button: sortButton, column: columnIndex });
+      th.appendChild(sortButton);
+    } else {
+      th.textContent = headerText;
+    }
+
     headerRow.appendChild(th);
   }
   thead.appendChild(headerRow);
 
   // Fill one table row for each saved improvement.
   const tbody = document.createElement("tbody");
-  for (const rowValues of rows) {
+  for (const [rowIndex, rowValues] of rows.entries()) {
     const row = document.createElement("tr");
+    row.dataset.originalIndex = String(rowIndex);
+
     for (const value of rowValues) {
       const td = document.createElement("td");
       if (value instanceof Node) {
@@ -220,10 +334,25 @@ function renderSection(container, title, headers, rows, createHref) {
       } else {
         td.textContent = formatValue(value);
       }
+      td.dataset.sortValue = td.textContent.trim();
       row.appendChild(td);
     }
     tbody.appendChild(row);
   }
+
+  const toggleButton = document.createElement("button");
+  toggleButton.type = "button";
+  toggleButton.className = "button section-toggle-button";
+  tableWrap.hidden = true;
+  toggleButton.textContent = "Show Table";
+  toggleButton.setAttribute("aria-expanded", "false");
+  toggleButton.addEventListener("click", () => {
+    const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+    tableWrap.hidden = isExpanded;
+    toggleButton.setAttribute("aria-expanded", String(!isExpanded));
+    toggleButton.textContent = isExpanded ? "Show Table" : "Hide Table";
+  });
+  headerActions.appendChild(toggleButton);
 
   table.append(thead, tbody);
   tableWrap.appendChild(table);
@@ -409,11 +538,14 @@ function createRows(
 function highlightLowestEnergyImprovement() {
   const tables = document.querySelectorAll(".improvement-section-table");
 
-  let lowestValue = Infinity;
-  let lowestRow = null;
+  document.querySelectorAll(".highlight-row").forEach((r) => {
+    r.classList.remove("highlight-row");
+  });
 
   tables.forEach((table) => {
     const rows = table.querySelectorAll("tbody tr");
+    let lowestValue = Infinity;
+    let lowestRow = null;
 
     rows.forEach((row) => {
       const cells = row.querySelectorAll("td");
@@ -428,26 +560,24 @@ function highlightLowestEnergyImprovement() {
         lowestRow = row;
       }
     });
+
+    if (lowestRow) {
+      lowestRow.classList.add("highlight-row");
+    }
   });
-
-  if (lowestRow) {
-    // Remove previous highlights
-    document.querySelectorAll(".highlight-row").forEach((r) => {
-      r.classList.remove("highlight-row");
-    });
-
-    lowestRow.classList.add("highlight-row");
-  }
 }
 
 function highlightLowestCarbonImprovement() {
   const tables = document.querySelectorAll(".improvement-section-table");
 
-  let lowestValue = Infinity;
-  let lowestRow = null;
+  document.querySelectorAll(".highlight-row").forEach((r) => {
+    r.classList.remove("highlight-row");
+  });
 
   tables.forEach((table) => {
     const rows = table.querySelectorAll("tbody tr");
+    let lowestValue = Infinity;
+    let lowestRow = null;
 
     rows.forEach((row) => {
       const cells = row.querySelectorAll("td");
@@ -459,25 +589,24 @@ function highlightLowestCarbonImprovement() {
         lowestRow = row;
       }
     });
+
+    if (lowestRow) {
+      lowestRow.classList.add("highlight-row");
+    }
   });
-
-  if (lowestRow) {
-    document.querySelectorAll(".highlight-row").forEach((r) => {
-      r.classList.remove("highlight-row");
-    });
-
-    lowestRow.classList.add("highlight-row");
-  }
 }
 
 function highlightLowestCostImprovement() {
   const tables = document.querySelectorAll(".improvement-section-table");
 
-  let lowestValue = Infinity;
-  let lowestRow = null;
+  document.querySelectorAll(".highlight-row").forEach((r) => {
+    r.classList.remove("highlight-row");
+  });
 
   tables.forEach((table) => {
     const rows = table.querySelectorAll("tbody tr");
+    let lowestValue = Infinity;
+    let lowestRow = null;
 
     rows.forEach((row) => {
       const cells = row.querySelectorAll("td");
@@ -489,16 +618,11 @@ function highlightLowestCostImprovement() {
         lowestRow = row;
       }
     });
+
+    if (lowestRow) {
+      lowestRow.classList.add("highlight-row");
+    }
   });
-
-  if (lowestRow) {
-    // Remove any previous highlight
-    document.querySelectorAll(".highlight-row").forEach((r) => {
-      r.classList.remove("highlight-row");
-    });
-
-    lowestRow.classList.add("highlight-row");
-  }
 }
 
 async function init() {
@@ -608,7 +732,6 @@ function renderParametersCard(list, building, buildingParameters) {
       <thead>
         <tr>
           <th>Building Name</th>
-          <th>Building Parameters ID</th>
           <th>Climate</th>
           <th>Floor Area</th>
           <th>Building Type</th>
@@ -619,7 +742,6 @@ function renderParametersCard(list, building, buildingParameters) {
       <tbody>
         <tr>
           <td>${formatValue(building.name || "Unnamed Building")}</td>
-          <td>${formatValue(buildingParameters.id)}</td>
           <td>${formatValue(formatEnum(buildingParameters.climate))}</td>
           <td>${formatValue(buildingParameters.floorArea)}</td>
           <td>${formatValue(formatEnum(buildingParameters.buildingType))}</td>

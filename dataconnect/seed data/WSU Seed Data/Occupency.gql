@@ -1,0 +1,367 @@
+mutation SeedOccupancyData @auth(level: PUBLIC) {
+	occ1: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 39
+	})
+	occ2: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 4
+	})
+	occ3: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 8
+	})
+	occ4: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 10
+	})
+	occ5: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 12
+	})
+	occ6: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 16
+	})
+	occ7: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 20
+	})
+	occ8: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 24
+	})
+	occ9: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 27
+	})
+	occ10: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 29
+	})
+
+	occ11: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 31
+	})
+	occ12: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 35
+	})
+	occ13: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 43
+	})
+	occ14: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 47
+	})
+	occ15: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 49
+	})
+	occ16: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 51
+	})
+	occ17: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000017"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 55
+	})
+	occ18: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000018"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 59
+	})
+	occ19: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000019"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 62
+	})
+	occ20: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000020"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 66
+	})
+
+	occ21: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000021"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 68
+	})
+	occ22: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000022"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 70
+	})
+	occ23: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000023"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 74
+	})
+	occ24: occupancy_insert(data: {
+		id: "45000000-0000-0000-0000-000000000024"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		numberOfPeople: 78
+	})
+
+	erOcc1: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000001"
+		occupancy: { id: "45000000-0000-0000-0000-000000000001" }
+		improvementType: "OCCUPANCY"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48471
+		cost: 0.0
+	})
+	erOcc2: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000002"
+		occupancy: { id: "45000000-0000-0000-0000-000000000002" }
+		improvementType: "OCCUPANCY"
+		heating: 5919.818473
+		cooling: 3602.661527
+		total: 38062.66
+		carbon: 26.26324
+		cost: 0.0
+	})
+	erOcc3: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000003"
+		occupancy: { id: "45000000-0000-0000-0000-000000000003" }
+		improvementType: "OCCUPANCY"
+		heating: 5850.485451
+		cooling: 3702.404549
+		total: 38093.07
+		carbon: 26.28422
+		cost: 0.0
+	})
+	erOcc4: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000004"
+		occupancy: { id: "45000000-0000-0000-0000-000000000004" }
+		improvementType: "OCCUPANCY"
+		heating: 5815.916154
+		cooling: 3752.583846
+		total: 38108.68
+		carbon: 26.29499
+		cost: 0.0
+	})
+	erOcc5: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000005"
+		occupancy: { id: "45000000-0000-0000-0000-000000000005" }
+		improvementType: "OCCUPANCY"
+		heating: 5781.400559
+		cooling: 3803.899441
+		total: 38125.48
+		carbon: 26.30658
+		cost: 0.0
+	})
+	erOcc6: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000006"
+		occupancy: { id: "45000000-0000-0000-0000-000000000006" }
+		improvementType: "OCCUPANCY"
+		heating: 5712.776579
+		cooling: 3905.733421
+		total: 38158.68
+		carbon: 26.32949
+		cost: 0.0
+	})
+	erOcc7: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000007"
+		occupancy: { id: "45000000-0000-0000-0000-000000000007" }
+		improvementType: "OCCUPANCY"
+		heating: 5644.786299
+		cooling: 4008.713701
+		total: 38193.68
+		carbon: 26.35364
+		cost: 0.0
+	})
+	erOcc8: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000008"
+		occupancy: { id: "45000000-0000-0000-0000-000000000008" }
+		improvementType: "OCCUPANCY"
+		heating: 5577.32693
+		cooling: 4113.69307
+		total: 38231.21
+		carbon: 26.37953
+		cost: 0.0
+	})
+	erOcc9: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000009"
+		occupancy: { id: "45000000-0000-0000-0000-000000000009" }
+		improvementType: "OCCUPANCY"
+		heating: 5527.274408
+		cooling: 4191.945592
+		total: 38259.4
+		carbon: 26.39899
+		cost: 0.0
+	})
+	erOcc10: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000010"
+		occupancy: { id: "45000000-0000-0000-0000-000000000010" }
+		improvementType: "OCCUPANCY"
+		heating: 5493.823507
+		cooling: 4245.746493
+		total: 38279.75
+		carbon: 26.41303
+		cost: 0.0
+	})
+
+	erOcc11: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000011"
+		occupancy: { id: "45000000-0000-0000-0000-000000000011" }
+		improvementType: "OCCUPANCY"
+		heating: 5460.656909
+		cooling: 4298.813091
+		total: 38299.65
+		carbon: 26.42676
+		cost: 0.0
+	})
+	erOcc12: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000012"
+		occupancy: { id: "45000000-0000-0000-0000-000000000012" }
+		improvementType: "OCCUPANCY"
+		heating: 5394.729688
+		cooling: 4405.960312
+		total: 38340.87
+		carbon: 26.4552
+		cost: 0.0
+	})
+	erOcc13: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000013"
+		occupancy: { id: "45000000-0000-0000-0000-000000000013" }
+		improvementType: "OCCUPANCY"
+		heating: 5264.938304
+		cooling: 4622.891696
+		total: 38428.01
+		carbon: 26.51533
+		cost: 0.0
+	})
+	erOcc14: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000014"
+		occupancy: { id: "45000000-0000-0000-0000-000000000014" }
+		improvementType: "OCCUPANCY"
+		heating: 5200.569837
+		cooling: 4732.720163
+		total: 38473.46
+		carbon: 26.54669
+		cost: 0.0
+	})
+	erOcc15: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000015"
+		occupancy: { id: "45000000-0000-0000-0000-000000000015" }
+		improvementType: "OCCUPANCY"
+		heating: 5168.538942
+		cooling: 4788.221058
+		total: 38496.93
+		carbon: 26.56288
+		cost: 0.0
+	})
+	erOcc16: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000016"
+		occupancy: { id: "45000000-0000-0000-0000-000000000016" }
+		improvementType: "OCCUPANCY"
+		heating: 5136.76298
+		cooling: 4843.67702
+		total: 38520.63
+		carbon: 26.57923
+		cost: 0.0
+	})
+	erOcc17: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000017"
+		occupancy: { id: "45000000-0000-0000-0000-000000000017" }
+		improvementType: "OCCUPANCY"
+		heating: 5073.891602
+		cooling: 4955.408398
+		total: 38569.48
+		carbon: 26.61294
+		cost: 0.0
+	})
+	erOcc18: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000018"
+		occupancy: { id: "45000000-0000-0000-0000-000000000018" }
+		improvementType: "OCCUPANCY"
+		heating: 5011.546064
+		cooling: 5068.113936
+		total: 38619.84
+		carbon: 26.64769
+		cost: 0.0
+	})
+	erOcc19: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000019"
+		occupancy: { id: "45000000-0000-0000-0000-000000000019" }
+		improvementType: "OCCUPANCY"
+		heating: 4964.939887
+		cooling: 5153.750113
+		total: 38658.87
+		carbon: 26.67462
+		cost: 0.0
+	})
+	erOcc20: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000020"
+		occupancy: { id: "45000000-0000-0000-0000-000000000020" }
+		improvementType: "OCCUPANCY"
+		heating: 4903.441693
+		cooling: 5267.908307
+		total: 38711.53
+		carbon: 26.71096
+		cost: 0.0
+	})
+
+	erOcc21: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000021"
+		occupancy: { id: "45000000-0000-0000-0000-000000000021" }
+		improvementType: "OCCUPANCY"
+		heating: 4873.006712
+		cooling: 5325.263288
+		total: 38738.46
+		carbon: 26.72954
+		cost: 0.0
+	})
+	erOcc22: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000022"
+		occupancy: { id: "45000000-0000-0000-0000-000000000022" }
+		improvementType: "OCCUPANCY"
+		heating: 4842.760089
+		cooling: 5382.809911
+		total: 38765.74
+		carbon: 26.74836
+		cost: 0.0
+	})
+	erOcc23: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000023"
+		occupancy: { id: "45000000-0000-0000-0000-000000000023" }
+		improvementType: "OCCUPANCY"
+		heating: 4782.750818
+		cooling: 5497.669182
+		total: 38820.6
+		carbon: 26.78621
+		cost: 0.0
+	})
+	erOcc24: energyResult_insert(data: {
+		id: "46000000-0000-0000-0000-000000000024"
+		occupancy: { id: "45000000-0000-0000-0000-000000000024" }
+		improvementType: "OCCUPANCY"
+		heating: 4722.980707
+		cooling: 5614.999293
+		total: 38878.16
+		carbon: 26.82593
+		cost: 0.0
+	})
+}

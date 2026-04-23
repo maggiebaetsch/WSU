@@ -1,0 +1,878 @@
+mutation SeedInsulationWallData @auth(level: PUBLIC) {
+	wall1: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "NoInsulation"
+		thickness: 0.0
+		rValue: 0.0
+	})
+	wall2: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 1.0
+		rValue: 1.4
+	})
+	wall3: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 1.0
+		rValue: 1.1
+	})
+	wall4: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 1.0
+		rValue: 1.3
+	})
+	wall5: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 1.0
+		rValue: 0.7
+	})
+	wall6: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 1.0
+		rValue: 2.3
+	})
+	wall7: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 1.0
+		rValue: 0.8
+	})
+	wall8: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 1.0
+		rValue: 1.3
+	})
+	wall9: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 1.0
+		rValue: 1.7
+	})
+	wall10: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 1.0
+		rValue: 0.8
+	})
+
+	wall11: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 1.0
+		rValue: 1.6
+	})
+	wall12: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 2.0
+		rValue: 2.7
+	})
+	wall13: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 2.0
+		rValue: 2.2
+	})
+	wall14: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 2.0
+		rValue: 2.6
+	})
+	wall15: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 2.0
+		rValue: 1.4
+	})
+	wall16: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 2.0
+		rValue: 4.6
+	})
+	wall17: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000017"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 2.0
+		rValue: 1.7
+	})
+	wall18: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000018"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 2.0
+		rValue: 2.5
+	})
+	wall19: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000019"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 2.0
+		rValue: 3.3
+	})
+	wall20: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000020"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 2.0
+		rValue: 1.6
+	})
+
+	wall21: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000021"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 2.0
+		rValue: 3.1
+	})
+	wall22: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000022"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 3.0
+		rValue: 4.1
+	})
+	wall23: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000023"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 3.0
+		rValue: 3.3
+	})
+	wall24: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000024"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 3.0
+		rValue: 3.9
+	})
+	wall25: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000025"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 3.0
+		rValue: 2.1
+	})
+	wall26: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000026"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 3.0
+		rValue: 6.8
+	})
+	wall27: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000027"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 3.0
+		rValue: 2.5
+	})
+	wall28: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000028"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 3.0
+		rValue: 3.8
+	})
+	wall29: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000029"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 3.0
+		rValue: 5.0
+	})
+	wall30: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000030"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 3.0
+		rValue: 2.4
+	})
+
+	wall31: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000031"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 3.0
+		rValue: 4.7
+	})
+	wall32: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000032"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 4.0
+		rValue: 5.4
+	})
+	wall33: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000033"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 4.0
+		rValue: 4.4
+	})
+	wall34: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000034"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 4.0
+		rValue: 5.1
+	})
+	wall35: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000035"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 4.0
+		rValue: 2.9
+	})
+	wall36: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000036"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 4.0
+		rValue: 9.1
+	})
+	wall37: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000037"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 4.0
+		rValue: 3.3
+	})
+	wall38: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000038"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 4.0
+		rValue: 5.0
+	})
+	wall39: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000039"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 4.0
+		rValue: 6.7
+	})
+	wall40: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000040"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 4.0
+		rValue: 3.2
+	})
+
+	wall41: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000041"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 4.0
+		rValue: 6.3
+	})
+	wall42: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000042"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 5.0
+		rValue: 6.8
+	})
+	wall43: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000043"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 5.0
+		rValue: 5.6
+	})
+	wall44: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000044"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 5.0
+		rValue: 6.4
+	})
+	wall45: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000045"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 5.0
+		rValue: 3.6
+	})
+	wall46: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000046"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 5.0
+		rValue: 11.4
+	})
+	wall47: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000047"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 5.0
+		rValue: 4.2
+	})
+	wall48: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000048"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 5.0
+		rValue: 6.3
+	})
+	wall49: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000049"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 5.0
+		rValue: 8.3
+	})
+	wall50: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000050"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 5.0
+		rValue: 4.0
+	})
+    wall51: insulationWall_insert(data: {
+		id: "43000000-0000-0000-0000-000000000051"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 5.0
+		rValue: 7.8
+	})
+
+	erWall1: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000001"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000001" }
+		improvementType: "INSULATION_WALL"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48471
+		cost: 0.0
+	})
+	erWall2: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000002"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000002" }
+		improvementType: "INSULATION_WALL"
+		heating: 5220.699769
+		cooling: 4440.110231
+		total: 38200.99
+		carbon: 26.35868
+		cost: 0.0
+	})
+	erWall3: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000003"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000003" }
+		improvementType: "INSULATION_WALL"
+		heating: 5228.218576
+		cooling: 4445.611424
+		total: 38214.01
+		carbon: 26.36767
+		cost: 0.0
+	})
+	erWall4: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000004"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000004" }
+		improvementType: "INSULATION_WALL"
+		heating: 5222.701983
+		cooling: 4441.438017
+		total: 38204.32
+		carbon: 26.36098
+		cost: 0.0
+	})
+	erWall5: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000005"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000005" }
+		improvementType: "INSULATION_WALL"
+		heating: 5246.970185
+		cooling: 4460.139815
+		total: 38247.29
+		carbon: 26.39063
+		cost: 0.0
+	})
+	erWall6: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000006"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000006" }
+		improvementType: "INSULATION_WALL"
+		heating: 5222.06686
+		cooling: 4376.92314
+		total: 38139.17
+		carbon: 26.31603
+		cost: 0.0
+	})
+	erWall7: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000007"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000007" }
+		improvementType: "INSULATION_WALL"
+		heating: 5239.788956
+		cooling: 4455.101044
+		total: 38235.07
+		carbon: 26.3822
+		cost: 0.0
+	})
+	erWall8: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000008"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000008" }
+		improvementType: "INSULATION_WALL"
+		heating: 5224.765289
+		cooling: 4439.724711
+		total: 38204.68
+		carbon: 26.36123
+		cost: 0.0
+	})
+	erWall9: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000009"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000009" }
+		improvementType: "INSULATION_WALL"
+		heating: 5213.28409
+		cooling: 4432.79591
+		total: 38186.25
+		carbon: 26.34851
+		cost: 0.0
+	})
+	erWall10: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000010"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000010" }
+		improvementType: "INSULATION_WALL"
+		heating: 5241.32024
+		cooling: 4457.53976
+		total: 38239.04
+		carbon: 26.38494
+		cost: 0.0
+	})
+
+	erWall11: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000011"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000011" }
+		improvementType: "INSULATION_WALL"
+		heating: 5215.380315
+		cooling: 4434.879685
+		total: 38190.45
+		carbon: 26.35141
+		cost: 0.0
+	})
+	erWall12: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000012"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000012" }
+		improvementType: "INSULATION_WALL"
+		heating: 5198.103671
+		cooling: 4419.146329
+		total: 38157.43
+		carbon: 26.32863
+		cost: 0.0
+	})
+	erWall13: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000013"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000013" }
+		improvementType: "INSULATION_WALL"
+		heating: 5204.297729
+		cooling: 4423.202271
+		total: 38167.68
+		carbon: 26.3357
+		cost: 0.0
+	})
+	erWall14: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000014"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000014" }
+		improvementType: "INSULATION_WALL"
+		heating: 5199.716707
+		cooling: 4420.173293
+		total: 38160.07
+		carbon: 26.33045
+		cost: 0.0
+	})
+	erWall15: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000015"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000015" }
+		improvementType: "INSULATION_WALL"
+		heating: 5222.092911
+		cooling: 4433.017089
+		total: 38195.29
+		carbon: 26.35475
+		cost: 0.0
+	})
+	erWall16: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000016"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000016" }
+		improvementType: "INSULATION_WALL"
+		heating: 5201.179449
+		cooling: 4360.410551
+		total: 38101.77
+		carbon: 26.29022
+		cost: 0.0
+	})
+	erWall17: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000017"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000017" }
+		improvementType: "INSULATION_WALL"
+		heating: 5214.110039
+		cooling: 4431.009961
+		total: 38185.3
+		carbon: 26.34786
+		cost: 0.0
+	})
+	erWall18: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000018"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000018" }
+		improvementType: "INSULATION_WALL"
+		heating: 5202.905701
+		cooling: 4415.874299
+		total: 38158.96
+		carbon: 26.32968
+		cost: 0.0
+	})
+	erWall19: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000019"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000019" }
+		improvementType: "INSULATION_WALL"
+		heating: 5193.70582
+		cooling: 4411.47418
+		total: 38145.36
+		carbon: 26.3203
+		cost: 0.0
+	})
+	erWall20: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000020"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000020" }
+		improvementType: "INSULATION_WALL"
+		heating: 5214.950625
+		cooling: 4434.189375
+		total: 38189.31
+		carbon: 26.35062
+		cost: 0.0
+	})
+
+	erWall21: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000021"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000021" }
+		improvementType: "INSULATION_WALL"
+		heating: 5194.083657
+		cooling: 4415.206343
+		total: 38149.46
+		carbon: 26.32313
+		cost: 0.0
+	})
+	erWall22: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000022"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000022" }
+		improvementType: "INSULATION_WALL"
+		heating: 5188.325371
+		cooling: 4409.134629
+		total: 38137.64
+		carbon: 26.31497
+		cost: 0.0
+	})
+	erWall23: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000023"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000023" }
+		improvementType: "INSULATION_WALL"
+		heating: 5193.823068
+		cooling: 4411.116932
+		total: 38145.12
+		carbon: 26.32013
+		cost: 0.0
+	})
+	erWall24: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000024"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000024" }
+		improvementType: "INSULATION_WALL"
+		heating: 5189.032743
+		cooling: 4410.787257
+		total: 38140.0
+		carbon: 26.3166
+		cost: 0.0
+	})
+	erWall25: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000025"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000025" }
+		improvementType: "INSULATION_WALL"
+		heating: 5209.369012
+		cooling: 4417.190988
+		total: 38166.74
+		carbon: 26.33505
+		cost: 0.0
+	})
+	erWall26: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000026"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000026" }
+		improvementType: "INSULATION_WALL"
+		heating: 5192.372677
+		cooling: 4353.417323
+		total: 38085.97
+		carbon: 26.27932
+		cost: 0.0
+	})
+	erWall27: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000027"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000027" }
+		improvementType: "INSULATION_WALL"
+		heating: 5201.643685
+		cooling: 4417.956315
+		total: 38159.78
+		carbon: 26.33025
+		cost: 0.0
+	})
+	erWall28: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000028"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000028" }
+		improvementType: "INSULATION_WALL"
+		heating: 5193.878802
+		cooling: 4404.311198
+		total: 38138.36
+		carbon: 26.31547
+		cost: 0.0
+	})
+	erWall29: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000029"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000029" }
+		improvementType: "INSULATION_WALL"
+		heating: 5185.418846
+		cooling: 4402.001154
+		total: 38127.6
+		carbon: 26.30804
+		cost: 0.0
+	})
+	erWall30: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000030"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000030" }
+		improvementType: "INSULATION_WALL"
+		heating: 5201.836187
+		cooling: 4422.123813
+		total: 38164.13
+		carbon: 26.33325
+		cost: 0.0
+	})
+
+	erWall31: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000031"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000031" }
+		improvementType: "INSULATION_WALL"
+		heating: 5185.943684
+		cooling: 4404.546316
+		total: 38130.68
+		carbon: 26.31017
+		cost: 0.0
+	})
+	erWall32: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000032"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000032" }
+		improvementType: "INSULATION_WALL"
+		heating: 5182.663669
+		cooling: 4402.956331
+		total: 38125.8
+		carbon: 26.3068
+		cost: 0.0
+	})
+	erWall33: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000033"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000033" }
+		improvementType: "INSULATION_WALL"
+		heating: 5187.818578
+		cooling: 4404.791422
+		total: 38132.8
+		carbon: 26.31163
+		cost: 0.0
+	})
+	erWall34: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000034"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000034" }
+		improvementType: "INSULATION_WALL"
+		heating: 5184.482283
+		cooling: 4402.197717
+		total: 38126.86
+		carbon: 26.30753
+		cost: 0.0
+	})
+	erWall35: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000035"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000035" }
+		improvementType: "INSULATION_WALL"
+		heating: 5201.350432
+		cooling: 4406.819568
+		total: 38148.35
+		carbon: 26.32236
+		cost: 0.0
+	})
+	erWall36: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000036"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000036" }
+		improvementType: "INSULATION_WALL"
+		heating: 5188.06887
+		cooling: 4349.181113
+		total: 38077.43
+		carbon: 26.27343
+		cost: 0.0
+	})
+	erWall37: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000037"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000037" }
+		improvementType: "INSULATION_WALL"
+		heating: 5194.826843
+		cooling: 4409.373157
+		total: 38144.38
+		carbon: 26.31962
+		cost: 0.0
+	})
+	erWall38: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000038"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000038" }
+		improvementType: "INSULATION_WALL"
+		heating: 5187.856873
+		cooling: 4397.123127
+		total: 38125.16
+		carbon: 26.30636
+		cost: 0.0
+	})
+	erWall39: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000039"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000039" }
+		improvementType: "INSULATION_WALL"
+		heating: 5180.912402
+		cooling: 4397.137598
+		total: 38118.23
+		carbon: 26.30158
+		cost: 0.0
+	})
+	erWall40: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000040"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000040" }
+		improvementType: "INSULATION_WALL"
+		heating: 5194.21283
+		cooling: 4413.91717
+		total: 38148.31
+		carbon: 26.32233
+		cost: 0.0
+	})
+
+	erWall41: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000041"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000041" }
+		improvementType: "INSULATION_WALL"
+		heating: 5181.627949
+		cooling: 4398.512051
+		total: 38120.33
+		carbon: 26.30303
+		cost: 0.0
+	})
+	erWall42: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000042"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000042" }
+		improvementType: "INSULATION_WALL"
+		heating: 5179.823459
+		cooling: 4398.166541
+		total: 38118.17
+		carbon: 26.30154
+		cost: 0.0
+	})
+	erWall43: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000043"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000043" }
+		improvementType: "INSULATION_WALL"
+		heating: 5183.942545
+		cooling: 4399.577455
+		total: 38123.7
+		carbon: 26.30535
+		cost: 0.0
+	})
+	erWall44: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000044"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000044" }
+		improvementType: "INSULATION_WALL"
+		heating: 5181.159353
+		cooling: 4398.500647
+		total: 38119.83
+		carbon: 26.30268
+		cost: 0.0
+	})
+	erWall45: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000045"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000045" }
+		improvementType: "INSULATION_WALL"
+		heating: 5195.296628
+		cooling: 4398.733372
+		total: 38134.21
+		carbon: 26.3126
+		cost: 0.0
+	})
+	erWall46: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000046"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000046" }
+		improvementType: "INSULATION_WALL"
+		heating: 5183.97257
+		cooling: 4346.53743
+		total: 38070.69
+		carbon: 26.26878
+		cost: 0.0
+	})
+	erWall47: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000047"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000047" }
+		improvementType: "INSULATION_WALL"
+		heating: 5190.15814
+		cooling: 4404.09186
+		total: 38134.43
+		carbon: 26.31276
+		cost: 0.0
+	})
+	erWall48: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000048"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000048" }
+		improvementType: "INSULATION_WALL"
+		heating: 5183.407307
+		cooling: 4391.322693
+		total: 38114.91
+		carbon: 26.29929
+		cost: 0.0
+	})
+	erWall49: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000049"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000049" }
+		improvementType: "INSULATION_WALL"
+		heating: 5178.256058
+		cooling: 4393.893942
+		total: 38112.33
+		carbon: 26.29751
+		cost: 0.0
+	})
+	erWall50: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000050"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000050" }
+		improvementType: "INSULATION_WALL"
+		heating: 5188.938852
+		cooling: 4409.291148
+		total: 38138.4
+		carbon: 26.3155
+		cost: 0.0
+	})
+    erWall51: energyResult_insert(data: {
+		id: "44000000-0000-0000-0000-000000000051"
+		insulationWall: { id: "43000000-0000-0000-0000-000000000051" }
+		improvementType: "INSULATION_WALL"
+		heating: 5178.743114
+		cooling: 4395.186886
+		total: 38114.11
+		carbon: 26.2987359
+		cost: 0.0
+	})
+}

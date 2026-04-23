@@ -12,6 +12,50 @@
       <p>View all buildings in the system.</p>
     </header>
     <div class="container">
+      <div class="card">
+        <div class="button-group building-filters">
+          <div class="form-group filter-field">
+            <label for="building-search">Search Buildings</label>
+            <input
+              type="search"
+              id="building-search"
+              placeholder="Search by building name"
+            />
+          </div>
+          <div class="form-group filter-field filter-scope">
+            <label for="climate-filter">Climate</label>
+            <select id="climate-filter">
+              <option value="">All Climates</option>
+            </select>
+          </div>
+          <div class="form-group filter-field filter-scope">
+            <label for="floor-area-filter">Floor Area (m²)</label>
+            <select id="floor-area-filter">
+              <option value="">All Floor Areas</option>
+            </select>
+          </div>
+          <div class="form-group filter-field filter-scope">
+            <label for="building-type-filter">Building Type</label>
+            <select id="building-type-filter">
+              <option value="">All Building Types</option>
+            </select>
+          </div>
+          <div class="form-group filter-field filter-scope">
+            <label for="envelope-filter">Envelope</label>
+            <select id="envelope-filter">
+              <option value="">All Envelopes</option>
+            </select>
+          </div>
+          <div class="form-group filter-field filter-scope">
+            <label for="air-conditioned-filter">Air Conditioned</label>
+            <select id="air-conditioned-filter">
+              <option value="">Any</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div id="buildings-list">
         <p>Loading buildings...</p>
       </div>

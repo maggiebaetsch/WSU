@@ -1,0 +1,878 @@
+mutation SeedInsulationRoofData @auth(level: PUBLIC) {
+	roof1: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "NoInsulation"
+		thickness: 0.0
+		rValue: 0.0
+	})
+	roof2: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 1.0
+		rValue: 1.4
+	})
+	roof3: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 1.0
+		rValue: 1.1
+	})
+	roof4: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 1.0
+		rValue: 1.3
+	})
+	roof5: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 1.0
+		rValue: 0.7
+	})
+	roof6: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 1.0
+		rValue: 2.3
+	})
+	roof7: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 1.0
+		rValue: 0.8
+	})
+	roof8: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 1.0
+		rValue: 1.3
+	})
+	roof9: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 1.0
+		rValue: 1.7
+	})
+	roof10: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 1.0
+		rValue: 0.8
+	})
+
+	roof11: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 1.0
+		rValue: 1.6
+	})
+	roof12: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 2.0
+		rValue: 2.7
+	})
+	roof13: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 2.0
+		rValue: 2.2
+	})
+	roof14: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 2.0
+		rValue: 2.6
+	})
+	roof15: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 2.0
+		rValue: 1.4
+	})
+	roof16: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 2.0
+		rValue: 4.6
+	})
+	roof17: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000017"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 2.0
+		rValue: 1.7
+	})
+	roof18: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000018"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 2.0
+		rValue: 2.5
+	})
+	roof19: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000019"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 2.0
+		rValue: 3.3
+	})
+	roof20: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000020"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 2.0
+		rValue: 1.6
+	})
+
+	roof21: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000021"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 2.0
+		rValue: 3.1
+	})
+	roof22: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000022"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 3.0
+		rValue: 4.1
+	})
+	roof23: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000023"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 3.0
+		rValue: 3.3
+	})
+	roof24: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000024"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 3.0
+		rValue: 3.9
+	})
+	roof25: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000025"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 3.0
+		rValue: 2.1
+	})
+	roof26: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000026"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 3.0
+		rValue: 6.8
+	})
+	roof27: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000027"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 3.0
+		rValue: 2.5
+	})
+	roof28: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000028"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 3.0
+		rValue: 3.8
+	})
+	roof29: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000029"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 3.0
+		rValue: 5.0
+	})
+	roof30: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000030"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 3.0
+		rValue: 2.4
+	})
+
+	roof31: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000031"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 3.0
+		rValue: 4.7
+	})
+	roof32: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000032"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 4.0
+		rValue: 5.4
+	})
+	roof33: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000033"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 4.0
+		rValue: 4.4
+	})
+	roof34: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000034"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 4.0
+		rValue: 5.1
+	})
+	roof35: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000035"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 4.0
+		rValue: 2.9
+	})
+	roof36: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000036"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 4.0
+		rValue: 9.1
+	})
+	roof37: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000037"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 4.0
+		rValue: 3.3
+	})
+	roof38: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000038"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 4.0
+		rValue: 5.0
+	})
+	roof39: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000039"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 4.0
+		rValue: 6.7
+	})
+	roof40: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000040"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 4.0
+		rValue: 3.2
+	})
+
+	roof41: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000041"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 4.0
+		rValue: 6.3
+	})
+	roof42: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000042"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "XPS"
+		thickness: 5.0
+		rValue: 6.8
+	})
+	roof43: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000043"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Rockwool"
+		thickness: 5.0
+		rValue: 5.6
+	})
+	roof44: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000044"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Sheepwool"
+		thickness: 5.0
+		rValue: 6.4
+	})
+	roof45: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000045"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cork"
+		thickness: 5.0
+		rValue: 3.6
+	})
+	roof46: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000046"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cladding"
+		thickness: 5.0
+		rValue: 11.4
+	})
+	roof47: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000047"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "WoodChips"
+		thickness: 5.0
+		rValue: 4.2
+	})
+	roof48: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000048"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Cellulose"
+		thickness: 5.0
+		rValue: 6.3
+	})
+	roof49: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000049"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SprayFoam"
+		thickness: 5.0
+		rValue: 8.3
+	})
+	roof50: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000050"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "PET"
+		thickness: 5.0
+		rValue: 4.0
+	})
+    roof51: insulationRoof_insert(data: {
+		id: "41000000-0000-0000-0000-000000000051"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Glasswool"
+		thickness: 5.0
+		rValue: 7.8
+	})
+
+	erRoof1: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000001"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000001" }
+		improvementType: "INSULATION_ROOF"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48
+		cost: 0.0
+	})
+	erRoof2: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000002"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000002" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3396.39133
+		cooling: 4641.70867
+		total: 36578.28
+		carbon: 25.24
+		cost: 0.0
+	})
+	erRoof3: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000003"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000003" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3472.890626
+		cooling: 4632.669374
+		total: 36645.75
+		carbon: 25.29
+		cost: 0.0
+	})
+	erRoof4: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000004"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000004" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3416.095963
+		cooling: 4639.354037
+		total: 36595.63
+		carbon: 25.25
+		cost: 0.0
+	})
+	erRoof5: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000005"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000005" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3703.787808
+		cooling: 4562.072192
+		total: 36806.04
+		carbon: 25.40
+		cost: 0.0
+	})
+	erRoof6: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000006"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000006" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3488.885565
+		cooling: 4340.564435
+		total: 36369.63
+		carbon: 25.10
+		cost: 0.0
+	})
+	erRoof7: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000007"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000007" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3599.521929
+		cooling: 4619.408071
+		total: 36759.11
+		carbon: 25.36
+		cost: 0.0
+	})
+	erRoof8: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000008"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000008" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3456.755608
+		cooling: 4588.434392
+		total: 36585.37
+		carbon: 25.24
+		cost: 0.0
+	})
+	erRoof9: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000009"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000009" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3335.901631
+		cooling: 4634.918369
+		total: 36510.99
+		carbon: 25.19
+		cost: 0.0
+	})
+	erRoof10: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000010"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000010" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3609.862302
+		cooling: 4635.657698
+		total: 36785.71
+		carbon: 25.38
+		cost: 0.0
+	})
+
+	erRoof11: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000011"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000011" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3352.457172
+		cooling: 4637.542828
+		total: 36530.18
+		carbon: 25.21
+		cost: 0.0
+	})
+	erRoof12: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000012"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000012" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3211.620164
+		cooling: 4641.679836
+		total: 36393.49
+		carbon: 25.11
+		cost: 0.0
+	})
+	erRoof13: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000013"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000013" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3263.297864
+		cooling: 4627.592136
+		total: 36431.07
+		carbon: 25.14
+		cost: 0.0
+	})
+	erRoof14: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000014"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000014" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3224.794798
+		cooling: 4638.635202
+		total: 36403.62
+		carbon: 25.12
+		cost: 0.0
+	})
+	erRoof15: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000015"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000015" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3449.449647
+		cooling: 4528.560353
+		total: 36518.19
+		carbon: 25.20
+		cost: 0.0
+	})
+	erRoof16: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000016"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000016" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3348.867097
+		cooling: 4333.952903
+		total: 36223.0
+		carbon: 24.99
+		cost: 0.0
+	})
+	erRoof17: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000017"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000017" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3351.758003
+		cooling: 4608.051997
+		total: 36500.0
+		carbon: 25.19
+		cost: 0.0
+	})
+	erRoof18: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000018"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000018" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3274.284915
+		cooling: 4561.155085
+		total: 36375.62
+		carbon: 25.10
+		cost: 0.0
+	})
+	erRoof19: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000019"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000019" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3180.861827
+		cooling: 4626.648173
+		total: 36347.69
+		carbon: 25.08
+		cost: 0.0
+	})
+	erRoof20: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000020"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000020" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3344.513063
+		cooling: 4642.156937
+		total: 36526.85
+		carbon: 25.20
+		cost: 0.0
+	})
+
+	erRoof21: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000021"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000021" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3189.227998
+		cooling: 4632.452002
+		total: 36361.86
+		carbon: 25.09
+		cost: 0.0
+	})
+	erRoof22: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000022"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000022" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3142.276386
+		cooling: 4641.033614
+		total: 36323.49
+		carbon: 25.06
+		cost: 0.0
+	})
+	erRoof23: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000023"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000023" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3183.987666
+		cooling: 4618.292334
+		total: 36342.46
+		carbon: 25.08
+		cost: 0.0
+	})
+	erRoof24: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000024"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000024" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3152.726732
+		cooling: 4635.213268
+		total: 36328.12
+		carbon: 25.07
+		cost: 0.0
+	})
+	erRoof25: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000025"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000025" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3341.615127
+		cooling: 4525.464873
+		total: 36407.25
+		carbon: 25.12
+		cost: 0.0
+	})
+	erRoof26: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000026"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000026" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3297.485596
+		cooling: 4333.164404
+		total: 36170.83
+		carbon: 24.96
+		cost: 0.0
+	})
+	erRoof27: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000027"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000027" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3253.623819
+		cooling: 4593.206181
+		total: 36387.01
+		carbon: 25.11
+		cost: 0.0
+	})
+	erRoof28: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000028"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000028" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3202.185966
+		cooling: 4561.514034
+		total: 36303.87
+		carbon: 25.05
+		cost: 0.0
+	})
+	erRoof29: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000029"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000029" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3123.807988
+		cooling: 4617.682012
+		total: 36281.67
+		carbon: 25.03
+		cost: 0.0
+	})
+	erRoof30: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000030"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000030" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3238.002273
+		cooling: 4641.987727
+		total: 36420.18
+		carbon: 25.13
+		cost: 0.0
+	})
+
+	erRoof31: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000031"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000031" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3128.595049
+		cooling: 4626.494951
+		total: 36295.27
+		carbon: 25.04
+		cost: 0.0
+	})
+	erRoof32: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000032"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000032" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3105.394925
+		cooling: 4638.975075
+		total: 36284.55
+		carbon: 25.04
+		cost: 0.0
+	})
+	erRoof33: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000033"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000033" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3142.760178
+		cooling: 4612.219822
+		total: 36295.15
+		carbon: 25.04
+		cost: 0.0
+	})
+	erRoof34: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000034"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000034" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3115.167367
+		cooling: 4631.442633
+		total: 36286.78
+		carbon: 25.04
+		cost: 0.0
+	})
+	erRoof35: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000035"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000035" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3287.838628
+		cooling: 4524.391372
+		total: 36352.41
+		carbon: 25.08
+		cost: 0.0
+	})
+	erRoof36: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000036"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000036" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3275.417278
+		cooling: 4332.302722
+		total: 36147.89
+		carbon: 24.94
+		cost: 0.0
+	})
+	erRoof37: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000037"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000037" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3202.023371
+		cooling: 4585.236629
+		total: 36327.44
+		carbon: 25.07
+		cost: 0.0
+	})
+	erRoof38: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000038"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000038" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3171.751371
+		cooling: 4557.818629
+		total: 36269.74
+		carbon: 25.03
+		cost: 0.0
+	})
+	erRoof39: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000039"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000039" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3094.517347
+		cooling: 4612.972653
+		total: 36247.68
+		carbon: 25.01
+		cost: 0.0
+	})
+	erRoof40: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000040"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000040" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3180.988218
+		cooling: 4641.641782
+		total: 36362.8
+		carbon: 25.09
+		cost: 0.0
+	})
+
+	erRoof41: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000041"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000041" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3097.55427
+		cooling: 4620.16573
+		total: 36257.9
+		carbon: 25.02
+		cost: 0.0
+	})
+	erRoof42: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000042"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000042" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3082.388286
+		cooling: 4637.401714
+		total: 36259.97
+		carbon: 25.02
+		cost: 0.0
+	})
+	erRoof43: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000043"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000043" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3116.83277
+		cooling: 4608.02723
+		total: 36235.05
+		carbon: 25.00
+		cost: 0.0
+	})
+	erRoof44: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000044"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000044" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3091.602039
+		cooling: 4628.017961
+		total: 36259.8
+		carbon: 25.02
+		cost: 0.0
+	})
+	erRoof45: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000045"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000045" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3252.843802
+		cooling: 4517.656198
+		total: 36310.68
+		carbon: 25.05
+		cost: 0.0
+	})
+	erRoof46: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000046"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000046" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3258.991688
+		cooling: 4331.728312
+		total: 36130.91
+		carbon: 24.93
+		cost: 0.0
+	})
+	erRoof47: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000047"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000047" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3168.622872
+		cooling: 4582.677128
+		total: 36291.48
+		carbon: 25.04
+		cost: 0.0
+	})
+	erRoof48: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000048"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000048" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3150.921081
+		cooling: 4551.678919
+		total: 36242.78
+		carbon: 25.01
+		cost: 0.0
+	})
+	erRoof49: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000049"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000049" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3074.367048
+		cooling: 4612.192952
+		total: 36226.74
+		carbon: 25.00
+		cost: 0.0
+	})
+	erRoof50: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000050"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000050" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3144.737299
+		cooling: 4641.432701
+		total: 36326.35
+		carbon: 25.07
+		cost: 0.0
+	})
+    erRoof51: energyResult_insert(data: {
+		id: "42000000-0000-0000-0000-000000000051"
+		insulationRoof: { id: "41000000-0000-0000-0000-000000000051" }
+		improvementType: "INSULATION_ROOF"
+		heating: 3077.728839
+		cooling: 4618.361161
+		total: 36236.27
+		carbon: 25.00
+		cost: 0.0
+	})
+}

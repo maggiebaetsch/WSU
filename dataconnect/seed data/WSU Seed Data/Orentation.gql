@@ -1,0 +1,245 @@
+mutation SeedOrientationData @auth(level: PUBLIC) {
+	or1: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "South"
+	})
+	or2: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "East"
+	})
+	or3: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "West"
+	})
+	or4: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "North"
+	})
+	or5: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "Southeast"
+	})
+	or6: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "Southwest"
+	})
+	or7: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "Northeast"
+	})
+	or8: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "Northwest"
+	})
+	or9: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "North-northwest"
+	})
+	or10: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "North-northeast"
+	})
+
+	or11: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "East-northeast"
+	})
+	or12: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "East-southeast"
+	})
+	or13: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "South-southeast"
+	})
+	or14: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "South-southwest"
+	})
+	or15: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "West-southwest"
+	})
+	or16: orientation_insert(data: {
+		id: "49000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		direction: "West-northwest"
+	})
+
+	erOr1: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000001"
+		orientation: { id: "49000000-0000-0000-0000-000000000001" }
+		improvementType: "ORIENTATION"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48471
+		cost: 0.0
+	})
+	erOr2: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000002"
+		orientation: { id: "49000000-0000-0000-0000-000000000002" }
+		improvementType: "ORIENTATION"
+		heating: 5693.742894
+		cooling: 4310.327106
+		total: 38544.26
+		carbon: 26.59554
+		cost: 0.0
+	})
+	erOr3: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000003"
+		orientation: { id: "49000000-0000-0000-0000-000000000003" }
+		improvementType: "ORIENTATION"
+		heating: 5618.437724
+		cooling: 4310.182276
+		total: 38468.8
+		carbon: 26.54347
+		cost: 0.0
+	})
+	erOr4: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000004"
+		orientation: { id: "49000000-0000-0000-0000-000000000004" }
+		improvementType: "ORIENTATION"
+		heating: 6016.44655
+		cooling: 3856.49345
+		total: 38413.12
+		carbon: 26.50505
+		cost: 0.0
+	})
+	erOr5: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000005"
+		orientation: { id: "49000000-0000-0000-0000-000000000005" }
+		improvementType: "ORIENTATION"
+		heating: 5390.175475
+		cooling: 4616.184525
+		total: 38546.54
+		carbon: 26.59711
+		cost: 0.0
+	})
+	erOr6: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000006"
+		orientation: { id: "49000000-0000-0000-0000-000000000006" }
+		improvementType: "ORIENTATION"
+		heating: 5425.986249
+		cooling: 4445.743751
+		total: 38411.91
+		carbon: 26.50422
+		cost: 0.0
+	})
+	erOr7: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000007"
+		orientation: { id: "49000000-0000-0000-0000-000000000007" }
+		improvementType: "ORIENTATION"
+		heating: 5904.98295
+		cooling: 3959.10705
+		total: 38404.28
+		carbon: 26.49895
+		cost: 0.0
+	})
+	erOr8: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000008"
+		orientation: { id: "49000000-0000-0000-0000-000000000008" }
+		improvementType: "ORIENTATION"
+		heating: 5915.082234
+		cooling: 4094.457766
+		total: 38549.72
+		carbon: 26.59931
+		cost: 0.0
+	})
+	erOr9: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000009"
+		orientation: { id: "49000000-0000-0000-0000-000000000009" }
+		improvementType: "ORIENTATION"
+		heating: 6007.534218
+		cooling: 3909.885782
+		total: 38457.6
+		carbon: 26.53574
+		cost: 0.0
+	})
+	erOr10: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000010"
+		orientation: { id: "49000000-0000-0000-0000-000000000010" }
+		improvementType: "ORIENTATION"
+		heating: 5983.993179
+		cooling: 3902.886821
+		total: 38427.08
+		carbon: 26.51469
+		cost: 0.0
+	})
+
+	erOr11: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000011"
+		orientation: { id: "49000000-0000-0000-0000-000000000011" }
+		improvementType: "ORIENTATION"
+		heating: 5797.628181
+		cooling: 4068.471819
+		total: 38406.28
+		carbon: 26.50033
+		cost: 0.0
+	})
+	erOr12: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000012"
+		orientation: { id: "49000000-0000-0000-0000-000000000012" }
+		improvementType: "ORIENTATION"
+		heating: 5558.087407
+		cooling: 4531.112593
+		total: 38629.38
+		carbon: 26.65427
+		cost: 0.0
+	})
+	erOr13: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000013"
+		orientation: { id: "49000000-0000-0000-0000-000000000013" }
+		improvementType: "ORIENTATION"
+		heating: 5296.491263
+		cooling: 4591.678737
+		total: 38428.35
+		carbon: 26.51556
+		cost: 0.0
+	})
+	erOr14: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000014"
+		orientation: { id: "49000000-0000-0000-0000-000000000014" }
+		improvementType: "ORIENTATION"
+		heating: 5353.859453
+		cooling: 4497.460547
+		total: 38391.51
+		carbon: 26.49014
+		cost: 0.0
+	})
+	erOr15: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000015"
+		orientation: { id: "49000000-0000-0000-0000-000000000015" }
+		improvementType: "ORIENTATION"
+		heating: 5497.911374
+		cooling: 4327.228626
+		total: 38365.32
+		carbon: 26.47207
+		cost: 0.0
+	})
+	erOr16: energyResult_insert(data: {
+		id: "4a000000-0000-0000-0000-000000000016"
+		orientation: { id: "49000000-0000-0000-0000-000000000016" }
+		improvementType: "ORIENTATION"
+		heating: 5771.822229
+		cooling: 4278.607771
+		total: 38590.6
+		carbon: 26.62751
+		cost: 0.0
+	})
+}
