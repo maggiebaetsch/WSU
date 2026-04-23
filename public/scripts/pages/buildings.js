@@ -17,11 +17,11 @@ import {
 const EMPTY_MESSAGE = "No buildings found.";
 const FILTER_EMPTY_MESSAGE = "No buildings match the current search or filter.";
 const FLOOR_AREA_RANGES = [
-  { label: "0-100 m²", min: 0, max: 100 },
-  { label: "101-250 m²", min: 101, max: 250 },
-  { label: "251-500 m²", min: 251, max: 500 },
-  { label: "501-1000 m²", min: 501, max: 1000 },
-  { label: "1000+ m²", min: 1001, max: Infinity },
+  { label: "0-100 m²", min: 0, max: 1000 },
+  { label: "1001-2500 m²", min: 1001, max: 2500 },
+  { label: "2501-5000 m²", min: 2501, max: 5000 },
+  { label: "5001-10000 m²", min: 5001, max: 10000 },
+  { label: "10000+ m²", min: 10001, max: Infinity },
 ];
 const FILTER_CONFIGS = [
   {
