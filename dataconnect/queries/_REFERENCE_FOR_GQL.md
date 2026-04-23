@@ -4,7 +4,7 @@ This file shows practical examples for the operations in this folder.
 
 ## Useful Test IDs
 
-These IDs match your seed data and are good for testing:
+These IDs match the seed data and are good for testing:
 
 - Building ID: 11111111-1111-1111-1111-111111111111
 - BuildingParameters ID: aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1

@@ -49,7 +49,7 @@ EnergyResult is one shared table with optional links to each improvement type.
 
 1. `npm install`
 2. `npm install -g firebase-tools`
-3. `firebase login`
+3. `firebase login` Must have permission for Firebase
 
 If login is blocked in the terminal, use the Firebase console:
 https://console.firebase.google.com/u/1/project/building-energy-analysis/hosting/sites/building-energy-analysis
@@ -58,8 +58,8 @@ https://console.firebase.google.com/u/1/project/building-energy-analysis/hosting
 
 1. Update schema or GraphQL operations under `dataconnect/`
 2. Regenerate the source Data Connect client if needed
-3. Run `npm run sync:dataconnect-browser`
-4. Run `npm run deploy:dataconnect` for backend changes
+3. Run `npm run deploy:dataconnect` for backend changes
+4. Run `npm run sync:dataconnect-browser` This takes the files generated in src/dataconnect-generated/esm and copies them into the pubilc files. (Needed for when any changes are made to dataconnect only)
 5. Run `npm run deploy:hosting` for browser changes
 
 
