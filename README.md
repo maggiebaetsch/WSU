@@ -1,4 +1,6 @@
-# WSU
+# WSU Building Energy Analysis
+
+Web app for capturing building parameters, managing improvement options, and storing linked energy results using Firebase Data Connect.
 
 Project Console: https://console.firebase.google.com/project/building-energy-analysis/overview
 
@@ -25,7 +27,7 @@ Building
 │       └── EnergyResult (0..1 per row)
 ```
 
-EnergyResult is one shared table with optional links to each improvement type.
+EnergyResult is a shared table with optional foreign key links to each improvement type.
 
 ## Current Structure
 
@@ -45,11 +47,17 @@ EnergyResult is one shared table with optional links to each improvement type.
 - `building-improvements.html`: list all improvements for one building and show linked energy results
 - `add-improvement.html`: create or edit one improvement record and its energy result
 
-## Setup
+## Prerequisites
 
-1. `npm install`
-2. `npm install -g firebase-tools`
-3. `firebase login` Must have permission for Firebase
+- Node.js and npm
+- Firebase CLI
+- Firebase project access permissions
+
+Install Firebase CLI globally if needed:
+
+```bash
+npm install -g firebase-tools
+```
 
 If login is blocked in the terminal, use the Firebase console:
 https://console.firebase.google.com/u/1/project/building-energy-analysis/hosting/sites/building-energy-analysis
