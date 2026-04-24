@@ -20,6 +20,11 @@ import {
   getWindowSizes,
 } from "../dataconnect-generated/esm/index.esm.js";
 
+// Building improvements page controller.
+// Responsibilities:
+// 1) Load building parameters + all improvement categories.
+// 2) Render one table section per category.
+// 3) Support edit/delete actions and highlight helpers.
 const ENERGY_HEADERS = [
   "Cooling (kWh)",
   "Heating (kWh)",
@@ -196,6 +201,7 @@ function compareSortValues(leftValue, rightValue) {
 }
 
 function sortTableRows(tbody, columnIndex, direction) {
+  // Sort currently rendered rows in place and preserve original order as tie-breaker.
   const rows = Array.from(tbody.rows);
 
   rows.sort((leftRow, rightRow) => {
@@ -260,6 +266,7 @@ function renderSection(container, title, headers, rows, createHref) {
   // Build the table header from the section config.
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
+  // Keep sort state per section table instance.
   const sortState = { columnIndex: null, direction: "asc" };
   const sortButtons = [];
   const isSortableHeader = (headerText) => headerText !== "Actions";
@@ -281,6 +288,7 @@ function renderSection(container, title, headers, rows, createHref) {
       indicator.textContent = "-";
       sortButton.append(label, indicator);
       sortButton.addEventListener("click", () => {
+        // Toggle asc/desc when clicking same column; otherwise start ascending.
         const nextDirection =
           sortState.columnIndex === columnIndex && sortState.direction === "asc"
             ? "desc"
@@ -498,7 +506,8 @@ function createRows(
   buildingParametersId,
   improvementData,
 ) {
-  // Match each improvement with its linked energy result.
+  // Match each improvement row with linked energy result records for display
+  // and deletion (energy rows are deleted before improvement rows).
   const energyMap = buildEnergyResultMap(
     improvementData[section.energyKey],
     section.relationKey,
@@ -536,6 +545,7 @@ function createRows(
 }
 
 function highlightLowestEnergyImprovement() {
+  // In each section, highlight the row with the lowest cooling+heating sum.
   const tables = document.querySelectorAll(".improvement-section-table");
 
   document.querySelectorAll(".highlight-row").forEach((r) => {
@@ -568,6 +578,7 @@ function highlightLowestEnergyImprovement() {
 }
 
 function highlightLowestCarbonImprovement() {
+  // In each section, highlight the row with the minimum carbon value.
   const tables = document.querySelectorAll(".improvement-section-table");
 
   document.querySelectorAll(".highlight-row").forEach((r) => {
@@ -597,6 +608,7 @@ function highlightLowestCarbonImprovement() {
 }
 
 function highlightLowestCostImprovement() {
+  // In each section, highlight the row with the minimum cost value.
   const tables = document.querySelectorAll(".improvement-section-table");
 
   document.querySelectorAll(".highlight-row").forEach((r) => {
@@ -663,7 +675,7 @@ async function init() {
       return;
     }
 
-    // Clear the page before rebuilding it.
+    // Clear loading state and rebuild everything from fresh data.
     title.textContent = "Building Improvements";
     subtitle.textContent = `Viewing improvement records for ${building.name || "this building"}.`;
     list.replaceChildren();
@@ -696,6 +708,7 @@ async function init() {
         rows,
         `addImprovement.html?buildingId=${encodeURIComponent(buildingId)}&buildingParametersId=${encodeURIComponent(buildingParametersId || "")}&kind=${section.kind}`,
       );
+      // Wire highlight actions after section render so tables are present in DOM.
       document
         .getElementById("highlight-lowest-btn")
         .addEventListener("click", highlightLowestEnergyImprovement);

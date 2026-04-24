@@ -8,6 +8,11 @@ import {
   updateBuildingParameters,
 } from "../dataconnect-generated/esm/index.esm.js";
 
+// Building parameters page controller.
+// Supports both create and update flows for:
+// - the parent building record (name)
+// - the linked buildingParameters record (climate/type/envelope/etc.)
+
 // Form option labels need to be converted to the enum values stored in Data Connect.
 const FORM_VALUE_MAPS = {
   climate: {
@@ -50,6 +55,7 @@ function reverseMap(map) {
 
 // Read the current form values and convert them to stored enum values.
 function getFormValues(formData) {
+  // Convert user-facing labels to backend enum values before persistence.
   return {
     name: formData.get("buildingName"),
     climate: FORM_VALUE_MAPS.climate[formData.get("climate")],
@@ -81,6 +87,7 @@ function fillForm(building, buildingParameters) {
 
 // Create a building if needed, or update the existing one.
 async function saveBuilding(buildingId, name) {
+  // Upsert-like helper for parent row. Returns the active building id.
   if (buildingId) {
     await updateBuilding(dc, { id: buildingId, name });
     return buildingId;
@@ -121,7 +128,9 @@ async function init() {
   let existingBuildingId = buildingIdFromUrl;
   let existingBuildingParametersId = null;
 
-  // If a building id exists in the URL, switch the page into update mode.
+  // URL decides mode:
+  // - create mode: no building id
+  // - update mode: existing building id loaded and prefilled
   if (buildingIdFromUrl) {
     pageTitle.textContent = "Update Building Parameters";
     pageSubtitle.textContent = "Review the saved values, make your changes, and submit the update.";
@@ -144,7 +153,8 @@ async function init() {
     const values = getFormValues(formData);
 
     try {
-      // Save the building first, then save its parameter record.
+      // Save parent first (building), then child (buildingParameters).
+      // Child row depends on `buildingId` as foreign key.
       const buildingId = await saveBuilding(existingBuildingId, values.name);
       const buildingParametersId = await saveBuildingParameters(
         buildingId,

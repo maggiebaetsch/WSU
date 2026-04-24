@@ -34,9 +34,16 @@ import {
   updateWindowSize,
 } from "../dataconnect-generated/esm/index.esm.js";
 
+// Add/Edit improvement page controller.
+// This script drives a dynamic form where URL param `kind` selects the
+// improvement schema, create/update mutation set, and energy linkage behavior.
 const ENERGY_FIELDS = ["cooling", "heating", "total", "carbon", "cost"];
 
-// Each improvement type defines its fields and the matching Data Connect actions.
+// Each improvement kind declares:
+// - static UI labels and dynamic form fields,
+// - query keys used to load existing rows,
+// - create/update/assign-energy mutations,
+// - mappers between form values and API payloads.
 const configByKind = {
   roof: {
     // Static page text and query keys for roof records.
@@ -505,6 +512,7 @@ async function loadEditData(config, buildingParametersId, itemId) {
 
 // Pick the correct query for the selected improvement type.
 function getItemsByKind(itemKey, buildingParametersId) {
+  // Dispatch to the correct query function based on selected section.
   const loaders = {
     insulationRoofs: getInsulationRoofs,
     insulationWalls: getInsulationWalls,
@@ -555,12 +563,12 @@ async function init() {
     return;
   }
 
-  // Insert the fields for the selected improvement type.
+  // Build the dynamic portion of the form from selected kind config.
   dynamicFields.innerHTML = config.fields;
   backLink.href = `buildingImprovements.html?buildingId=${encodeURIComponent(buildingId)}${buildingParametersIdFromUrl ? `&buildingParametersId=${encodeURIComponent(buildingParametersIdFromUrl)}` : ""}`;
 
   try {
-    // Load the building and its parameter record together.
+    // Load building context first; improvements cannot exist without parameters.
     const [detailsResponse, parametersResponse] = await Promise.all([
       getFullBuildingDetails(dc, { buildingId }),
       getAllBuildingParameters(dc),
@@ -575,6 +583,7 @@ async function init() {
     const buildingParametersId = buildingParameters?.id;
 
     // Stop early if the building cannot accept improvements yet.
+    // Improvement rows require a `buildingParametersId` foreign key.
     if (!building || !buildingParametersId) {
       form.innerHTML = `
         <div class="card">
@@ -621,7 +630,8 @@ async function init() {
       const formData = new FormData(form);
       try {
         if (isEditMode) {
-          // Update the improvement first, then update or attach its energy result.
+          // Keep data integrity by updating the improvement record first,
+          // then update existing energy row or create/attach a new one.
           await config.update(config.buildUpdateVars(formData, itemId));
 
           // Reuse the linked energy row when it already exists.
@@ -635,7 +645,7 @@ async function init() {
             await config.assignEnergy(config.buildAssignEnergyVars(formData, itemId));
           }
         } else {
-          // Create both the improvement and its energy result in one call.
+          // Create both the improvement and its first energy result together.
           await config.create(config.buildVars(formData, buildingParametersId));
         }
 

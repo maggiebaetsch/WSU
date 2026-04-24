@@ -14,6 +14,11 @@ import {
   getFullBuildingDetails,
 } from "../dataconnect-generated/esm/index.esm.js";
 
+// Buildings page controller.
+// Responsibilities:
+// 1) Load buildings + parameter records.
+// 2) Build searchable/filterable card list.
+// 3) Handle full cascade delete for a building and linked child rows.
 const EMPTY_MESSAGE = "No buildings found.";
 const FILTER_EMPTY_MESSAGE = "No buildings match the current search or filter.";
 const FLOOR_AREA_RANGES = [
@@ -24,6 +29,8 @@ const FLOOR_AREA_RANGES = [
   { label: "10000+ m²", min: 10001, max: Infinity },
 ];
 const FILTER_CONFIGS = [
+  // Each filter defines how to read a value from `buildingParameters`,
+  // how to label it in the UI, and how to sort available options.
   {
     elementId: "climate-filter",
     defaultLabel: "All Climates",
@@ -98,7 +105,8 @@ const FILTER_CONFIGS = [
   },
 ];
 
-// This maps each improvement list in the query result to its delete mutation.
+// Map each child collection key from `getFullBuildingDetails` to its delete mutation.
+// Deleting children first keeps referential integrity before deleting parent rows.
 const DELETE_GROUPS = [
   ["insulationRoofs", deleteInsulationRoof],
   ["insulationWalls", deleteInsulationWall],
@@ -121,7 +129,7 @@ function formatEnum(value) {
 }
 
 async function init() {
-  // Container saved building cards.
+  // Cache key page elements once and reuse throughout render cycles.
   const container = document.getElementById("buildings-list");
   const searchInput = document.getElementById("building-search");
   const filterElements = Object.fromEntries(
@@ -153,6 +161,7 @@ async function init() {
     }
 
     const render = () => {
+      // Repopulate filters from current records first so deletes are reflected.
       populateFilterOptions(buildingRecords, filterElements);
 
       const searchTerm = searchInput?.value || "";
@@ -163,6 +172,8 @@ async function init() {
         getFilteredBuildingRecords(buildingRecords, searchTerm, filters),
         hasActiveFilters(searchTerm, filters),
         async (buildingId) => {
+          // Delete from backend, then remove from local in-memory collection,
+          // then rerender to keep UI consistent without a full reload.
           await deleteBuildingRecord(buildingId);
 
           const recordIndex = buildingRecords.findIndex(
@@ -191,6 +202,7 @@ async function init() {
 }
 
 function renderBuildingsList(container, buildingRecords, hasActiveSearch, onDelete) {
+  // Replace all rows each render; simple and predictable for small/medium lists.
   container.replaceChildren();
 
   if (!buildingRecords.length) {
@@ -222,6 +234,7 @@ function hasActiveFilters(searchTerm, filters) {
 }
 
 function getActiveFilters(filterElements) {
+  // Normalize missing elements to empty string so filter logic is stable.
   return Object.fromEntries(
     FILTER_CONFIGS.map((config) => [config.elementId, filterElements[config.elementId]?.value || ""])
   );
@@ -255,6 +268,7 @@ function populateFilterOptions(buildingRecords, filterElements) {
       continue;
     }
 
+    // Keep the user's current selection if it still exists after refresh.
     const previousValue = element.value;
     const values = config.getOptions
       ? config.getOptions(buildingRecords)
