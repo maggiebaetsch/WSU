@@ -70,6 +70,7 @@ type WindowGlazing @table {
   energyResult: EnergyResult
 
   type: String!
+  orientation: String
   rValue: Float!
   shgc: Float!
 }

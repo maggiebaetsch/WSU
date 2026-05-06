@@ -145,6 +145,7 @@ mutation SeedData @auth(level: PUBLIC) {
     id: "b4444444-4444-4444-4444-444444444441"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
     type: "Double Pane"
+    orientation: "North"
     rValue: 2.0
     shgc: 0.65
   })
@@ -152,6 +153,7 @@ mutation SeedData @auth(level: PUBLIC) {
     id: "b4444444-4444-4444-4444-444444444442"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
     type: "Triple Pane"
+    orientation: "East"
     rValue: 3.2
     shgc: 0.45
   })
@@ -159,6 +161,7 @@ mutation SeedData @auth(level: PUBLIC) {
     id: "b4444444-4444-4444-4444-444444444443"
     buildingParameters: { id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1" }
     type: "Low-E"
+    orientation: "South"
     rValue: 2.5
     shgc: 0.38
   })

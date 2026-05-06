@@ -88,6 +88,7 @@ mutation CreateWindowGlazingWithEnergyResult(
   $id: UUID!,
   $buildingParametersId: UUID!,
   $type: String!,
+  $orientation: String!,
   $rValue: Float!,
   $shgc: Float!,
   $cooling: Float!,
@@ -100,6 +101,7 @@ mutation CreateWindowGlazingWithEnergyResult(
     id: $id
     buildingParameters: { id: $buildingParametersId }
     type: $type
+    orientation: $orientation
     rValue: $rValue
     shgc: $shgc
   })

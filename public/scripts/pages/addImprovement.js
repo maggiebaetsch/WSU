@@ -71,7 +71,7 @@ const configByKind = {
         </select>
       </div>
       <div class="form-group">
-        <label for="thickness">Thickness</label>
+        <label for="thickness">Thickness (mm)</label>
         <input type="number" id="thickness" name="thickness" step="1" min="0" required />
       </div>
       <div class="form-group">
@@ -137,7 +137,7 @@ const configByKind = {
         </select>
       </div>
       <div class="form-group">
-        <label for="thickness">Thickness</label>
+        <label for="thickness">Thickness (mm)</label>
         <input type="number" id="thickness" name="thickness" step="1" min="0" required />
       </div>
       <div class="form-group">
@@ -239,6 +239,10 @@ const configByKind = {
         </select>
       </div>
       <div class="form-group">
+        <label for="orientation">Orientation</label>
+        <input type="text" id="orientation" name="orientation" required />
+      </div>
+      <div class="form-group">
         <label for="rValue">R-Value</label>
         <input type="number" id="rValue" name="rValue" step="0.01" min="0" required />
       </div>
@@ -256,6 +260,7 @@ const configByKind = {
         id: crypto.randomUUID(),
         buildingParametersId,
         type: formData.get("type"),
+        orientation: formData.get("orientation"),
         rValue: parseFloat(formData.get("rValue")),
         shgc: parseFloat(formData.get("shgc")),
         ...getEnergyValues(formData),
@@ -265,6 +270,7 @@ const configByKind = {
       return {
         id: itemId,
         type: formData.get("type"),
+        orientation: formData.get("orientation"),
         rValue: parseFloat(formData.get("rValue")),
         shgc: parseFloat(formData.get("shgc")),
       };
@@ -275,6 +281,7 @@ const configByKind = {
     // Fill the form with values from the saved glazing record.
     populateItem(item) {
       setFieldValue("type", item.type);
+      setFieldValue("orientation", item.orientation || "");
       setFieldValue("rValue", item.rValue);
       setFieldValue("shgc", item.shgc);
     },

@@ -140,20 +140,31 @@ async function init() {
   }
 
   try {
-    // Load buildings and parameter records together.
-    const [buildingsRes, paramsRes] = await Promise.all([
+    // Load buildings first and treat parameter records as optional enhancement so
+    // one secondary query cannot blank the whole page.
+    const [buildingsResult, paramsResult] = await Promise.allSettled([
       getAllBuildings(dc),
       getAllBuildingParameters(dc),
     ]);
 
-    const buildings = buildingsRes?.data?.buildings ?? [];
-    const parametersByBuildingId = buildParametersMap(
-      paramsRes?.data?.buildingParameterss ?? []
-    );
+    if (buildingsResult.status !== "fulfilled") {
+      throw buildingsResult.reason;
+    }
+
+    const buildings = buildingsResult.value?.data?.buildings ?? [];
+    const buildingParameters =
+      paramsResult.status === "fulfilled"
+        ? paramsResult.value?.data?.buildingParameterss ?? []
+        : [];
+    const parametersByBuildingId = buildParametersMap(buildingParameters);
     const buildingRecords = buildings.map((building) => ({
       building,
       buildingParameters: parametersByBuildingId.get(building.id),
     }));
+
+    if (paramsResult.status !== "fulfilled") {
+      console.error("Failed to load building parameters", paramsResult.reason);
+    }
 
     if (buildingRecords.length === 0) {
       container.textContent = EMPTY_MESSAGE;
@@ -161,7 +172,6 @@ async function init() {
     }
 
     const render = () => {
-      // Repopulate filters from current records first so deletes are reflected.
       populateFilterOptions(buildingRecords, filterElements);
 
       const searchTerm = searchInput?.value || "";
@@ -172,8 +182,6 @@ async function init() {
         getFilteredBuildingRecords(buildingRecords, searchTerm, filters),
         hasActiveFilters(searchTerm, filters),
         async (buildingId) => {
-          // Delete from backend, then remove from local in-memory collection,
-          // then rerender to keep UI consistent without a full reload.
           await deleteBuildingRecord(buildingId);
 
           const recordIndex = buildingRecords.findIndex(
@@ -194,7 +202,6 @@ async function init() {
       element?.addEventListener("change", render);
     });
 
-    // Clear the loading text before adding cards.
     render();
   } catch (error) {
     container.innerHTML = `<p>Error loading buildings: ${error.message}</p>`;
@@ -254,7 +261,11 @@ function matchesParameterFilters(buildingParameters, filters) {
 
 // Build a lookup from building id to its parameter record.
 function buildParametersMap(buildingParameters) {
-  return new Map(buildingParameters.map((item) => [item.building.id, item]));
+  return new Map(
+    buildingParameters
+      .filter((item) => item?.building?.id)
+      .map((item) => [item.building.id, item])
+  );
 }
 
 function getBuildingNameText(building) {

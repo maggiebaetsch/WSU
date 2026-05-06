@@ -61,12 +61,14 @@ mutation CreateWindowSize(
 mutation CreateWindowGlazing(
   $buildingParametersId: UUID!,
   $type: String!,
+  $orientation: String!,
   $rValue: Float!,
   $shgc: Float!
 ) @auth(level: PUBLIC) {
   windowGlazing_insert(data: {
     buildingParameters: { id: $buildingParametersId }
     type: $type
+    orientation: $orientation
     rValue: $rValue
     shgc: $shgc
   })

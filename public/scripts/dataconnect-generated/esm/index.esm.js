@@ -1,4 +1,4 @@
-import { queryRef, executeQuery, validateArgsWithOptions, mutationRef, executeMutation, validateArgs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-data-connect.js";
+import { queryRef, executeQuery, validateArgsWithOptions, mutationRef, executeMutation, validateArgs } from 'firebase/data-connect';
 
 export const BuildingType = {
   RESIDENTIAL: "RESIDENTIAL",
@@ -31,45 +31,6 @@ export const connectorConfig = {
   service: 'wsu',
   location: 'us-east4'
 };
-export const getEnergyResultByIdRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultById', inputVars);
-}
-getEnergyResultByIdRef.operationName = 'GetEnergyResultById';
-
-export function getEnergyResultById(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultByIdRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-
-export const getEnergyResultsByBuildingParametersRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultsByBuildingParameters', inputVars);
-}
-getEnergyResultsByBuildingParametersRef.operationName = 'GetEnergyResultsByBuildingParameters';
-
-export function getEnergyResultsByBuildingParameters(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultsByBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-
-export const getEnergyResultsByBuildingRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultsByBuilding', inputVars);
-}
-getEnergyResultsByBuildingRef.operationName = 'GetEnergyResultsByBuilding';
-
-export function getEnergyResultsByBuilding(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultsByBuildingRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-
 export const getAllBuildingsRef = (dc) => {
   const { dc: dcInstance} = validateArgs(connectorConfig, dc, undefined);
   dcInstance._useGeneratedSdk();
@@ -727,5 +688,44 @@ deleteEnergyResultRef.operationName = 'DeleteEnergyResult';
 export function deleteEnergyResult(dcOrVars, vars) {
   const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
   return executeMutation(deleteEnergyResultRef(dcInstance, inputVars));
+}
+
+export const getEnergyResultByIdRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultById', inputVars);
+}
+getEnergyResultByIdRef.operationName = 'GetEnergyResultById';
+
+export function getEnergyResultById(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultByIdRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+
+export const getEnergyResultsByBuildingParametersRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuildingParameters', inputVars);
+}
+getEnergyResultsByBuildingParametersRef.operationName = 'GetEnergyResultsByBuildingParameters';
+
+export function getEnergyResultsByBuildingParameters(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+
+export const getEnergyResultsByBuildingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuilding', inputVars);
+}
+getEnergyResultsByBuildingRef.operationName = 'GetEnergyResultsByBuilding';
+
+export function getEnergyResultsByBuilding(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
 }
 

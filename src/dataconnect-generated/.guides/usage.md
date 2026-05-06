@@ -14,17 +14,8 @@ If a user is not using a supported framework, they can use the generated SDK dir
 Here's an example of how to use it with the first 5 operations:
 
 ```js
-import { getEnergyResultById, getEnergyResultsByBuildingParameters, getEnergyResultsByBuilding, getAllBuildings, getBuildingById, getAllBuildingParameters, getFullBuildingDetails, getWindowSizes, getInsulationRoofs, getInsulationWalls } from '@dataconnect/generated';
+import { getAllBuildings, getBuildingById, getAllBuildingParameters, getFullBuildingDetails, getWindowSizes, getInsulationRoofs, getInsulationWalls, getWindowGlazings, getOrientations, getOccupancies } from '@dataconnect/generated';
 
-
-// Operation GetEnergyResultById:  For variables, look at type GetEnergyResultByIdVars in ../index.d.ts
-const { data } = await GetEnergyResultById(dataConnect, getEnergyResultByIdVars);
-
-// Operation GetEnergyResultsByBuildingParameters:  For variables, look at type GetEnergyResultsByBuildingParametersVars in ../index.d.ts
-const { data } = await GetEnergyResultsByBuildingParameters(dataConnect, getEnergyResultsByBuildingParametersVars);
-
-// Operation GetEnergyResultsByBuilding:  For variables, look at type GetEnergyResultsByBuildingVars in ../index.d.ts
-const { data } = await GetEnergyResultsByBuilding(dataConnect, getEnergyResultsByBuildingVars);
 
 // Operation GetAllBuildings: 
 const { data } = await GetAllBuildings(dataConnect);
@@ -46,6 +37,15 @@ const { data } = await GetInsulationRoofs(dataConnect, getInsulationRoofsVars);
 
 // Operation GetInsulationWalls:  For variables, look at type GetInsulationWallsVars in ../index.d.ts
 const { data } = await GetInsulationWalls(dataConnect, getInsulationWallsVars);
+
+// Operation GetWindowGlazings:  For variables, look at type GetWindowGlazingsVars in ../index.d.ts
+const { data } = await GetWindowGlazings(dataConnect, getWindowGlazingsVars);
+
+// Operation GetOrientations:  For variables, look at type GetOrientationsVars in ../index.d.ts
+const { data } = await GetOrientations(dataConnect, getOrientationsVars);
+
+// Operation GetOccupancies:  For variables, look at type GetOccupanciesVars in ../index.d.ts
+const { data } = await GetOccupancies(dataConnect, getOccupanciesVars);
 
 
 ```

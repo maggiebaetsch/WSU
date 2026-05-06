@@ -48,6 +48,7 @@ query GetWindowGlazings($buildingParametersId: UUID!) @auth(level: PUBLIC) {
   windowGlazings(where: { buildingParameters: { id: { eq: $buildingParametersId } } }) {
     id
     type
+    orientation
     rValue
     shgc
     energyResult {

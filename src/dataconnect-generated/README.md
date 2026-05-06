@@ -8,9 +8,6 @@ This README will guide you through the process of using the generated JavaScript
 - [**Accessing the connector**](#accessing-the-connector)
   - [*Connecting to the local Emulator*](#connecting-to-the-local-emulator)
 - [**Queries**](#queries)
-  - [*GetEnergyResultById*](#getenergyresultbyid)
-  - [*GetEnergyResultsByBuildingParameters*](#getenergyresultsbybuildingparameters)
-  - [*GetEnergyResultsByBuilding*](#getenergyresultsbybuilding)
   - [*GetAllBuildings*](#getallbuildings)
   - [*GetBuildingById*](#getbuildingbyid)
   - [*GetAllBuildingParameters*](#getallbuildingparameters)
@@ -22,6 +19,9 @@ This README will guide you through the process of using the generated JavaScript
   - [*GetOrientations*](#getorientations)
   - [*GetOccupancies*](#getoccupancies)
   - [*GetWindowShadings*](#getwindowshadings)
+  - [*GetEnergyResultById*](#getenergyresultbyid)
+  - [*GetEnergyResultsByBuildingParameters*](#getenergyresultsbybuildingparameters)
+  - [*GetEnergyResultsByBuilding*](#getenergyresultsbybuilding)
 - [**Mutations**](#mutations)
   - [*UpdateBuilding*](#updatebuilding)
   - [*UpdateBuildingParameters*](#updatebuildingparameters)
@@ -111,534 +111,6 @@ The following is true for both the action shortcut function and the `QueryRef` f
 - Both functions can be called with or without passing in a `DataConnect` instance as an argument. If no `DataConnect` argument is passed in, then the generated SDK will call `getDataConnect(connectorConfig)` behind the scenes for you.
 
 Below are examples of how to use the `example` connector's generated functions to execute each query. You can also follow the examples from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#using-queries).
-
-## GetEnergyResultById
-You can execute the `GetEnergyResultById` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
-```typescript
-getEnergyResultById(vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-
-interface GetEnergyResultByIdRef {
-  ...
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-}
-export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
-```
-You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
-```typescript
-getEnergyResultById(dc: DataConnect, vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-
-interface GetEnergyResultByIdRef {
-  ...
-  (dc: DataConnect, vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-}
-export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
-```
-
-If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultByIdRef:
-```typescript
-const name = getEnergyResultByIdRef.operationName;
-console.log(name);
-```
-
-### Variables
-The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-
-```typescript
-export interface GetEnergyResultByIdVariables {
-  id: UUIDString;
-}
-```
-### Return Type
-Recall that executing the `GetEnergyResultById` query returns a `QueryPromise` that resolves to an object with a `data` property.
-
-The `data` property is an object of type `GetEnergyResultByIdData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-```typescript
-export interface GetEnergyResultByIdData {
-  energyResult?: {
-    id: UUIDString;
-    improvementType: string;
-    cooling: number;
-    heating: number;
-    total: number;
-    carbon: number;
-    cost: number;
-    insulationRoof?: {
-      id: UUIDString;
-    } & InsulationRoof_Key;
-      insulationWall?: {
-        id: UUIDString;
-      } & InsulationWall_Key;
-        windowSize?: {
-          id: UUIDString;
-        } & WindowSize_Key;
-          windowGlazing?: {
-            id: UUIDString;
-          } & WindowGlazing_Key;
-            orientation?: {
-              id: UUIDString;
-            } & Orientation_Key;
-              occupancy?: {
-                id: UUIDString;
-              } & Occupancy_Key;
-                windowShading?: {
-                  id: UUIDString;
-                } & WindowShading_Key;
-  } & EnergyResult_Key;
-}
-```
-### Using `GetEnergyResultById`'s action shortcut function
-
-```typescript
-import { getDataConnect } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultById, GetEnergyResultByIdVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`:
-const getEnergyResultByIdVars: GetEnergyResultByIdVariables = {
-  id: ..., 
-};
-
-// Call the `getEnergyResultById()` function to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await getEnergyResultById(getEnergyResultByIdVars);
-// Variables can be defined inline as well.
-const { data } = await getEnergyResultById({ id: ..., });
-
-// You can also pass in a `DataConnect` instance to the action shortcut function.
-const dataConnect = getDataConnect(connectorConfig);
-const { data } = await getEnergyResultById(dataConnect, getEnergyResultByIdVars);
-
-console.log(data.energyResult);
-
-// Or, you can use the `Promise` API.
-getEnergyResultById(getEnergyResultByIdVars).then((response) => {
-  const data = response.data;
-  console.log(data.energyResult);
-});
-```
-
-### Using `GetEnergyResultById`'s `QueryRef` function
-
-```typescript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultByIdRef, GetEnergyResultByIdVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`:
-const getEnergyResultByIdVars: GetEnergyResultByIdVariables = {
-  id: ..., 
-};
-
-// Call the `getEnergyResultByIdRef()` function to get a reference to the query.
-const ref = getEnergyResultByIdRef(getEnergyResultByIdVars);
-// Variables can be defined inline as well.
-const ref = getEnergyResultByIdRef({ id: ..., });
-
-// You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const dataConnect = getDataConnect(connectorConfig);
-const ref = getEnergyResultByIdRef(dataConnect, getEnergyResultByIdVars);
-
-// Call `executeQuery()` on the reference to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await executeQuery(ref);
-
-console.log(data.energyResult);
-
-// Or, you can use the `Promise` API.
-executeQuery(ref).then((response) => {
-  const data = response.data;
-  console.log(data.energyResult);
-});
-```
-
-## GetEnergyResultsByBuildingParameters
-You can execute the `GetEnergyResultsByBuildingParameters` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
-```typescript
-getEnergyResultsByBuildingParameters(vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-
-interface GetEnergyResultsByBuildingParametersRef {
-  ...
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-}
-export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
-```
-You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
-```typescript
-getEnergyResultsByBuildingParameters(dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-
-interface GetEnergyResultsByBuildingParametersRef {
-  ...
-  (dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-}
-export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
-```
-
-If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultsByBuildingParametersRef:
-```typescript
-const name = getEnergyResultsByBuildingParametersRef.operationName;
-console.log(name);
-```
-
-### Variables
-The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-
-```typescript
-export interface GetEnergyResultsByBuildingParametersVariables {
-  buildingParametersId: UUIDString;
-}
-```
-### Return Type
-Recall that executing the `GetEnergyResultsByBuildingParameters` query returns a `QueryPromise` that resolves to an object with a `data` property.
-
-The `data` property is an object of type `GetEnergyResultsByBuildingParametersData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-```typescript
-export interface GetEnergyResultsByBuildingParametersData {
-  roofResults: ({
-    id: UUIDString;
-    improvementType: string;
-    cooling: number;
-    heating: number;
-    total: number;
-    carbon: number;
-    cost: number;
-  } & EnergyResult_Key)[];
-    wallResults: ({
-      id: UUIDString;
-      improvementType: string;
-      cooling: number;
-      heating: number;
-      total: number;
-      carbon: number;
-      cost: number;
-    } & EnergyResult_Key)[];
-      windowSizeResults: ({
-        id: UUIDString;
-        improvementType: string;
-        cooling: number;
-        heating: number;
-        total: number;
-        carbon: number;
-        cost: number;
-      } & EnergyResult_Key)[];
-        windowGlazingResults: ({
-          id: UUIDString;
-          improvementType: string;
-          cooling: number;
-          heating: number;
-          total: number;
-          carbon: number;
-          cost: number;
-        } & EnergyResult_Key)[];
-          orientationResults: ({
-            id: UUIDString;
-            improvementType: string;
-            cooling: number;
-            heating: number;
-            total: number;
-            carbon: number;
-            cost: number;
-          } & EnergyResult_Key)[];
-            occupancyResults: ({
-              id: UUIDString;
-              improvementType: string;
-              cooling: number;
-              heating: number;
-              total: number;
-              carbon: number;
-              cost: number;
-            } & EnergyResult_Key)[];
-              windowShadingResults: ({
-                id: UUIDString;
-                improvementType: string;
-                cooling: number;
-                heating: number;
-                total: number;
-                carbon: number;
-                cost: number;
-              } & EnergyResult_Key)[];
-}
-```
-### Using `GetEnergyResultsByBuildingParameters`'s action shortcut function
-
-```typescript
-import { getDataConnect } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultsByBuildingParameters, GetEnergyResultsByBuildingParametersVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`:
-const getEnergyResultsByBuildingParametersVars: GetEnergyResultsByBuildingParametersVariables = {
-  buildingParametersId: ..., 
-};
-
-// Call the `getEnergyResultsByBuildingParameters()` function to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await getEnergyResultsByBuildingParameters(getEnergyResultsByBuildingParametersVars);
-// Variables can be defined inline as well.
-const { data } = await getEnergyResultsByBuildingParameters({ buildingParametersId: ..., });
-
-// You can also pass in a `DataConnect` instance to the action shortcut function.
-const dataConnect = getDataConnect(connectorConfig);
-const { data } = await getEnergyResultsByBuildingParameters(dataConnect, getEnergyResultsByBuildingParametersVars);
-
-console.log(data.roofResults);
-console.log(data.wallResults);
-console.log(data.windowSizeResults);
-console.log(data.windowGlazingResults);
-console.log(data.orientationResults);
-console.log(data.occupancyResults);
-console.log(data.windowShadingResults);
-
-// Or, you can use the `Promise` API.
-getEnergyResultsByBuildingParameters(getEnergyResultsByBuildingParametersVars).then((response) => {
-  const data = response.data;
-  console.log(data.roofResults);
-  console.log(data.wallResults);
-  console.log(data.windowSizeResults);
-  console.log(data.windowGlazingResults);
-  console.log(data.orientationResults);
-  console.log(data.occupancyResults);
-  console.log(data.windowShadingResults);
-});
-```
-
-### Using `GetEnergyResultsByBuildingParameters`'s `QueryRef` function
-
-```typescript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultsByBuildingParametersRef, GetEnergyResultsByBuildingParametersVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`:
-const getEnergyResultsByBuildingParametersVars: GetEnergyResultsByBuildingParametersVariables = {
-  buildingParametersId: ..., 
-};
-
-// Call the `getEnergyResultsByBuildingParametersRef()` function to get a reference to the query.
-const ref = getEnergyResultsByBuildingParametersRef(getEnergyResultsByBuildingParametersVars);
-// Variables can be defined inline as well.
-const ref = getEnergyResultsByBuildingParametersRef({ buildingParametersId: ..., });
-
-// You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const dataConnect = getDataConnect(connectorConfig);
-const ref = getEnergyResultsByBuildingParametersRef(dataConnect, getEnergyResultsByBuildingParametersVars);
-
-// Call `executeQuery()` on the reference to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await executeQuery(ref);
-
-console.log(data.roofResults);
-console.log(data.wallResults);
-console.log(data.windowSizeResults);
-console.log(data.windowGlazingResults);
-console.log(data.orientationResults);
-console.log(data.occupancyResults);
-console.log(data.windowShadingResults);
-
-// Or, you can use the `Promise` API.
-executeQuery(ref).then((response) => {
-  const data = response.data;
-  console.log(data.roofResults);
-  console.log(data.wallResults);
-  console.log(data.windowSizeResults);
-  console.log(data.windowGlazingResults);
-  console.log(data.orientationResults);
-  console.log(data.occupancyResults);
-  console.log(data.windowShadingResults);
-});
-```
-
-## GetEnergyResultsByBuilding
-You can execute the `GetEnergyResultsByBuilding` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
-```typescript
-getEnergyResultsByBuilding(vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-
-interface GetEnergyResultsByBuildingRef {
-  ...
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-}
-export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
-```
-You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
-```typescript
-getEnergyResultsByBuilding(dc: DataConnect, vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-
-interface GetEnergyResultsByBuildingRef {
-  ...
-  (dc: DataConnect, vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-}
-export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
-```
-
-If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultsByBuildingRef:
-```typescript
-const name = getEnergyResultsByBuildingRef.operationName;
-console.log(name);
-```
-
-### Variables
-The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-
-```typescript
-export interface GetEnergyResultsByBuildingVariables {
-  buildingId: UUIDString;
-}
-```
-### Return Type
-Recall that executing the `GetEnergyResultsByBuilding` query returns a `QueryPromise` that resolves to an object with a `data` property.
-
-The `data` property is an object of type `GetEnergyResultsByBuildingData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
-```typescript
-export interface GetEnergyResultsByBuildingData {
-  roofResults: ({
-    id: UUIDString;
-    improvementType: string;
-    cooling: number;
-    heating: number;
-    total: number;
-    carbon: number;
-    cost: number;
-  } & EnergyResult_Key)[];
-    wallResults: ({
-      id: UUIDString;
-      improvementType: string;
-      cooling: number;
-      heating: number;
-      total: number;
-      carbon: number;
-      cost: number;
-    } & EnergyResult_Key)[];
-      windowSizeResults: ({
-        id: UUIDString;
-        improvementType: string;
-        cooling: number;
-        heating: number;
-        total: number;
-        carbon: number;
-        cost: number;
-      } & EnergyResult_Key)[];
-        windowGlazingResults: ({
-          id: UUIDString;
-          improvementType: string;
-          cooling: number;
-          heating: number;
-          total: number;
-          carbon: number;
-          cost: number;
-        } & EnergyResult_Key)[];
-          orientationResults: ({
-            id: UUIDString;
-            improvementType: string;
-            cooling: number;
-            heating: number;
-            total: number;
-            carbon: number;
-            cost: number;
-          } & EnergyResult_Key)[];
-            occupancyResults: ({
-              id: UUIDString;
-              improvementType: string;
-              cooling: number;
-              heating: number;
-              total: number;
-              carbon: number;
-              cost: number;
-            } & EnergyResult_Key)[];
-              windowShadingResults: ({
-                id: UUIDString;
-                improvementType: string;
-                cooling: number;
-                heating: number;
-                total: number;
-                carbon: number;
-                cost: number;
-              } & EnergyResult_Key)[];
-}
-```
-### Using `GetEnergyResultsByBuilding`'s action shortcut function
-
-```typescript
-import { getDataConnect } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultsByBuilding, GetEnergyResultsByBuildingVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`:
-const getEnergyResultsByBuildingVars: GetEnergyResultsByBuildingVariables = {
-  buildingId: ..., 
-};
-
-// Call the `getEnergyResultsByBuilding()` function to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await getEnergyResultsByBuilding(getEnergyResultsByBuildingVars);
-// Variables can be defined inline as well.
-const { data } = await getEnergyResultsByBuilding({ buildingId: ..., });
-
-// You can also pass in a `DataConnect` instance to the action shortcut function.
-const dataConnect = getDataConnect(connectorConfig);
-const { data } = await getEnergyResultsByBuilding(dataConnect, getEnergyResultsByBuildingVars);
-
-console.log(data.roofResults);
-console.log(data.wallResults);
-console.log(data.windowSizeResults);
-console.log(data.windowGlazingResults);
-console.log(data.orientationResults);
-console.log(data.occupancyResults);
-console.log(data.windowShadingResults);
-
-// Or, you can use the `Promise` API.
-getEnergyResultsByBuilding(getEnergyResultsByBuildingVars).then((response) => {
-  const data = response.data;
-  console.log(data.roofResults);
-  console.log(data.wallResults);
-  console.log(data.windowSizeResults);
-  console.log(data.windowGlazingResults);
-  console.log(data.orientationResults);
-  console.log(data.occupancyResults);
-  console.log(data.windowShadingResults);
-});
-```
-
-### Using `GetEnergyResultsByBuilding`'s `QueryRef` function
-
-```typescript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
-import { connectorConfig, getEnergyResultsByBuildingRef, GetEnergyResultsByBuildingVariables } from '@dataconnect/generated';
-
-// The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`:
-const getEnergyResultsByBuildingVars: GetEnergyResultsByBuildingVariables = {
-  buildingId: ..., 
-};
-
-// Call the `getEnergyResultsByBuildingRef()` function to get a reference to the query.
-const ref = getEnergyResultsByBuildingRef(getEnergyResultsByBuildingVars);
-// Variables can be defined inline as well.
-const ref = getEnergyResultsByBuildingRef({ buildingId: ..., });
-
-// You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const dataConnect = getDataConnect(connectorConfig);
-const ref = getEnergyResultsByBuildingRef(dataConnect, getEnergyResultsByBuildingVars);
-
-// Call `executeQuery()` on the reference to execute the query.
-// You can use the `await` keyword to wait for the promise to resolve.
-const { data } = await executeQuery(ref);
-
-console.log(data.roofResults);
-console.log(data.wallResults);
-console.log(data.windowSizeResults);
-console.log(data.windowGlazingResults);
-console.log(data.orientationResults);
-console.log(data.occupancyResults);
-console.log(data.windowShadingResults);
-
-// Or, you can use the `Promise` API.
-executeQuery(ref).then((response) => {
-  const data = response.data;
-  console.log(data.roofResults);
-  console.log(data.wallResults);
-  console.log(data.windowSizeResults);
-  console.log(data.windowGlazingResults);
-  console.log(data.orientationResults);
-  console.log(data.occupancyResults);
-  console.log(data.windowShadingResults);
-});
-```
 
 ## GetAllBuildings
 You can execute the `GetAllBuildings` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
@@ -1051,6 +523,7 @@ export interface GetFullBuildingDetailsData {
           windowGlazings: ({
             id: UUIDString;
             type: string;
+            orientation?: string | null;
             rValue: number;
             shgc: number;
             energyResult?: {
@@ -1595,6 +1068,7 @@ export interface GetWindowGlazingsData {
   windowGlazings: ({
     id: UUIDString;
     type: string;
+    orientation?: string | null;
     rValue: number;
     shgc: number;
     energyResult?: {
@@ -2025,6 +1499,576 @@ console.log(data.windowShadings);
 executeQuery(ref).then((response) => {
   const data = response.data;
   console.log(data.windowShadings);
+});
+```
+
+## GetEnergyResultById
+You can execute the `GetEnergyResultById` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
+```typescript
+getEnergyResultById(vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+
+interface GetEnergyResultByIdRef {
+  ...
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+}
+export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
+```
+You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
+```typescript
+getEnergyResultById(dc: DataConnect, vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+
+interface GetEnergyResultByIdRef {
+  ...
+  (dc: DataConnect, vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+}
+export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
+```
+
+If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultByIdRef:
+```typescript
+const name = getEnergyResultByIdRef.operationName;
+console.log(name);
+```
+
+### Variables
+The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+
+```typescript
+export interface GetEnergyResultByIdVariables {
+  id: UUIDString;
+}
+```
+### Return Type
+Recall that executing the `GetEnergyResultById` query returns a `QueryPromise` that resolves to an object with a `data` property.
+
+The `data` property is an object of type `GetEnergyResultByIdData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+```typescript
+export interface GetEnergyResultByIdData {
+  energyResult?: {
+    id: UUIDString;
+    improvementType: string;
+    cooling: number;
+    heating: number;
+    total: number;
+    carbon: number;
+    cost: number;
+    insulationRoof?: {
+      id: UUIDString;
+    } & InsulationRoof_Key;
+      insulationWall?: {
+        id: UUIDString;
+      } & InsulationWall_Key;
+        windowSize?: {
+          id: UUIDString;
+        } & WindowSize_Key;
+          windowGlazing?: {
+            id: UUIDString;
+          } & WindowGlazing_Key;
+            orientation?: {
+              id: UUIDString;
+            } & Orientation_Key;
+              occupancy?: {
+                id: UUIDString;
+              } & Occupancy_Key;
+                windowShading?: {
+                  id: UUIDString;
+                } & WindowShading_Key;
+  } & EnergyResult_Key;
+}
+```
+### Using `GetEnergyResultById`'s action shortcut function
+
+```typescript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultById, GetEnergyResultByIdVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`:
+const getEnergyResultByIdVars: GetEnergyResultByIdVariables = {
+  id: ..., 
+};
+
+// Call the `getEnergyResultById()` function to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await getEnergyResultById(getEnergyResultByIdVars);
+// Variables can be defined inline as well.
+const { data } = await getEnergyResultById({ id: ..., });
+
+// You can also pass in a `DataConnect` instance to the action shortcut function.
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getEnergyResultById(dataConnect, getEnergyResultByIdVars);
+
+console.log(data.energyResult);
+
+// Or, you can use the `Promise` API.
+getEnergyResultById(getEnergyResultByIdVars).then((response) => {
+  const data = response.data;
+  console.log(data.energyResult);
+});
+```
+
+### Using `GetEnergyResultById`'s `QueryRef` function
+
+```typescript
+import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultByIdRef, GetEnergyResultByIdVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultById` query requires an argument of type `GetEnergyResultByIdVariables`:
+const getEnergyResultByIdVars: GetEnergyResultByIdVariables = {
+  id: ..., 
+};
+
+// Call the `getEnergyResultByIdRef()` function to get a reference to the query.
+const ref = getEnergyResultByIdRef(getEnergyResultByIdVars);
+// Variables can be defined inline as well.
+const ref = getEnergyResultByIdRef({ id: ..., });
+
+// You can also pass in a `DataConnect` instance to the `QueryRef` function.
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getEnergyResultByIdRef(dataConnect, getEnergyResultByIdVars);
+
+// Call `executeQuery()` on the reference to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await executeQuery(ref);
+
+console.log(data.energyResult);
+
+// Or, you can use the `Promise` API.
+executeQuery(ref).then((response) => {
+  const data = response.data;
+  console.log(data.energyResult);
+});
+```
+
+## GetEnergyResultsByBuildingParameters
+You can execute the `GetEnergyResultsByBuildingParameters` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
+```typescript
+getEnergyResultsByBuildingParameters(vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+
+interface GetEnergyResultsByBuildingParametersRef {
+  ...
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+}
+export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
+```
+You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
+```typescript
+getEnergyResultsByBuildingParameters(dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+
+interface GetEnergyResultsByBuildingParametersRef {
+  ...
+  (dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+}
+export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
+```
+
+If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultsByBuildingParametersRef:
+```typescript
+const name = getEnergyResultsByBuildingParametersRef.operationName;
+console.log(name);
+```
+
+### Variables
+The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+
+```typescript
+export interface GetEnergyResultsByBuildingParametersVariables {
+  buildingParametersId: UUIDString;
+}
+```
+### Return Type
+Recall that executing the `GetEnergyResultsByBuildingParameters` query returns a `QueryPromise` that resolves to an object with a `data` property.
+
+The `data` property is an object of type `GetEnergyResultsByBuildingParametersData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+```typescript
+export interface GetEnergyResultsByBuildingParametersData {
+  roofResults: ({
+    id: UUIDString;
+    improvementType: string;
+    cooling: number;
+    heating: number;
+    total: number;
+    carbon: number;
+    cost: number;
+    insulationRoof?: {
+      id: UUIDString;
+    } & InsulationRoof_Key;
+  } & EnergyResult_Key)[];
+    wallResults: ({
+      id: UUIDString;
+      improvementType: string;
+      cooling: number;
+      heating: number;
+      total: number;
+      carbon: number;
+      cost: number;
+      insulationWall?: {
+        id: UUIDString;
+      } & InsulationWall_Key;
+    } & EnergyResult_Key)[];
+      windowSizeResults: ({
+        id: UUIDString;
+        improvementType: string;
+        cooling: number;
+        heating: number;
+        total: number;
+        carbon: number;
+        cost: number;
+        windowSize?: {
+          id: UUIDString;
+        } & WindowSize_Key;
+      } & EnergyResult_Key)[];
+        windowGlazingResults: ({
+          id: UUIDString;
+          improvementType: string;
+          cooling: number;
+          heating: number;
+          total: number;
+          carbon: number;
+          cost: number;
+          windowGlazing?: {
+            id: UUIDString;
+          } & WindowGlazing_Key;
+        } & EnergyResult_Key)[];
+          orientationResults: ({
+            id: UUIDString;
+            improvementType: string;
+            cooling: number;
+            heating: number;
+            total: number;
+            carbon: number;
+            cost: number;
+            orientation?: {
+              id: UUIDString;
+            } & Orientation_Key;
+          } & EnergyResult_Key)[];
+            occupancyResults: ({
+              id: UUIDString;
+              improvementType: string;
+              cooling: number;
+              heating: number;
+              total: number;
+              carbon: number;
+              cost: number;
+              occupancy?: {
+                id: UUIDString;
+              } & Occupancy_Key;
+            } & EnergyResult_Key)[];
+              windowShadingResults: ({
+                id: UUIDString;
+                improvementType: string;
+                cooling: number;
+                heating: number;
+                total: number;
+                carbon: number;
+                cost: number;
+                windowShading?: {
+                  id: UUIDString;
+                } & WindowShading_Key;
+              } & EnergyResult_Key)[];
+}
+```
+### Using `GetEnergyResultsByBuildingParameters`'s action shortcut function
+
+```typescript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultsByBuildingParameters, GetEnergyResultsByBuildingParametersVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`:
+const getEnergyResultsByBuildingParametersVars: GetEnergyResultsByBuildingParametersVariables = {
+  buildingParametersId: ..., 
+};
+
+// Call the `getEnergyResultsByBuildingParameters()` function to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await getEnergyResultsByBuildingParameters(getEnergyResultsByBuildingParametersVars);
+// Variables can be defined inline as well.
+const { data } = await getEnergyResultsByBuildingParameters({ buildingParametersId: ..., });
+
+// You can also pass in a `DataConnect` instance to the action shortcut function.
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getEnergyResultsByBuildingParameters(dataConnect, getEnergyResultsByBuildingParametersVars);
+
+console.log(data.roofResults);
+console.log(data.wallResults);
+console.log(data.windowSizeResults);
+console.log(data.windowGlazingResults);
+console.log(data.orientationResults);
+console.log(data.occupancyResults);
+console.log(data.windowShadingResults);
+
+// Or, you can use the `Promise` API.
+getEnergyResultsByBuildingParameters(getEnergyResultsByBuildingParametersVars).then((response) => {
+  const data = response.data;
+  console.log(data.roofResults);
+  console.log(data.wallResults);
+  console.log(data.windowSizeResults);
+  console.log(data.windowGlazingResults);
+  console.log(data.orientationResults);
+  console.log(data.occupancyResults);
+  console.log(data.windowShadingResults);
+});
+```
+
+### Using `GetEnergyResultsByBuildingParameters`'s `QueryRef` function
+
+```typescript
+import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultsByBuildingParametersRef, GetEnergyResultsByBuildingParametersVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultsByBuildingParameters` query requires an argument of type `GetEnergyResultsByBuildingParametersVariables`:
+const getEnergyResultsByBuildingParametersVars: GetEnergyResultsByBuildingParametersVariables = {
+  buildingParametersId: ..., 
+};
+
+// Call the `getEnergyResultsByBuildingParametersRef()` function to get a reference to the query.
+const ref = getEnergyResultsByBuildingParametersRef(getEnergyResultsByBuildingParametersVars);
+// Variables can be defined inline as well.
+const ref = getEnergyResultsByBuildingParametersRef({ buildingParametersId: ..., });
+
+// You can also pass in a `DataConnect` instance to the `QueryRef` function.
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getEnergyResultsByBuildingParametersRef(dataConnect, getEnergyResultsByBuildingParametersVars);
+
+// Call `executeQuery()` on the reference to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await executeQuery(ref);
+
+console.log(data.roofResults);
+console.log(data.wallResults);
+console.log(data.windowSizeResults);
+console.log(data.windowGlazingResults);
+console.log(data.orientationResults);
+console.log(data.occupancyResults);
+console.log(data.windowShadingResults);
+
+// Or, you can use the `Promise` API.
+executeQuery(ref).then((response) => {
+  const data = response.data;
+  console.log(data.roofResults);
+  console.log(data.wallResults);
+  console.log(data.windowSizeResults);
+  console.log(data.windowGlazingResults);
+  console.log(data.orientationResults);
+  console.log(data.occupancyResults);
+  console.log(data.windowShadingResults);
+});
+```
+
+## GetEnergyResultsByBuilding
+You can execute the `GetEnergyResultsByBuilding` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
+```typescript
+getEnergyResultsByBuilding(vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+
+interface GetEnergyResultsByBuildingRef {
+  ...
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+}
+export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
+```
+You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
+```typescript
+getEnergyResultsByBuilding(dc: DataConnect, vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+
+interface GetEnergyResultsByBuildingRef {
+  ...
+  (dc: DataConnect, vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+}
+export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
+```
+
+If you need the name of the operation without creating a ref, you can retrieve the operation name by calling the `operationName` property on the getEnergyResultsByBuildingRef:
+```typescript
+const name = getEnergyResultsByBuildingRef.operationName;
+console.log(name);
+```
+
+### Variables
+The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+
+```typescript
+export interface GetEnergyResultsByBuildingVariables {
+  buildingId: UUIDString;
+}
+```
+### Return Type
+Recall that executing the `GetEnergyResultsByBuilding` query returns a `QueryPromise` that resolves to an object with a `data` property.
+
+The `data` property is an object of type `GetEnergyResultsByBuildingData`, which is defined in [dataconnect-generated/index.d.ts](./index.d.ts). It has the following fields:
+```typescript
+export interface GetEnergyResultsByBuildingData {
+  roofResults: ({
+    id: UUIDString;
+    improvementType: string;
+    cooling: number;
+    heating: number;
+    total: number;
+    carbon: number;
+    cost: number;
+    insulationRoof?: {
+      id: UUIDString;
+    } & InsulationRoof_Key;
+  } & EnergyResult_Key)[];
+    wallResults: ({
+      id: UUIDString;
+      improvementType: string;
+      cooling: number;
+      heating: number;
+      total: number;
+      carbon: number;
+      cost: number;
+      insulationWall?: {
+        id: UUIDString;
+      } & InsulationWall_Key;
+    } & EnergyResult_Key)[];
+      windowSizeResults: ({
+        id: UUIDString;
+        improvementType: string;
+        cooling: number;
+        heating: number;
+        total: number;
+        carbon: number;
+        cost: number;
+        windowSize?: {
+          id: UUIDString;
+        } & WindowSize_Key;
+      } & EnergyResult_Key)[];
+        windowGlazingResults: ({
+          id: UUIDString;
+          improvementType: string;
+          cooling: number;
+          heating: number;
+          total: number;
+          carbon: number;
+          cost: number;
+          windowGlazing?: {
+            id: UUIDString;
+          } & WindowGlazing_Key;
+        } & EnergyResult_Key)[];
+          orientationResults: ({
+            id: UUIDString;
+            improvementType: string;
+            cooling: number;
+            heating: number;
+            total: number;
+            carbon: number;
+            cost: number;
+            orientation?: {
+              id: UUIDString;
+            } & Orientation_Key;
+          } & EnergyResult_Key)[];
+            occupancyResults: ({
+              id: UUIDString;
+              improvementType: string;
+              cooling: number;
+              heating: number;
+              total: number;
+              carbon: number;
+              cost: number;
+              occupancy?: {
+                id: UUIDString;
+              } & Occupancy_Key;
+            } & EnergyResult_Key)[];
+              windowShadingResults: ({
+                id: UUIDString;
+                improvementType: string;
+                cooling: number;
+                heating: number;
+                total: number;
+                carbon: number;
+                cost: number;
+                windowShading?: {
+                  id: UUIDString;
+                } & WindowShading_Key;
+              } & EnergyResult_Key)[];
+}
+```
+### Using `GetEnergyResultsByBuilding`'s action shortcut function
+
+```typescript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultsByBuilding, GetEnergyResultsByBuildingVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`:
+const getEnergyResultsByBuildingVars: GetEnergyResultsByBuildingVariables = {
+  buildingId: ..., 
+};
+
+// Call the `getEnergyResultsByBuilding()` function to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await getEnergyResultsByBuilding(getEnergyResultsByBuildingVars);
+// Variables can be defined inline as well.
+const { data } = await getEnergyResultsByBuilding({ buildingId: ..., });
+
+// You can also pass in a `DataConnect` instance to the action shortcut function.
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getEnergyResultsByBuilding(dataConnect, getEnergyResultsByBuildingVars);
+
+console.log(data.roofResults);
+console.log(data.wallResults);
+console.log(data.windowSizeResults);
+console.log(data.windowGlazingResults);
+console.log(data.orientationResults);
+console.log(data.occupancyResults);
+console.log(data.windowShadingResults);
+
+// Or, you can use the `Promise` API.
+getEnergyResultsByBuilding(getEnergyResultsByBuildingVars).then((response) => {
+  const data = response.data;
+  console.log(data.roofResults);
+  console.log(data.wallResults);
+  console.log(data.windowSizeResults);
+  console.log(data.windowGlazingResults);
+  console.log(data.orientationResults);
+  console.log(data.occupancyResults);
+  console.log(data.windowShadingResults);
+});
+```
+
+### Using `GetEnergyResultsByBuilding`'s `QueryRef` function
+
+```typescript
+import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { connectorConfig, getEnergyResultsByBuildingRef, GetEnergyResultsByBuildingVariables } from '@dataconnect/generated';
+
+// The `GetEnergyResultsByBuilding` query requires an argument of type `GetEnergyResultsByBuildingVariables`:
+const getEnergyResultsByBuildingVars: GetEnergyResultsByBuildingVariables = {
+  buildingId: ..., 
+};
+
+// Call the `getEnergyResultsByBuildingRef()` function to get a reference to the query.
+const ref = getEnergyResultsByBuildingRef(getEnergyResultsByBuildingVars);
+// Variables can be defined inline as well.
+const ref = getEnergyResultsByBuildingRef({ buildingId: ..., });
+
+// You can also pass in a `DataConnect` instance to the `QueryRef` function.
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getEnergyResultsByBuildingRef(dataConnect, getEnergyResultsByBuildingVars);
+
+// Call `executeQuery()` on the reference to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await executeQuery(ref);
+
+console.log(data.roofResults);
+console.log(data.wallResults);
+console.log(data.windowSizeResults);
+console.log(data.windowGlazingResults);
+console.log(data.orientationResults);
+console.log(data.occupancyResults);
+console.log(data.windowShadingResults);
+
+// Or, you can use the `Promise` API.
+executeQuery(ref).then((response) => {
+  const data = response.data;
+  console.log(data.roofResults);
+  console.log(data.wallResults);
+  console.log(data.windowSizeResults);
+  console.log(data.windowGlazingResults);
+  console.log(data.orientationResults);
+  console.log(data.occupancyResults);
+  console.log(data.windowShadingResults);
 });
 ```
 
@@ -2663,6 +2707,7 @@ The `UpdateWindowGlazing` mutation requires an argument of type `UpdateWindowGla
 export interface UpdateWindowGlazingVariables {
   id: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
 }
@@ -2686,6 +2731,7 @@ import { connectorConfig, updateWindowGlazing, UpdateWindowGlazingVariables } fr
 const updateWindowGlazingVars: UpdateWindowGlazingVariables = {
   id: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
 };
@@ -2694,7 +2740,7 @@ const updateWindowGlazingVars: UpdateWindowGlazingVariables = {
 // You can use the `await` keyword to wait for the promise to resolve.
 const { data } = await updateWindowGlazing(updateWindowGlazingVars);
 // Variables can be defined inline as well.
-const { data } = await updateWindowGlazing({ id: ..., type: ..., rValue: ..., shgc: ..., });
+const { data } = await updateWindowGlazing({ id: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
 const dataConnect = getDataConnect(connectorConfig);
@@ -2719,6 +2765,7 @@ import { connectorConfig, updateWindowGlazingRef, UpdateWindowGlazingVariables }
 const updateWindowGlazingVars: UpdateWindowGlazingVariables = {
   id: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
 };
@@ -2726,7 +2773,7 @@ const updateWindowGlazingVars: UpdateWindowGlazingVariables = {
 // Call the `updateWindowGlazingRef()` function to get a reference to the mutation.
 const ref = updateWindowGlazingRef(updateWindowGlazingVars);
 // Variables can be defined inline as well.
-const ref = updateWindowGlazingRef({ id: ..., type: ..., rValue: ..., shgc: ..., });
+const ref = updateWindowGlazingRef({ id: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
 const dataConnect = getDataConnect(connectorConfig);
@@ -3828,6 +3875,7 @@ The `CreateWindowGlazing` mutation requires an argument of type `CreateWindowGla
 export interface CreateWindowGlazingVariables {
   buildingParametersId: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
 }
@@ -3851,6 +3899,7 @@ import { connectorConfig, createWindowGlazing, CreateWindowGlazingVariables } fr
 const createWindowGlazingVars: CreateWindowGlazingVariables = {
   buildingParametersId: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
 };
@@ -3859,7 +3908,7 @@ const createWindowGlazingVars: CreateWindowGlazingVariables = {
 // You can use the `await` keyword to wait for the promise to resolve.
 const { data } = await createWindowGlazing(createWindowGlazingVars);
 // Variables can be defined inline as well.
-const { data } = await createWindowGlazing({ buildingParametersId: ..., type: ..., rValue: ..., shgc: ..., });
+const { data } = await createWindowGlazing({ buildingParametersId: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
 const dataConnect = getDataConnect(connectorConfig);
@@ -3884,6 +3933,7 @@ import { connectorConfig, createWindowGlazingRef, CreateWindowGlazingVariables }
 const createWindowGlazingVars: CreateWindowGlazingVariables = {
   buildingParametersId: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
 };
@@ -3891,7 +3941,7 @@ const createWindowGlazingVars: CreateWindowGlazingVariables = {
 // Call the `createWindowGlazingRef()` function to get a reference to the mutation.
 const ref = createWindowGlazingRef(createWindowGlazingVars);
 // Variables can be defined inline as well.
-const ref = createWindowGlazingRef({ buildingParametersId: ..., type: ..., rValue: ..., shgc: ..., });
+const ref = createWindowGlazingRef({ buildingParametersId: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
 const dataConnect = getDataConnect(connectorConfig);
@@ -5571,6 +5621,7 @@ export interface CreateWindowGlazingWithEnergyResultVariables {
   id: UUIDString;
   buildingParametersId: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
   cooling: number;
@@ -5601,6 +5652,7 @@ const createWindowGlazingWithEnergyResultVars: CreateWindowGlazingWithEnergyResu
   id: ..., 
   buildingParametersId: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
   cooling: ..., 
@@ -5614,7 +5666,7 @@ const createWindowGlazingWithEnergyResultVars: CreateWindowGlazingWithEnergyResu
 // You can use the `await` keyword to wait for the promise to resolve.
 const { data } = await createWindowGlazingWithEnergyResult(createWindowGlazingWithEnergyResultVars);
 // Variables can be defined inline as well.
-const { data } = await createWindowGlazingWithEnergyResult({ id: ..., buildingParametersId: ..., type: ..., rValue: ..., shgc: ..., cooling: ..., heating: ..., total: ..., carbon: ..., cost: ..., });
+const { data } = await createWindowGlazingWithEnergyResult({ id: ..., buildingParametersId: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., cooling: ..., heating: ..., total: ..., carbon: ..., cost: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
 const dataConnect = getDataConnect(connectorConfig);
@@ -5642,6 +5694,7 @@ const createWindowGlazingWithEnergyResultVars: CreateWindowGlazingWithEnergyResu
   id: ..., 
   buildingParametersId: ..., 
   type: ..., 
+  orientation: ..., 
   rValue: ..., 
   shgc: ..., 
   cooling: ..., 
@@ -5654,7 +5707,7 @@ const createWindowGlazingWithEnergyResultVars: CreateWindowGlazingWithEnergyResu
 // Call the `createWindowGlazingWithEnergyResultRef()` function to get a reference to the mutation.
 const ref = createWindowGlazingWithEnergyResultRef(createWindowGlazingWithEnergyResultVars);
 // Variables can be defined inline as well.
-const ref = createWindowGlazingWithEnergyResultRef({ id: ..., buildingParametersId: ..., type: ..., rValue: ..., shgc: ..., cooling: ..., heating: ..., total: ..., carbon: ..., cost: ..., });
+const ref = createWindowGlazingWithEnergyResultRef({ id: ..., buildingParametersId: ..., type: ..., orientation: ..., rValue: ..., shgc: ..., cooling: ..., heating: ..., total: ..., carbon: ..., cost: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
 const dataConnect = getDataConnect(connectorConfig);

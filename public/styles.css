@@ -177,7 +177,8 @@ input[type="checkbox"] {
 }
 
 .improvements-page .container {
-  max-width: 1280px;
+  width: min(96vw, 1800px);
+  max-width: 1800px;
 }
 
 .improvements-page #improvements-list {

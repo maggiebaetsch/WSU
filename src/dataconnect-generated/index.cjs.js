@@ -36,51 +36,6 @@ const connectorConfig = {
 };
 exports.connectorConfig = connectorConfig;
 
-const getEnergyResultByIdRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultById', inputVars);
-}
-getEnergyResultByIdRef.operationName = 'GetEnergyResultById';
-exports.getEnergyResultByIdRef = getEnergyResultByIdRef;
-
-exports.getEnergyResultById = function getEnergyResultById(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultByIdRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-;
-
-const getEnergyResultsByBuildingParametersRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultsByBuildingParameters', inputVars);
-}
-getEnergyResultsByBuildingParametersRef.operationName = 'GetEnergyResultsByBuildingParameters';
-exports.getEnergyResultsByBuildingParametersRef = getEnergyResultsByBuildingParametersRef;
-
-exports.getEnergyResultsByBuildingParameters = function getEnergyResultsByBuildingParameters(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultsByBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-;
-
-const getEnergyResultsByBuildingRef = (dcOrVars, vars) => {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetEnergyResultsByBuilding', inputVars);
-}
-getEnergyResultsByBuildingRef.operationName = 'GetEnergyResultsByBuilding';
-exports.getEnergyResultsByBuildingRef = getEnergyResultsByBuildingRef;
-
-exports.getEnergyResultsByBuilding = function getEnergyResultsByBuilding(dcOrVars, varsOrOptions, options) {
-  
-  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
-  return executeQuery(getEnergyResultsByBuildingRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
-}
-;
-
 const getAllBuildingsRef = (dc) => {
   const { dc: dcInstance} = validateArgs(connectorConfig, dc, undefined);
   dcInstance._useGeneratedSdk();
@@ -845,5 +800,50 @@ exports.deleteEnergyResultRef = deleteEnergyResultRef;
 exports.deleteEnergyResult = function deleteEnergyResult(dcOrVars, vars) {
   const { dc: dcInstance, vars: inputVars } = validateArgs(connectorConfig, dcOrVars, vars, true);
   return executeMutation(deleteEnergyResultRef(dcInstance, inputVars));
+}
+;
+
+const getEnergyResultByIdRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultById', inputVars);
+}
+getEnergyResultByIdRef.operationName = 'GetEnergyResultById';
+exports.getEnergyResultByIdRef = getEnergyResultByIdRef;
+
+exports.getEnergyResultById = function getEnergyResultById(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultByIdRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getEnergyResultsByBuildingParametersRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuildingParameters', inputVars);
+}
+getEnergyResultsByBuildingParametersRef.operationName = 'GetEnergyResultsByBuildingParameters';
+exports.getEnergyResultsByBuildingParametersRef = getEnergyResultsByBuildingParametersRef;
+
+exports.getEnergyResultsByBuildingParameters = function getEnergyResultsByBuildingParameters(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingParametersRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;
+
+const getEnergyResultsByBuildingRef = (dcOrVars, vars) => {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'GetEnergyResultsByBuilding', inputVars);
+}
+getEnergyResultsByBuildingRef.operationName = 'GetEnergyResultsByBuilding';
+exports.getEnergyResultsByBuildingRef = getEnergyResultsByBuildingRef;
+
+exports.getEnergyResultsByBuilding = function getEnergyResultsByBuilding(dcOrVars, varsOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
+  return executeQuery(getEnergyResultsByBuildingRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
 }
 ;

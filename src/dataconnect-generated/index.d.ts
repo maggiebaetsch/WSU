@@ -273,6 +273,7 @@ export interface CreateWindowGlazingData {
 export interface CreateWindowGlazingVariables {
   buildingParametersId: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
 }
@@ -286,6 +287,7 @@ export interface CreateWindowGlazingWithEnergyResultVariables {
   id: UUIDString;
   buildingParametersId: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
   cooling: number;
@@ -519,6 +521,9 @@ export interface GetEnergyResultsByBuildingData {
     total: number;
     carbon: number;
     cost: number;
+    insulationRoof?: {
+      id: UUIDString;
+    } & InsulationRoof_Key;
   } & EnergyResult_Key)[];
     wallResults: ({
       id: UUIDString;
@@ -528,6 +533,9 @@ export interface GetEnergyResultsByBuildingData {
       total: number;
       carbon: number;
       cost: number;
+      insulationWall?: {
+        id: UUIDString;
+      } & InsulationWall_Key;
     } & EnergyResult_Key)[];
       windowSizeResults: ({
         id: UUIDString;
@@ -537,6 +545,9 @@ export interface GetEnergyResultsByBuildingData {
         total: number;
         carbon: number;
         cost: number;
+        windowSize?: {
+          id: UUIDString;
+        } & WindowSize_Key;
       } & EnergyResult_Key)[];
         windowGlazingResults: ({
           id: UUIDString;
@@ -546,6 +557,9 @@ export interface GetEnergyResultsByBuildingData {
           total: number;
           carbon: number;
           cost: number;
+          windowGlazing?: {
+            id: UUIDString;
+          } & WindowGlazing_Key;
         } & EnergyResult_Key)[];
           orientationResults: ({
             id: UUIDString;
@@ -555,6 +569,9 @@ export interface GetEnergyResultsByBuildingData {
             total: number;
             carbon: number;
             cost: number;
+            orientation?: {
+              id: UUIDString;
+            } & Orientation_Key;
           } & EnergyResult_Key)[];
             occupancyResults: ({
               id: UUIDString;
@@ -564,6 +581,9 @@ export interface GetEnergyResultsByBuildingData {
               total: number;
               carbon: number;
               cost: number;
+              occupancy?: {
+                id: UUIDString;
+              } & Occupancy_Key;
             } & EnergyResult_Key)[];
               windowShadingResults: ({
                 id: UUIDString;
@@ -573,6 +593,9 @@ export interface GetEnergyResultsByBuildingData {
                 total: number;
                 carbon: number;
                 cost: number;
+                windowShading?: {
+                  id: UUIDString;
+                } & WindowShading_Key;
               } & EnergyResult_Key)[];
 }
 
@@ -585,6 +608,9 @@ export interface GetEnergyResultsByBuildingParametersData {
     total: number;
     carbon: number;
     cost: number;
+    insulationRoof?: {
+      id: UUIDString;
+    } & InsulationRoof_Key;
   } & EnergyResult_Key)[];
     wallResults: ({
       id: UUIDString;
@@ -594,6 +620,9 @@ export interface GetEnergyResultsByBuildingParametersData {
       total: number;
       carbon: number;
       cost: number;
+      insulationWall?: {
+        id: UUIDString;
+      } & InsulationWall_Key;
     } & EnergyResult_Key)[];
       windowSizeResults: ({
         id: UUIDString;
@@ -603,6 +632,9 @@ export interface GetEnergyResultsByBuildingParametersData {
         total: number;
         carbon: number;
         cost: number;
+        windowSize?: {
+          id: UUIDString;
+        } & WindowSize_Key;
       } & EnergyResult_Key)[];
         windowGlazingResults: ({
           id: UUIDString;
@@ -612,6 +644,9 @@ export interface GetEnergyResultsByBuildingParametersData {
           total: number;
           carbon: number;
           cost: number;
+          windowGlazing?: {
+            id: UUIDString;
+          } & WindowGlazing_Key;
         } & EnergyResult_Key)[];
           orientationResults: ({
             id: UUIDString;
@@ -621,6 +656,9 @@ export interface GetEnergyResultsByBuildingParametersData {
             total: number;
             carbon: number;
             cost: number;
+            orientation?: {
+              id: UUIDString;
+            } & Orientation_Key;
           } & EnergyResult_Key)[];
             occupancyResults: ({
               id: UUIDString;
@@ -630,6 +668,9 @@ export interface GetEnergyResultsByBuildingParametersData {
               total: number;
               carbon: number;
               cost: number;
+              occupancy?: {
+                id: UUIDString;
+              } & Occupancy_Key;
             } & EnergyResult_Key)[];
               windowShadingResults: ({
                 id: UUIDString;
@@ -639,6 +680,9 @@ export interface GetEnergyResultsByBuildingParametersData {
                 total: number;
                 carbon: number;
                 cost: number;
+                windowShading?: {
+                  id: UUIDString;
+                } & WindowShading_Key;
               } & EnergyResult_Key)[];
 }
 
@@ -703,6 +747,7 @@ export interface GetFullBuildingDetailsData {
           windowGlazings: ({
             id: UUIDString;
             type: string;
+            orientation?: string | null;
             rValue: number;
             shgc: number;
             energyResult?: {
@@ -833,6 +878,7 @@ export interface GetWindowGlazingsData {
   windowGlazings: ({
     id: UUIDString;
     type: string;
+    orientation?: string | null;
     rValue: number;
     shgc: number;
     energyResult?: {
@@ -989,6 +1035,7 @@ export interface UpdateWindowGlazingData {
 export interface UpdateWindowGlazingVariables {
   id: UUIDString;
   type: string;
+  orientation: string;
   rValue: number;
   shgc: number;
 }
@@ -1026,42 +1073,6 @@ export interface WindowSize_Key {
   id: UUIDString;
   __typename?: 'WindowSize_Key';
 }
-
-interface GetEnergyResultByIdRef {
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-  /* Allow users to pass in custom DataConnect instances */
-  (dc: DataConnect, vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-  operationName: string;
-}
-export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
-
-export function getEnergyResultById(vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-export function getEnergyResultById(dc: DataConnect, vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
-
-interface GetEnergyResultsByBuildingParametersRef {
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-  /* Allow users to pass in custom DataConnect instances */
-  (dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-  operationName: string;
-}
-export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
-
-export function getEnergyResultsByBuildingParameters(vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-export function getEnergyResultsByBuildingParameters(dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
-
-interface GetEnergyResultsByBuildingRef {
-  /* Allow users to create refs without passing in DataConnect */
-  (vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-  /* Allow users to pass in custom DataConnect instances */
-  (dc: DataConnect, vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-  operationName: string;
-}
-export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
-
-export function getEnergyResultsByBuilding(vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
-export function getEnergyResultsByBuilding(dc: DataConnect, vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
 
 interface GetAllBuildingsRef {
   /* Allow users to create refs without passing in DataConnect */
@@ -1710,4 +1721,40 @@ export const deleteEnergyResultRef: DeleteEnergyResultRef;
 
 export function deleteEnergyResult(vars: DeleteEnergyResultVariables): MutationPromise<DeleteEnergyResultData, DeleteEnergyResultVariables>;
 export function deleteEnergyResult(dc: DataConnect, vars: DeleteEnergyResultVariables): MutationPromise<DeleteEnergyResultData, DeleteEnergyResultVariables>;
+
+interface GetEnergyResultByIdRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: GetEnergyResultByIdVariables): QueryRef<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+  operationName: string;
+}
+export const getEnergyResultByIdRef: GetEnergyResultByIdRef;
+
+export function getEnergyResultById(vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+export function getEnergyResultById(dc: DataConnect, vars: GetEnergyResultByIdVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultByIdData, GetEnergyResultByIdVariables>;
+
+interface GetEnergyResultsByBuildingParametersRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables): QueryRef<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+  operationName: string;
+}
+export const getEnergyResultsByBuildingParametersRef: GetEnergyResultsByBuildingParametersRef;
+
+export function getEnergyResultsByBuildingParameters(vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+export function getEnergyResultsByBuildingParameters(dc: DataConnect, vars: GetEnergyResultsByBuildingParametersVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingParametersData, GetEnergyResultsByBuildingParametersVariables>;
+
+interface GetEnergyResultsByBuildingRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: GetEnergyResultsByBuildingVariables): QueryRef<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+  operationName: string;
+}
+export const getEnergyResultsByBuildingRef: GetEnergyResultsByBuildingRef;
+
+export function getEnergyResultsByBuilding(vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
+export function getEnergyResultsByBuilding(dc: DataConnect, vars: GetEnergyResultsByBuildingVariables, options?: ExecuteQueryOptions): QueryPromise<GetEnergyResultsByBuildingData, GetEnergyResultsByBuildingVariables>;
 

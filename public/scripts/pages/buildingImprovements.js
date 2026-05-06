@@ -52,7 +52,7 @@ const SECTION_CONFIGS = [
     itemKey: "insulationRoofs",
     energyKey: "roofResults",
     relationKey: "insulationRoof",
-    headers: ["Type", "Thickness", "R-Value"],
+    headers: ["Type", "Thickness (mm)", "R-Value"],
     getValues(item) {
       return [item.type, item.thickness, item.rValue];
     },
@@ -63,7 +63,7 @@ const SECTION_CONFIGS = [
     itemKey: "insulationWalls",
     energyKey: "wallResults",
     relationKey: "insulationWall",
-    headers: ["Type", "Thickness", "R-Value"],
+    headers: ["Type", "Thickness (mm)", "R-Value"],
     getValues(item) {
       return [item.type, item.thickness, item.rValue];
     },
@@ -85,9 +85,9 @@ const SECTION_CONFIGS = [
     itemKey: "windowGlazings",
     energyKey: "windowGlazingResults",
     relationKey: "windowGlazing",
-    headers: ["Type", "R-Value", "SHGC"],
+    headers: ["Type", "Orientation", "R-Value", "SHGC"],
     getValues(item) {
-      return [item.type, item.rValue, item.shgc];
+      return [item.type, item.orientation, item.rValue, item.shgc];
     },
   },
   {
@@ -623,7 +623,7 @@ function highlightLowestCostImprovement() {
     rows.forEach((row) => {
       const cells = row.querySelectorAll("td");
 
-      const cost = parseFloat(cells[cells.length - 1].textContent) || 0;
+      const cost = parseFloat(cells[cells.length - 2].textContent) || 0;
 
       if (cost < lowestValue) {
         lowestValue = cost;
@@ -746,7 +746,7 @@ function renderParametersCard(list, building, buildingParameters) {
         <tr>
           <th>Building Name</th>
           <th>Climate</th>
-          <th>Floor Area</th>
+          <th>Floor Area (m²)</th>
           <th>Building Type</th>
           <th>Envelope</th>
           <th>Air Conditioned</th>
@@ -756,7 +756,7 @@ function renderParametersCard(list, building, buildingParameters) {
         <tr>
           <td>${formatValue(building.name || "Unnamed Building")}</td>
           <td>${formatValue(formatEnum(buildingParameters.climate))}</td>
-          <td>${formatValue(buildingParameters.floorArea)}</td>
+          <td>${formatValue(buildingParameters.floorArea)} m²</td>
           <td>${formatValue(formatEnum(buildingParameters.buildingType))}</td>
           <td>${formatValue(formatEnum(buildingParameters.envelope))}</td>
           <td>${buildingParameters.isAC ? "Yes" : "No"}</td>
