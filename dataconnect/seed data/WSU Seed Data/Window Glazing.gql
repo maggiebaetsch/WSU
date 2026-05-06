@@ -1,0 +1,1155 @@
+mutation SeedWindowGlazingData @auth(level: PUBLIC) {
+	wg1: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000001"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Baseline - SG - AL - Clear"
+		orientation: "South"
+		rValue: 4.0
+		shgc: 0.468
+	})
+	wg2: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000002"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG1 - AL - Clear"
+		orientation: "South"
+		rValue: 6.2
+		shgc: 0.63
+	})
+	wg3: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000003"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG2 - AL - Low E"
+		orientation: "South"
+		rValue: 4.3
+		shgc: 0.31
+	})
+	wg4: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000004"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG3 - Timber - Low E"
+		orientation: "South"
+		rValue: 3.1
+		shgc: 0.38
+	})
+	wg5: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000005"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG4 - Timber - Low E"
+		orientation: "South"
+		rValue: 3.2
+		shgc: 0.49
+	})
+	wg6: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000006"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG5 - AL - Toned"
+		orientation: "South"
+		rValue: 5.9
+		shgc: 0.6
+	})
+	wg7: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000007"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG1 - AL - Clear"
+		orientation: "South"
+		rValue: 3.3
+		shgc: 0.58
+	})
+	wg8: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000008"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG2 - Thermal Broken AL - Clear"
+		orientation: "South"
+		rValue: 2.8
+		shgc: 0.57
+	})
+	wg9: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000009"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG3 - AL - Low E"
+		orientation: "South"
+		rValue: 2.2
+		shgc: 0.36
+	})
+	wg10: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000010"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG4 - Timber - Low E"
+		orientation: "South"
+		rValue: 2.1
+		shgc: 0.17
+	})
+	wg11: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000011"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG5 - PVC - Low E"
+		orientation: "South"
+		rValue: 1.5
+		shgc: 0.34
+	})
+	wg12: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000012"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG1 - AL - Low E"
+		orientation: "South"
+		rValue: 1.7
+		shgc: 0.24
+	})
+	wg13: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000013"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG2 - Timber - Low E"
+		orientation: "South"
+		rValue: 1.2
+		shgc: 0.23
+	})
+	wg14: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000014"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG3 - PVC - Low E"
+		orientation: "South"
+		rValue: 0.9
+		shgc: 0.17
+	})
+	wg15: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000015"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG4 - AL - Low E"
+		orientation: "South"
+		rValue: 2.0
+		shgc: 0.22
+	})
+	wg16: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000016"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG5 - Timber - Low E"
+		orientation: "South"
+		rValue: 1.3
+		shgc: 0.27
+	})
+	wg17: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000017"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Baseline - SG - AL - Clear"
+		orientation: "North"
+		rValue: 4.0
+		shgc: 0.468
+	})
+	wg18: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000018"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG1 - AL - Clear"
+		orientation: "North"
+		rValue: 6.2
+		shgc: 0.63
+	})
+	wg19: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000019"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG2 - AL - Low E"
+		orientation: "North"
+		rValue: 4.3
+		shgc: 0.31
+	})
+	wg20: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000020"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG3 - Timber - Low E"
+		orientation: "North"
+		rValue: 3.1
+		shgc: 0.38
+	})
+	wg21: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000021"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG4 - Timber - Low E"
+		orientation: "North"
+		rValue: 3.2
+		shgc: 0.49
+	})
+	wg22: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000022"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG5 - AL - Toned"
+		orientation: "North"
+		rValue: 5.9
+		shgc: 0.6
+	})
+	wg23: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000023"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG1 - AL - Clear"
+		orientation: "North"
+		rValue: 3.3
+		shgc: 0.58
+	})
+	wg24: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000024"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG2 - Thermal Broken AL - Clear"
+		orientation: "North"
+		rValue: 2.8
+		shgc: 0.57
+	})
+	wg25: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000025"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG3 - AL - Low E"
+		orientation: "North"
+		rValue: 2.2
+		shgc: 0.36
+	})
+	wg26: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000026"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG4 - Timber - Low E"
+		orientation: "North"
+		rValue: 2.1
+		shgc: 0.17
+	})
+	wg27: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000027"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG5 - PVC - Low E"
+		orientation: "North"
+		rValue: 1.5
+		shgc: 0.34
+	})
+	wg28: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000028"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG1 - AL - Low E"
+		orientation: "North"
+		rValue: 1.7
+		shgc: 0.24
+	})
+	wg29: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000029"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG2 - Timber - Low E"
+		orientation: "North"
+		rValue: 1.2
+		shgc: 0.23
+	})
+	wg30: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000030"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG3 - PVC - Low E"
+		orientation: "North"
+		rValue: 0.9
+		shgc: 0.17
+	})
+	wg31: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000031"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG4 - AL - Low E"
+		orientation: "North"
+		rValue: 2.0
+		shgc: 0.22
+	})
+	wg32: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000032"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG5 - Timber - Low E"
+		orientation: "North"
+		rValue: 1.3
+		shgc: 0.27
+	})
+	wg33: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000033"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Baseline - SG - AL - Clear"
+		orientation: "East"
+		rValue: 4.0
+		shgc: 0.468
+	})
+	wg34: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000034"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG1 - AL - Clear"
+		orientation: "East"
+		rValue: 6.2
+		shgc: 0.63
+	})
+	wg35: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000035"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG2 - AL - Low E"
+		orientation: "East"
+		rValue: 4.3
+		shgc: 0.31
+	})
+	wg36: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000036"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG3 - Timber - Low E"
+		orientation: "East"
+		rValue: 3.1
+		shgc: 0.38
+	})
+	wg37: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000037"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG4 - Timber - Low E"
+		orientation: "East"
+		rValue: 3.2
+		shgc: 0.49
+	})
+	wg38: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000038"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG5 - AL - Toned"
+		orientation: "East"
+		rValue: 5.9
+		shgc: 0.6
+	})
+	wg39: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000039"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG1 - AL - Clear"
+		orientation: "East"
+		rValue: 3.3
+		shgc: 0.58
+	})
+	wg40: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000040"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG2 - Thermal Broken AL - Clear"
+		orientation: "East"
+		rValue: 2.8
+		shgc: 0.57
+	})
+	wg41: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000041"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG3 - AL - Low E"
+		orientation: "East"
+		rValue: 2.2
+		shgc: 0.36
+	})
+	wg42: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000042"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG4 - Timber - Low E"
+		orientation: "East"
+		rValue: 2.1
+		shgc: 0.17
+	})
+	wg43: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000043"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG5 - PVC - Low E"
+		orientation: "East"
+		rValue: 1.5
+		shgc: 0.34
+	})
+	wg44: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000044"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG1 - AL - Low E"
+		orientation: "East"
+		rValue: 1.7
+		shgc: 0.24
+	})
+	wg45: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000045"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG2 - Timber - Low E"
+		orientation: "East"
+		rValue: 1.2
+		shgc: 0.23
+	})
+	wg46: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000046"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG3 - PVC - Low E"
+		orientation: "East"
+		rValue: 0.9
+		shgc: 0.17
+	})
+	wg47: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000047"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG4 - AL - Low E"
+		orientation: "East"
+		rValue: 2.0
+		shgc: 0.22
+	})
+	wg48: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000048"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG5 - Timber - Low E"
+		orientation: "East"
+		rValue: 1.3
+		shgc: 0.27
+	})
+	wg49: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000049"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "Baseline - SG - AL - Clear"
+		orientation: "West"
+		rValue: 4.0
+		shgc: 0.468
+	})
+	wg50: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000050"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG1 - AL - Clear"
+		orientation: "West"
+		rValue: 6.2
+		shgc: 0.63
+	})
+	wg51: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000051"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG2 - AL - Low E"
+		orientation: "West"
+		rValue: 4.3
+		shgc: 0.31
+	})
+	wg52: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000052"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG3 - Timber - Low E"
+		orientation: "West"
+		rValue: 3.1
+		shgc: 0.38
+	})
+	wg53: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000053"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG4 - Timber - Low E"
+		orientation: "West"
+		rValue: 3.2
+		shgc: 0.49
+	})
+	wg54: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000054"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "SG5 - AL - Toned"
+		orientation: "West"
+		rValue: 5.9
+		shgc: 0.6
+	})
+	wg55: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000055"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG1 - AL - Clear"
+		orientation: "West"
+		rValue: 3.3
+		shgc: 0.58
+	})
+	wg56: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000056"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG2 - Thermal Broken AL - Clear"
+		orientation: "West"
+		rValue: 2.8
+		shgc: 0.57
+	})
+	wg57: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000057"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG3 - AL - Low E"
+		orientation: "West"
+		rValue: 2.2
+		shgc: 0.36
+	})
+	wg58: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000058"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG4 - Timber - Low E"
+		orientation: "West"
+		rValue: 2.1
+		shgc: 0.17
+	})
+	wg59: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000059"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "DG5 - PVC - Low E"
+		orientation: "West"
+		rValue: 1.5
+		shgc: 0.34
+	})
+	wg60: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000060"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG1 - AL - Low E"
+		orientation: "West"
+		rValue: 1.7
+		shgc: 0.24
+	})
+	wg61: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000061"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG2 - Timber - Low E"
+		orientation: "West"
+		rValue: 1.2
+		shgc: 0.23
+	})
+	wg62: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000062"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG3 - PVC - Low E"
+		orientation: "West"
+		rValue: 0.9
+		shgc: 0.17
+	})
+	wg63: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000063"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG4 - AL - Low E"
+		orientation: "West"
+		rValue: 2.0
+		shgc: 0.22
+	})
+	wg64: windowGlazing_insert(data: {
+		id: "4b000000-0000-0000-0000-000000000064"
+		buildingParameters: { id: "63a56f95-0dd4-4bd3-b9cc-7fd0f34f9a21" }
+		type: "TG5 - Timber - Low E"
+		orientation: "West"
+		rValue: 1.3
+		shgc: 0.27
+	})
+
+	erWg1: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000001"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000001" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5329.417134
+		cooling: 4514.052866
+		total: 38383.64
+		carbon: 26.48471
+		cost: 0.0
+	})
+	erWg2: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000002"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000002" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5341.91722
+		cooling: 4648.02278
+		total: 38530.12
+		carbon: 26.58578
+		cost: 0.0
+	})
+	erWg3: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000003"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000003" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5448.427274
+		cooling: 4410.032726
+		total: 38398.63
+		carbon: 26.49505
+		cost: 0.0
+	})
+	erWg4: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000004"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000004" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5345.321535
+		cooling: 4448.298465
+		total: 38333.8
+		carbon: 26.45032
+		cost: 0.0
+	})
+	erWg5: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000005"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000005" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5260.009608
+		cooling: 4558.560392
+		total: 38358.74
+		carbon: 26.46753
+		cost: 0.0
+	})
+	erWg6: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000006"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000006" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5340.035919
+		cooling: 4634.514081
+		total: 38514.73
+		carbon: 26.57516
+		cost: 0.0
+	})
+	erWg7: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000007"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000007" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5203.471242
+		cooling: 4611.038758
+		total: 38354.69
+		carbon: 26.46474
+		cost: 0.0
+	})
+	erWg8: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000008"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000008" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5167.266154
+		cooling: 4627.363846
+		total: 38334.82
+		carbon: 26.45103
+		cost: 0.0
+	})
+	erWg9: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000009"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000009" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5282.884412
+		cooling: 4470.015588
+		total: 38293.08
+		carbon: 26.42223
+		cost: 0.0
+	})
+	erWg10: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000010"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000010" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5449.112608
+		cooling: 4258.587392
+		total: 38247.88
+		carbon: 26.39104
+		cost: 0.0
+	})
+	erWg11: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000011"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000011" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5235.924799
+		cooling: 4481.815201
+		total: 38257.93
+		carbon: 26.39797
+		cost: 0.0
+	})
+	erWg12: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000012"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000012" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5347.219678
+		cooling: 4356.360322
+		total: 38243.76
+		carbon: 26.38819
+		cost: 0.0
+	})
+	erWg13: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000013"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000013" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5309.973329
+		cooling: 4367.586671
+		total: 38217.74
+		carbon: 26.37024
+		cost: 0.0
+	})
+	erWg14: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000014"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000014" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5340.043614
+		cooling: 4309.476386
+		total: 38189.7
+		carbon: 26.35089
+		cost: 0.0
+	})
+	erWg15: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000015"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000015" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5392.927523
+		cooling: 4319.752747
+		total: 38252.86
+		carbon: 26.39447
+		cost: 0.0
+	})
+	erWg16: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000016"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000016" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5281.801016
+		cooling: 4410.348984
+		total: 38232.33
+		carbon: 26.38031
+		cost: 0.0
+	})
+	erWg17: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000017"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000017" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 6016.44655
+		cooling: 3856.49345
+		total: 38413.12
+		carbon: 26.50505
+		cost: 0.0
+	})
+	erWg18: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000018"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000018" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 6148.547698
+		cooling: 3881.752302
+		total: 38570.48
+		carbon: 26.61363
+		cost: 0.0
+	})
+	erWg19: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000019"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000019" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 6076.112675
+		cooling: 3809.167325
+		total: 38425.46
+		carbon: 26.51357
+		cost: 0.0
+	})
+	erWg20: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000020"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000020" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5981.970048
+		cooling: 3843.029952
+		total: 38365.17
+		carbon: 26.47197
+		cost: 0.0
+	})
+	erWg21: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000021"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000021" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5966.154671
+		cooling: 3882.185329
+		total: 38388.51
+		carbon: 26.48807
+		cost: 0.0
+	})
+	erWg22: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000022"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000022" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 6131.325732
+		cooling: 3874.044268
+		total: 38545.54
+		carbon: 26.59642
+		cost: 0.0
+	})
+	erWg23: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000023"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000023" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5958.276475
+		cooling: 3904.393525
+		total: 38402.84
+		carbon: 26.49796
+		cost: 0.0
+	})
+	erWg24: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000024"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000024" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5920.166762
+		cooling: 3917.123238
+		total: 38377.46
+		carbon: 26.48045
+		cost: 0.0
+	})
+	erWg25: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000025"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000025" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5913.388325
+		cooling: 3862.891675
+		total: 38316.46
+		carbon: 26.43836
+		cost: 0.0
+	})
+	erWg26: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000026"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000026" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5949.564226
+		cooling: 3784.455774
+		total: 38274.2
+		carbon: 26.4092
+		cost: 0.0
+	})
+	erWg27: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000027"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000027" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5858.079231
+		cooling: 3878.950769
+		total: 38277.21
+		carbon: 26.41127
+		cost: 0.0
+	})
+	erWg28: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000028"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000028" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5899.527663
+		cooling: 3828.162337
+		total: 38266.86
+		carbon: 26.40413
+		cost: 0.0
+	})
+	erWg29: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000029"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000029" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5875.652173
+		cooling: 3840.787827
+		total: 38238.62
+		carbon: 26.38465
+		cost: 0.0
+	})
+	erWg30: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000030"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000030" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5845.802053
+		cooling: 3823.107947
+		total: 38209.08
+		carbon: 26.36427
+		cost: 0.0
+	})
+	erWg31: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000031"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000031" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5928.928303
+		cooling: 3809.481697
+		total: 38278.6
+		carbon: 26.41223
+		cost: 0.0
+	})
+	erWg32: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000032"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000032" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5856.708301
+		cooling: 3856.041699
+		total: 38252.93
+		carbon: 26.39452
+		cost: 0.0
+	})
+	erWg33: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000033"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000033" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5693.742894
+		cooling: 4310.327106
+		total: 38544.26
+		carbon: 26.59554
+		cost: 0.0
+	})
+	erWg34: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000034"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000034" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5796.261515
+		cooling: 4449.198485
+		total: 38785.65
+		carbon: 26.7621
+		cost: 0.0
+	})
+	erWg35: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000035"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000035" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 7266.67589
+		cooling: 5295.84111
+		total: 38507.38
+		carbon: 26.57009
+		cost: 0.0
+	})
+	erWg36: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000036"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000036" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5675.02567
+		cooling: 4252.31433
+		total: 38467.52
+		carbon: 26.54259
+		cost: 0.0
+	})
+	erWg37: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000037"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000037" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5640.087968
+		cooling: 4361.502032
+		total: 38541.77
+		carbon: 26.59382
+		cost: 0.0
+	})
+	erWg38: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000038"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000038" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5782.509983
+		cooling: 4430.650017
+		total: 38753.35
+		carbon: 26.73981
+		cost: 0.0
+	})
+	erWg39: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000039"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000039" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5622.313499
+		cooling: 4434.416501
+		total: 38596.91
+		carbon: 26.63187
+		cost: 0.0
+	})
+	erWg40: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000040"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000040" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5584.677624
+		cooling: 4447.202376
+		total: 38572.07
+		carbon: 26.61473
+		cost: 0.0
+	})
+	erWg41: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000041"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000041" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5606.751541
+		cooling: 4269.508459
+		total: 38416.44
+		carbon: 26.50734
+		cost: 0.0
+	})
+	erWg42: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000042"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000042" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5679.426502
+		cooling: 4006.153498
+		total: 38285.74
+		carbon: 26.41716
+		cost: 0.0
+	})
+	erWg43: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000043"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000043" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5552.867077
+		cooling: 4280.332923
+		total: 38373.37
+		carbon: 26.47763
+		cost: 0.0
+	})
+	erWg44: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000044"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000044" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5614.439639
+		cooling: 4159.300361
+		total: 38313.92
+		carbon: 26.436
+		cost: 0.0
+	})
+	erWg45: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000045"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000045" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5572.722529
+		cooling: 4169.227471
+		total: 38282.13
+		carbon: 26.41467
+		cost: 0.0
+	})
+	erWg46: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000046"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000046" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5572.932752
+		cooling: 4112.867248
+		total: 38225.98
+		carbon: 26.37593
+		cost: 0.0
+	})
+	erWg47: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000047"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000047" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5649.00131
+		cooling: 4125.36869
+		total: 38314.55
+		carbon: 26.43704
+		cost: 0.0
+	})
+	erWg48: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000048"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000048" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5564.440723
+		cooling: 4210.009277
+		total: 38314.6
+		carbon: 26.43707
+		cost: 0.0
+	})
+	erWg49: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000049"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000049" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5618.437724
+		cooling: 4310.182276
+		total: 38468.8
+		carbon: 26.54347
+		cost: 0.0
+	})
+	erWg50: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000050"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000050" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5695.379095
+		cooling: 4415.340905
+		total: 38650.89
+		carbon: 26.66911
+		cost: 0.0
+	})
+	erWg51: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000051"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000051" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5715.159773
+		cooling: 4212.240227
+		total: 38467.58
+		carbon: 26.54263
+		cost: 0.0
+	})
+	erWg52: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000052"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000052" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5604.640763
+		cooling: 4243.559237
+		total: 38388.38
+		carbon: 26.48798
+		cost: 0.0
+	})
+	erWg53: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000053"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000053" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5551.820837
+		cooling: 4348.049163
+		total: 38440.05
+		carbon: 26.52363
+		cost: 0.0
+	})
+	erWg54: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000054"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000054" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5687.529978
+		cooling: 4405.640022
+		total: 38633.35
+		carbon: 26.65701
+		cost: 0.0
+	})
+	erWg55: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000055"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000055" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5517.499861
+		cooling: 4408.020139
+		total: 38465.7
+		carbon: 26.54133
+		cost: 0.0
+	})
+	erWg56: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000056"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000056" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5479.269148
+		cooling: 4426.280852
+		total: 38445.72
+		carbon: 26.52755
+		cost: 0.0
+	})
+	erWg57: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000057"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000057" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5536.164267
+		cooling: 4266.955733
+		total: 38343.3
+		carbon: 26.45688
+		cost: 0.0
+	})
+	erWg58: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000058"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000058" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5640.286818
+		cooling: 4055.373182
+		total: 38235.84
+		carbon: 26.38273
+		cost: 0.0
+	})
+	erWg59: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000059"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000059" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5484.138681
+		cooling: 4282.501319
+		total: 38306.82
+		carbon: 26.43171
+		cost: 0.0
+	})
+	erWg60: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000060"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000060" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5561.798613
+		cooling: 4155.161387
+		total: 38257.14
+		carbon: 26.39743
+		cost: 0.0
+	})
+	erWg61: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000061"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000061" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5522.638286
+		cooling: 4168.301714
+		total: 38231.12
+		carbon: 26.37947
+		cost: 0.0
+	})
+	erWg62: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000062"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000062" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5531.593042
+		cooling: 4108.068958
+		total: 38179.87
+		carbon: 26.34411
+		cost: 0.0
+	})
+	erWg63: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000063"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000063" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5600.8642
+		cooling: 4118.3158
+		total: 38259.36
+		carbon: 26.39996
+		cost: 0.0
+	})
+	erWg64: energyResult_insert(data: {
+		id: "4c000000-0000-0000-0000-000000000064"
+		windowGlazing: { id: "4b000000-0000-0000-0000-000000000064" }
+		improvementType: "WINDOW_GLAZING"
+		heating: 5507.49892
+		cooling: 4211.15108
+		total: 38258.83
+		carbon: 26.39859
+		cost: 0.0
+	})
+}

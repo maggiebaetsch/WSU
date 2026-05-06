@@ -117,7 +117,11 @@ const DELETE_GROUPS = [
   ["windowShadings", deleteWindowShading],
 ];
 
-document.addEventListener("DOMContentLoaded", init);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
 
 // Turn enum values into readable text.
 function formatEnum(value) {
